@@ -249,11 +249,14 @@ async def run_program_workflow(ctx: AppContext, job: Job, target_results: int | 
         truncated = any(st.startswith(("budget", "deadline")) for st in stops)
         job.stop_reason = "; ".join(f"{lp.s.name}: {lp.s.stop_reason}" for lp in sessions)
 
-        if not job.emitted and provider_failed:
-            await use_curated(ctx, job, reason="Live research failed because an AI or search provider was unavailable")
+        reason = _failure_reason(stops)
+        timed_out = any(st == "deadline" for st in stops)
+        if not job.emitted and (provider_failed or timed_out):
+            # Nothing validated: show labelled curated records (with the specific reason) instead of an empty page.
+            await use_curated(ctx, job, reason=reason)
             return
         if job.emitted and len(job.emitted) < 3 and provider_failed:
-            await use_curated(ctx, job, reason="Live research was interrupted by a provider error", mixed=True)
+            await use_curated(ctx, job, reason=reason, mixed=True)
         if provider_failed:
             job.warn("A provider error interrupted research; results may be incomplete.")
         if truncated:
@@ -276,6 +279,24 @@ async def run_program_workflow(ctx: AppContext, job: Job, target_results: int | 
             if not t.done():
                 t.cancel()
         _finish(job)
+
+
+def _failure_reason(stops: list[str]) -> str:
+    """Specific, honest reason for the student (never a generic 'unavailable' when we know why)."""
+    joined = " ".join(stops)
+    if "provider_rate_limited" in joined:
+        return "Live research stopped because the AI provider's rate limit was reached"
+    if "provider_auth" in joined:
+        return "Live research stopped because an AI or search API key was rejected"
+    if "provider_timeout" in joined:
+        return "Live research stopped because the AI provider timed out"
+    if "provider_refusal" in joined:
+        return "Live research stopped because the AI model declined a step"
+    if "invalid_output" in joined:
+        return "Live research stopped because the AI provider returned an unusable response"
+    if "deadline" in joined:
+        return "Live research could not validate any program within the time limit"
+    return "Live research failed because an AI or search provider was unavailable"
 
 
 async def _finish_explanations(tasks: list[asyncio.Task], deadline_at: float) -> None:

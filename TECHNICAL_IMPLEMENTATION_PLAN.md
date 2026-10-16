@@ -1,5 +1,7 @@
 # GradBeacon — Technical Implementation Plan (Backend / Agentic System)
 
+> Provider migration update (current): Groq replaces Anthropic in the active implementation. Configure `GROQ_API_KEY_1` through `GROQ_API_KEY_6`; `openai/gpt-oss-120b` is the default model. The Groq adapter retains native function calling, structured extraction, application-side tool execution, and deterministic validation. It rotates across configured keys after authentication, rate-limit, timeout, connection, and service errors. Anthropic-specific sections below are historical and superseded by this update and the provider code.
+
 **Status:** Final plan for implementation, pending owner approval
 **Audience:** The coding agent or engineer who will build the GradBeacon backend
 **Product sources (binding):** `GradBeacon_Product_Requirements_Document.md` (PRD) and `agent (1).md` (agent spec)

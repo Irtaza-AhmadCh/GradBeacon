@@ -40,7 +40,8 @@ class EvidenceValidator:
             return Rejection("bad_quote_length")
         ordered = sorted(page.chunks, key=lambda c: 0 if c.chunk_id == chunk_id else 1)
         for c in ordered:
-            if nq in self._chunk_norm(c.chunk_id, c.text):
+            # Headings are verbatim page text too (and are shown to the extractor with each chunk).
+            if nq in self._chunk_norm(c.chunk_id, f"{c.heading or ''}\n{c.text}"):
                 return Evidence(source_id=source_id, chunk_id=c.chunk_id, url=page.source.final_url, quote=q,
                                 retrieved_at=page.source.retrieved_at)
         return Rejection("quote_not_in_source")

@@ -20,7 +20,7 @@ from app.models.outreach import Draft, DraftStatus
 from app.models.profile import StudentProfile
 from app.models.program import ProgramOpportunity, Requirement, Tuition
 from app.outreach.approval import ApprovalService, content_hash
-from app.providers.llm.anthropic_provider import strict_schema
+from app.providers.llm.groq_provider import strict_schema
 from app.scoring.scorer import Scorer
 from app.tools.fetcher import SafePageFetcher, decode_html
 from app.tools.url_safety import canonicalize, check_static, validate_public_url

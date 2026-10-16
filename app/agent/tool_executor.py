@@ -12,7 +12,7 @@ from collections import Counter
 from dataclasses import dataclass
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 
 from app.agent.state import LoopSession
 from app.core.errors import ProviderError
@@ -34,27 +34,43 @@ class _A(BaseModel):
 
 class SearchArgs(_A):
     query: str = Field(min_length=2, max_length=200)
-    limit: Literal[3, 5, 8, 10]
-    purpose: Literal["discover_programs", "fill_gap", "discover_faculty", "verify_field"]
-    target_program_id: str | None
-    gap: str | None
+    limit: int = 5
+    purpose: Literal["discover_programs", "fill_gap", "discover_faculty", "verify_field"] = "discover_programs"
+    target_program_id: str | None = None  # optional: some models omit nullable fields
+    gap: str | None = None
+
+    @field_validator("limit", mode="before")
+    @classmethod
+    def _clamp_limit(cls, v):
+        try:
+            return max(1, min(int(v), 10))
+        except (TypeError, ValueError):
+            return 5
 
 
 class FetchArgs(_A):
     url: str = Field(min_length=8, max_length=2048)
-    target_program_id: str | None
-    expected_page_kind: str
+    target_program_id: str | None = None
+    expected_page_kind: str = "other"
 
 
 class RetrieveArgs(_A):
     query: str = Field(min_length=2, max_length=300)
-    program_id: str | None
-    top_k: Literal[3, 5, 8]
+    program_id: str | None = None
+    top_k: int = 5
+
+    @field_validator("top_k", mode="before")
+    @classmethod
+    def _clamp_k(cls, v):
+        try:
+            return max(1, min(int(v), 8))
+        except (TypeError, ValueError):
+            return 5
 
 
 class FinishArgs(_A):
-    reason: Literal["sufficient", "no_more_leads", "budget"]
-    unresolved_gaps: list[str]
+    reason: Literal["sufficient", "no_more_leads", "budget"] = "sufficient"
+    unresolved_gaps: list[str] = Field(default_factory=list)
 
 
 ARG_MODELS = {"search_web": SearchArgs, "fetch_page": FetchArgs, "retrieve_evidence": RetrieveArgs,

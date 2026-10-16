@@ -17,7 +17,7 @@ or sent automatically. Fit scores are **profile-fit scores, not admission probab
 Student profile ──► Orchestrator (deterministic: budgets, permissions, validation, scoring)
                          │
                          ▼
-        ┌──────── Research loop (Claude, NATIVE strict tool calling, tool_choice=auto) ────────┐
+        ┌──────── Research loop (Groq LLM, NATIVE tool calling, tool_choice=auto)  ────────┐
         │  sees: evidence state per program (verified / not_found / conflicting / unavailable), │
         │        open_gaps, useful official links, remaining budget                              │
         │  chooses: search_web │ fetch_page │ retrieve_evidence │ finish_research               │
@@ -56,7 +56,7 @@ shell tools; untrusted page text is fenced and cannot change permissions (prompt
 py -3.12 -m venv .venv
 .venv/Scripts/pip install -r requirements-dev.txt        # macOS/Linux: .venv/bin/pip
 cp .env.example .env                                      # then fill in keys (see §3)
-.venv/Scripts/python scripts/verify_providers.py          # real Tavily + Claude tool-use + fetch checks
+.venv/Scripts/python scripts/verify_providers.py          # real Tavily + Groq tool-use + fetch checks
 .venv/Scripts/uvicorn app.main:app --port 8000 --workers 1
 # open http://localhost:8000/docs   or:
 .venv/Scripts/python scripts/run_research_cli.py --base-url http://localhost:8000
@@ -75,15 +75,14 @@ fallback instead of failing.
 
 | Variable | Required | Where to get it / value |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | **Yes (live)** | console.anthropic.com → Settings → API Keys → Create key (`sk-ant-…`). Needs API credits (a Claude.ai subscription does **not** include API credits). |
+| `GROQ_API_KEY_1` … `GROQ_API_KEY_6` | **≥1 required (live)** | console.groq.com → API Keys → Create API Key (`gsk_…`). Free tier = **8,000 tokens/min and 1,000 requests/day per organization**; a full research job needs ~30–40k tokens. Keys are rotated with automatic failover on 429/5xx. Extra keys only add capacity if they come from **different Groq organizations/accounts**; otherwise upgrade the org to the Developer tier. |
 | `TAVILY_API_KEY` | **Yes (live)** | app.tavily.com → sign up → API Keys (`tvly-…`). Free tier ≈1,000 credits/month; each search/extract uses credits. |
 | `APPROVAL_TOKEN_SECRET` | **Yes (outreach)** | Any random ≥32 chars: `python -c "import secrets; print(secrets.token_urlsafe(48))"`. Use a **different** value per deployment. |
 | `APP_ENV` | No | `production` on the host. |
 | `APP_MODE` | No | `live` (default) · `fallback_only` (no provider calls) · `demo_replay` (serve recorded run). |
 | `ALLOWED_ORIGINS` | When frontend is on another origin | CSV, e.g. `https://gradbeacon-web.example.app`. |
 | `TRUST_PROXY_HEADERS` | No | `true` only if the platform proxy sets `X-Forwarded-For` (for per-IP rate limits). |
-| `LLM_MODEL` | No | Default `claude-opus-5-5` (effort `low` for research/extraction to meet latency). Optional faster model: `claude-sonnet-5-5`. |
-| `LLM_SERVER_FALLBACK` | No | `true` (default): Anthropic server-side refusal fallback (`fallbacks: "default"`). |
+| `LLM_MODEL` | No | Default `openai/gpt-oss-120b` (native tool calling + strict JSON; `reasoning_effort` from `LLM_EFFORT_*`). `openai/gpt-oss-20b` is faster/cheaper. |
 | `EMAIL_SEND_MODE` | No | `live` (default, per owner). Sending provider **not implemented yet** — see §6. |
 | Budgets (`MAX_LOOP_TURNS`, `MAX_SEARCH_CALLS`, `MAX_PAGE_FETCHES`, `MAX_LLM_CALLS`, `REQUEST_DEADLINE_SECONDS`, …) | No | Initial assumptions; tune after measuring (see `.env.example`). |
 | `FETCH_PROVIDER_FALLBACK` | No | `true`: when a .edu site refuses direct fetch (bot wall/403), retrieve it via Tavily Extract; labelled `retrieval_method=provider_extract`. |
@@ -99,7 +98,7 @@ The app is a single Python 3.12 web service, **one worker** (in-memory job state
    - Build: `pip install -r requirements.txt`
    - Start: `uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 1 --proxy-headers` (also in `Procfile`)
    - Python version: `.python-version` / `runtime.txt` = 3.12
-3. Set env vars in the platform's secret manager: `ANTHROPIC_API_KEY`, `TAVILY_API_KEY`, `APPROVAL_TOKEN_SECRET`,
+3. Set env vars in the platform's secret manager: `GROQ_API_KEY_1` (+ more), `TAVILY_API_KEY`, `APPROVAL_TOKEN_SECRET`,
    `APP_ENV=production` (+ `ALLOWED_ORIGINS` once the frontend exists).
 4. Check `https://<primary>/health` → `effective_mode: "live"`, providers `configured`, `curated_records: 12`.
 5. **Backup instance:** create a second service from the same repo/commit with **separately entered** secrets
@@ -189,7 +188,7 @@ is a known negative (`not_offered`). Ranking: score → verified-field count →
 
 ## 10. Pre-demo smoke-test checklist (agent spec §14.5)
 
-- [ ] `scripts/verify_providers.py` all PASS on the deploy keys (Tavily, Claude tool_use, structured output, fetch).
+- [ ] `scripts/verify_providers.py` all PASS on the deploy keys (Tavily, Groq tool use, structured output, fetch).
 - [ ] `scripts/smoke_test.py --live` against **primary and backup**: health, secrets absent, results, gap follow-up.
 - [ ] Record 3–4 named programs from a live run: official URL + fields actually verified (paste below).
 - [ ] First validated result ≤ 45–60 s (`counts.first_result_ms`), else tune `MAX_*` budgets / `LLM_MODEL`.
@@ -208,5 +207,3 @@ Live-run verification record: _(fill in after the first live run)_
 - Student email is self-declared (only used for Reply-To/CC once sending exists).
 - PDFs are only readable via the provider-extract fallback; visa rules are not modelled.
 - Budgets/latency are initial assumptions until measured on the deployed instance.
-#   G r a d B e a c o n  
- 

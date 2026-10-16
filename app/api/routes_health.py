@@ -20,7 +20,7 @@ async def health(ctx: AppContext = Depends(get_ctx)):
     return {
         "status": "ok", "version": __version__, "app_env": s.app_env, "app_mode": s.app_mode,
         "effective_mode": ctx.providers.effective_mode,
-        "providers": {"llm": st(s.anthropic_api_key), "search": st(s.tavily_api_key),
+        "providers": {"llm": "configured" if s.groq_api_keys else "missing", "search": st(s.tavily_api_key),
                       "email": "configured" if getattr(ctx.providers.email, "configured", False) else "not_implemented",
                       "approval_signing": st(s.approval_token_secret)},
         "email_send_mode": s.email_send_mode,

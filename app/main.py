@@ -55,6 +55,10 @@ def create_app(settings: Settings | None = None, providers: Providers | None = N
             task.cancel()
             with contextlib.suppress(Exception):
                 await app.state.ctx.providers.fetcher.aclose()
+            close_llm = getattr(app.state.ctx.providers.llm, "aclose", None)
+            if close_llm:
+                with contextlib.suppress(Exception):
+                    await close_llm()
 
     app = FastAPI(title="GradBeacon API", version=__version__, lifespan=lifespan,
                   description="Evidence-first US graduate-opportunity research agent with human approval gates. "

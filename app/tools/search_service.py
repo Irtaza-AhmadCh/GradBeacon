@@ -5,8 +5,6 @@ from __future__ import annotations
 import re
 
 from app.core.config import Settings
-from app.core.errors import ProviderError
-from app.models.common import ErrorCategory
 from app.providers.search.base import SearchProvider, SearchResult
 from app.tools.cache import SIX_HOURS, TTLCache
 from app.tools.domains import is_official_domain, is_publication_domain
@@ -31,16 +29,12 @@ class SearchService:
         hit = self.cache.get(key)
         if hit is not None:
             return hit, True
-        hints = domain_hints or (None if allow_publication else ["edu"])
-        try:
-            raw = await self.provider.search(query, min(limit * 2, 10), hints)
-        except ProviderError as e:
-            if e.category != ErrorCategory.invalid_output or hints != ["edu"]:
-                raise
-            raw = []
-        if not raw and hints == ["edu"]:
-            # Some providers reject TLD-only filters; retry once without and rely on post-filtering.
-            raw = await self.provider.search(query + " site:.edu", min(limit * 2, 10), None)
+        # Verified 2026-10-17: Tavily rejects a bare TLD in include_domains (400), so official-domain focus uses a
+        # site: operator in the query, and every result is post-filtered by the domain policy below.
+        q = query if (allow_publication or domain_hints or "site:" in query) else f"{query} site:.edu"
+        raw = await self.provider.search(q, min(limit * 2, 10), domain_hints)
+        if not raw and q != query:
+            raw = await self.provider.search(query, min(limit * 2, 10), domain_hints)
         out: list[SearchResult] = []
         seen: set[str] = set()
         for r in raw:

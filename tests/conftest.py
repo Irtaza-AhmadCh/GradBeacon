@@ -17,11 +17,11 @@ from app.tools.search_service import SearchService  # noqa: E402
 from tests.fakes.fakes import EXTRACTIONS, ROUTES, FakeFetcher, FakeLLM, FakeSearchProvider  # noqa: E402
 
 SECRET = "test-approval-secret-0123456789-abcdefghijklmnop"
-FAKE_KEY = "sk-ant-test-THISISAFAKEKEYFORTESTS"
+FAKE_KEY = "gsk_test_THISISAFAKEKEYFORTESTS0123"
 
 
 def make_settings(**over) -> Settings:
-    base = dict(_env_file=None, app_env="development", app_mode="live", anthropic_api_key=SecretStr(FAKE_KEY),
+    base = dict(_env_file=None, app_env="development", app_mode="live", groq_api_key_1=SecretStr(FAKE_KEY),
                 tavily_api_key=SecretStr("tvly-fakekeyfortests123"), approval_token_secret=SecretStr(SECRET),
                 request_deadline_seconds=60, verify_deadline_seconds=30, professor_deadline_seconds=30,
                 rate_research_per_10min=100)

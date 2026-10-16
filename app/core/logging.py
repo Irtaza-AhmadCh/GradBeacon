@@ -10,6 +10,7 @@ from datetime import UTC, datetime
 
 _KEY_PATTERNS = [
     re.compile(r"sk-ant-[A-Za-z0-9_\-]+"),
+    re.compile(r"gsk_[A-Za-z0-9_\-]+"),
     re.compile(r"tvly-[A-Za-z0-9_\-]+"),
     re.compile(r"re_[A-Za-z0-9_]{16,}"),
 ]
@@ -72,5 +73,5 @@ def configure_logging(level: str, secrets: list[str]) -> None:
     handler.addFilter(SecretRedactionFilter(secrets))
     root.addHandler(handler)
     root.setLevel(level.upper())
-    for noisy in ("httpx", "httpcore", "httpx2", "anthropic", "trafilatura", "urllib3"):
+    for noisy in ("httpx", "httpcore", "httpx2", "groq", "trafilatura", "urllib3"):
         logging.getLogger(noisy).setLevel(logging.WARNING)

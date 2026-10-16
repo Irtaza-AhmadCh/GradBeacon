@@ -20,15 +20,19 @@ class Settings(BaseSettings):
     trust_proxy_headers: bool = False
     serve_frontend: bool = True
 
-    # --- LLM (Anthropic, native tool use) ---
-    llm_provider: Literal["anthropic"] = "anthropic"
-    anthropic_api_key: SecretStr | None = None
-    llm_model: str = "claude-opus-5-5"
+    # --- LLM (Groq, native tool use) ---
+    llm_provider: Literal["groq"] = "groq"
+    groq_api_key_1: SecretStr | None = None
+    groq_api_key_2: SecretStr | None = None
+    groq_api_key_3: SecretStr | None = None
+    groq_api_key_4: SecretStr | None = None
+    groq_api_key_5: SecretStr | None = None
+    groq_api_key_6: SecretStr | None = None
+    llm_model: str = "openai/gpt-oss-120b"
     llm_writing_model: str | None = None
     llm_effort_research: Literal["low", "medium", "high"] = "low"
     llm_effort_extraction: Literal["low", "medium", "high"] = "low"
     llm_effort_writing: Literal["low", "medium", "high"] = "medium"
-    llm_server_fallback: bool = True
     llm_timeout_seconds: float = 60.0
 
     # --- Search (Tavily) ---
@@ -54,7 +58,7 @@ class Settings(BaseSettings):
     max_llm_calls: int = 40
     first_batch_candidates: int = 4
     max_page_bytes: int = 2_000_000
-    max_extraction_chars: int = 40_000
+    max_extraction_chars: int = 12_000  # sized for Groq free-tier tokens-per-minute limits
     fetch_connect_timeout: float = 5.0
     fetch_total_timeout: float = 15.0
     max_redirects: int = 3
@@ -99,7 +103,8 @@ class Settings(BaseSettings):
 
     def secret_values(self) -> list[str]:
         out: list[str] = []
-        for name in ("anthropic_api_key", "tavily_api_key", "approval_token_secret"):
+        for name in ("groq_api_key_1", "groq_api_key_2", "groq_api_key_3", "groq_api_key_4",
+                     "groq_api_key_5", "groq_api_key_6", "tavily_api_key", "approval_token_secret"):
             v = getattr(self, name)
             if v is not None and v.get_secret_value():
                 out.append(v.get_secret_value())
@@ -107,11 +112,18 @@ class Settings(BaseSettings):
 
     def missing_for_live(self) -> list[str]:
         missing = []
-        if not _present(self.anthropic_api_key):
-            missing.append("ANTHROPIC_API_KEY")
+        if not self.groq_api_keys:
+            missing.append("GROQ_API_KEY_1..6 (at least one)")
         if not _present(self.tavily_api_key):
             missing.append("TAVILY_API_KEY")
         return missing
+
+    @property
+    def groq_api_keys(self) -> list[str]:
+        return [v.get_secret_value().strip() for name in (
+            "groq_api_key_1", "groq_api_key_2", "groq_api_key_3", "groq_api_key_4",
+            "groq_api_key_5", "groq_api_key_6") if (v := getattr(self, name)) is not None
+                and v.get_secret_value().strip()]
 
 
 def _present(v: SecretStr | None) -> bool:
