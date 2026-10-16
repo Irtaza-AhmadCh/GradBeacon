@@ -1,0 +1,475 @@
+{
+ "records": [
+  {
+   "institution": "Stanford University",
+   "program_name": "PhD in Computer Science",
+   "degree_level": "phd",
+   "field": "Computer Science",
+   "pages": [
+    {
+     "url": "https://www.cs.stanford.edu/admissions/phd-admissions-frequently-asked-questions",
+     "page_kind": "program_overview",
+     "scope": "program",
+     "institution_quote": "Visit Stanford University's Office of Graduate Admissions website for additional information.",
+     "program_quote": "No, if you have a PhD in CS from another institution, you cannot apply to the CS PhD program here at Stanford.",
+     "facts": [
+      {
+       "field": "min_gpa",
+       "value": "3.6 on a 4.0 scale",
+       "qualifiers": "Typical GPA of PhD applicants, not stated as a hard minimum",
+       "quote": "Typically GPA's are at least 3.6 (on a 4.0 scale) for PhD applicants."
+      },
+      {
+       "field": "gre",
+       "value": "GRE not required and not considered",
+       "qualifiers": null,
+       "quote": "GRE scores are not required and not considered from PhD applicants."
+      }
+     ]
+    },
+    {
+     "url": "https://www.cs.stanford.edu/admissions/phd-admissions",
+     "page_kind": "admissions_requirements",
+     "scope": "program",
+     "program_quote": "The Computer Science Department PhD program is a top-ranked research-oriented program, typically completed in 5-6 years.",
+     "facts": [
+      {
+       "field": "direct_entry_phd",
+       "value": "Applicants must hold a Bachelor's degree (bachelor's suffices)",
+       "qualifiers": null,
+       "quote": "Applicants must hold, or expect to hold before enrollment at Stanford, a Bachelor's degree from a U.S. college or University accredited by a regional accrediting association."
+      }
+     ]
+    },
+    {
+     "url": "https://www.cs.stanford.edu/admissions-graduate-application-deadlines",
+     "page_kind": "deadlines",
+     "scope": "program",
+     "facts": [
+      {
+       "field": "deadline",
+       "value": "December 8, 2026",
+       "qualifiers": "Autumn 2027 entry, PhD application (application opens September 15, 2026)",
+       "quote": "| PhD Application | Autumn | September 15, 2026 | December 8, 2026 | February 2027 |"
+      }
+     ]
+    },
+    {
+     "url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+     "page_kind": "admissions_requirements",
+     "scope": "program",
+     "facts": [
+      {
+       "field": "application_fee",
+       "value": "$125",
+       "qualifiers": "PhD and MS applicants",
+       "quote": "The application fee of $125 is to be paid in the online application with a credit card."
+      },
+      {
+       "field": "document",
+       "value": "Statement of purpose",
+       "qualifiers": "No more than two pages, single-spaced",
+       "quote": "The statement of purpose must be no more than two pages in length, single-spaced."
+      },
+      {
+       "field": "document",
+       "value": "Three letters of recommendation",
+       "qualifiers": "Submitted through the online application system",
+       "quote": "You must submit a minimum/maximum of three recommendation letters and they must be submitted through the online application system."
+      },
+      {
+       "field": "document",
+       "value": "Resume",
+       "qualifiers": "Include any publications",
+       "quote": "Submit your resume in the online application and include any publications."
+      },
+      {
+       "field": "document",
+       "value": "Transcripts",
+       "qualifiers": "Unofficial copies uploaded to the online application",
+       "quote": "You are required to upload unofficial copies of your transcripts or e-transcripts onto the online application for all institutions you have attended for at least a year as a full time student."
+      },
+      {
+       "field": "document",
+       "value": "Supplemental form",
+       "qualifiers": "Part of the online application",
+       "quote": "Supplemental form. This form is part of the online application."
+      }
+     ]
+    },
+    {
+     "url": "https://www.cs.stanford.edu/phd-program-overview/funding",
+     "page_kind": "funding",
+     "scope": "program",
+     "facts": [
+      {
+       "field": "funding",
+       "value": "All CS PhD students are guaranteed funding as long as they make satisfactory academic progress",
+       "qualifiers": null,
+       "funding_type": "other",
+       "applies_to_all_admitted": true,
+       "requires_separate_application": false,
+       "quote": "all CS PhD students are guaranteed funding as long as they make satisfactory academic progress."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "institution": "Cornell University",
+   "program_name": "Ph.D. in Computer Science",
+   "degree_level": "phd",
+   "field": "Computer Science",
+   "pages": [
+    {
+     "url": "https://www.cs.cornell.edu/phd-computer-science",
+     "page_kind": "program_overview",
+     "scope": "program",
+     "institution_quote": "Fostering an inclusive environment is a core value of the Computer Science Department and Cornell University.",
+     "program_quote": "Join a top ranked Ph.D. program where pioneering research spans the full spectrum of computer science",
+     "facts": [
+      {
+       "field": "research_area",
+       "value": "Artificial intelligence",
+       "qualifiers": null,
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries"
+      },
+      {
+       "field": "research_area",
+       "value": "Computer graphics",
+       "qualifiers": null,
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries"
+      },
+      {
+       "field": "research_area",
+       "value": "Systems",
+       "qualifiers": null,
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries"
+      },
+      {
+       "field": "research_area",
+       "value": "Security",
+       "qualifiers": null,
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries"
+      },
+      {
+       "field": "research_area",
+       "value": "Machine learning",
+       "qualifiers": null,
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries"
+      },
+      {
+       "field": "research_area",
+       "value": "Theory",
+       "qualifiers": null,
+       "quote": "while maintaining our depth in traditional areas such as theory, programming languages, and scientific computing."
+      }
+     ]
+    },
+    {
+     "url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+     "page_kind": "admissions_requirements",
+     "scope": "program",
+     "facts": [
+      {
+       "field": "document",
+       "value": "Transcripts",
+       "qualifiers": "Scanned transcripts of all previous college and university work",
+       "quote": "Your application should include completed and scanned transcripts of all previous college and university work, including any work done at Cornell."
+      },
+      {
+       "field": "document",
+       "value": "Two letters of recommendation",
+       "qualifiers": "3-4 allowed",
+       "quote": "2 Letters of recommendation are required; 3 - 4 allowed."
+      },
+      {
+       "field": "document",
+       "value": "Statement of purpose",
+       "qualifiers": null,
+       "quote": "You should think carefully when writing your Statement of Purpose."
+      },
+      {
+       "field": "document",
+       "value": "Personal statement",
+       "qualifiers": "Within 1,000 words",
+       "quote": "The personal statement will ask you to describe within 1,000 words how your background and experiences influenced your decision and ability to pursue a graduate degree."
+      },
+      {
+       "field": "funding",
+       "value": "All CS Ph.D. students are fully supported during the academic year while in good academic standing (tuition, health insurance, stipend)",
+       "qualifiers": "Via teaching assistantships, graduate research assistantships, and fellowships",
+       "funding_type": "stipend",
+       "applies_to_all_admitted": true,
+       "requires_separate_application": false,
+       "quote": "All Ph.D. students in Computer Science are fully supported during the academic year as long as they remain in good academic standing. Support from Cornell includes tuition, health insurance,and stipend."
+      },
+      {
+       "field": "direct_entry_phd",
+       "value": "Applicants with a Bachelor's or a Master's degree apply directly to the PhD program",
+       "qualifiers": null,
+       "quote": "Regardless of if you will have earned either a Bachelor's or a Master's degree, you should be applying directly to our PhD Program."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "institution": "Carnegie Mellon University",
+   "program_name": "M.S. in Computer Science",
+   "degree_level": "masters",
+   "field": "Computer Science",
+   "pages": [
+    {
+     "url": "https://csd.cmu.edu/academics/masters/ms-in-computer-science",
+     "page_kind": "program_overview",
+     "scope": "program",
+     "program_quote": "The M.S. in Computer Science offers students with a bachelor's degree the opportunity to improve their training with advanced study in computer science.",
+     "facts": [
+      {
+       "field": "min_gpa",
+       "value": "Maintain a 3.0 QPA",
+       "qualifiers": "Program requirement while enrolled, not an admission minimum",
+       "quote": "Maintain a 3.0 QPA."
+      }
+     ]
+    },
+    {
+     "url": "https://csd.cmu.edu/academics/masters/admissions",
+     "page_kind": "admissions_requirements",
+     "scope": "program",
+     "facts": [
+      {
+       "field": "deadline",
+       "value": "November 18, 2026",
+       "qualifiers": "Fall admission, MSCS early application deadline (3 p.m. EST)",
+       "quote": "Early Application Deadline: November 18, 2026 (3 p.m. EST)"
+      },
+      {
+       "field": "deadline",
+       "value": "December 9, 2026",
+       "qualifiers": "Fall admission, MSCS final application deadline (3 p.m. EST)",
+       "quote": "Final Application Deadline: December 9, 2026 (3 p.m. EST)"
+      },
+      {
+       "field": "application_fee",
+       "value": "$80",
+       "qualifiers": "Per program, by the early deadline",
+       "quote": "Early application deadline fee per program - $80 per program"
+      },
+      {
+       "field": "application_fee",
+       "value": "$100",
+       "qualifiers": "Per program, after November 18, 2026",
+       "quote": "Application fee after November 18, 2026, per program - $100 per program"
+      },
+      {
+       "field": "gre",
+       "value": "GRE strongly recommended (not strictly required)",
+       "qualifiers": "Waived for CMU graduates/enrolled students",
+       "quote": "The GRE is strongly recommended in order to apply to the MSCS program, especially for students who do not have clear documentation of strong mathematical proficiency."
+      },
+      {
+       "field": "document",
+       "value": "Transcripts",
+       "qualifiers": "PDF from each college/university attended",
+       "quote": "A PDF of your most recent transcript from each college and/or university you attended, even if no degree was granted."
+      },
+      {
+       "field": "document",
+       "value": "Resume/CV",
+       "qualifiers": "PDF format",
+       "quote": "Resume/CV: Please submit in PDF format."
+      },
+      {
+       "field": "document",
+       "value": "Statement of purpose",
+       "qualifiers": "One or two pages",
+       "quote": "Statement of Purpose: Provide a concise one- or two-page essay describing your primary research interests"
+      },
+      {
+       "field": "document",
+       "value": "Three letters of recommendation",
+       "qualifiers": "At least two from faculty or recent employers",
+       "quote": "Three letters of recommendation: At least two letters should be from faculty or recent employers."
+      },
+      {
+       "field": "funding",
+       "value": "Scholarships and financial assistance are not offered by the program",
+       "qualifiers": null,
+       "funding_type": "other",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": null,
+       "quote": "Scholarships and financial assistance to the Master of Science Program are not offered by the program at this time."
+      }
+     ]
+    },
+    {
+     "url": "https://www.cmu.edu/sfs/tuition/graduate/scs.html",
+     "page_kind": "tuition",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "tuition",
+       "value": "$62,200 per academic year",
+       "qualifiers": "SCS Master's Program; $31,100 per semester; academic year not stated on page",
+       "quote": "SCS Master's Program | $62,200 | $31,100 | $31,100 | $864"
+      },
+      {
+       "field": "tuition",
+       "value": "$864 per unit",
+       "qualifiers": "SCS Master's Program; academic year not stated on page",
+       "quote": "SCS Master's Program | $62,200 | $31,100 | $31,100 | $864"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "institution": "Rice University",
+   "program_name": "Master of Computer Science",
+   "degree_level": "masters",
+   "field": "Computer Science",
+   "pages": [
+    {
+     "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+     "page_kind": "program_overview",
+     "scope": "program",
+     "program_quote": "The Rice Master of Computer Science is a 30-credit-hour, non-thesis degree.",
+     "facts": [
+      {
+       "field": "min_gpa",
+       "value": "3.0+ GPA",
+       "qualifiers": "Listed under admission requirements",
+       "quote": "Undergraduate transcripts 3.0+ GPA CV or resume"
+      },
+      {
+       "field": "document",
+       "value": "Undergraduate transcripts",
+       "qualifiers": null,
+       "quote": "Applicants should prepare: Undergraduate transcripts"
+      },
+      {
+       "field": "document",
+       "value": "CV or resume",
+       "qualifiers": null,
+       "quote": "3.0+ GPA CV or resume Statement of purpose"
+      },
+      {
+       "field": "document",
+       "value": "Statement of purpose",
+       "qualifiers": null,
+       "quote": "CV or resume Statement of purpose Two letters of recommendation"
+      },
+      {
+       "field": "document",
+       "value": "Two letters of recommendation",
+       "qualifiers": "Program page; department application page says at least three",
+       "quote": "Statement of purpose Two letters of recommendation $85 application fee"
+      },
+      {
+       "field": "application_fee",
+       "value": "$85",
+       "qualifiers": null,
+       "quote": "Two letters of recommendation $85 application fee"
+      },
+      {
+       "field": "gre",
+       "value": "GRE recommended, but not required",
+       "qualifiers": null,
+       "quote": "$85 application fee GRE recommended, but not required"
+      },
+      {
+       "field": "funding",
+       "value": "No university or departmental financial aid is available for MCS students",
+       "qualifiers": null,
+       "funding_type": "other",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": null,
+       "quote": "No university or departmental financial aid is available for MCS students."
+      },
+      {
+       "field": "research_area",
+       "value": "Artificial intelligence",
+       "qualifiers": "Faculty research",
+       "quote": "Rice Computer Science faculty are advancing research in artificial intelligence, robotics, security, computational biology and other areas shaping the future of computing."
+      },
+      {
+       "field": "research_area",
+       "value": "Robotics",
+       "qualifiers": "Faculty research",
+       "quote": "Rice Computer Science faculty are advancing research in artificial intelligence, robotics, security, computational biology and other areas shaping the future of computing."
+      },
+      {
+       "field": "research_area",
+       "value": "Security",
+       "qualifiers": "Faculty research",
+       "quote": "Rice Computer Science faculty are advancing research in artificial intelligence, robotics, security, computational biology and other areas shaping the future of computing."
+      },
+      {
+       "field": "research_area",
+       "value": "Computational biology",
+       "qualifiers": "Faculty research",
+       "quote": "Rice Computer Science faculty are advancing research in artificial intelligence, robotics, security, computational biology and other areas shaping the future of computing."
+      }
+     ]
+    },
+    {
+     "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+     "page_kind": "deadlines",
+     "scope": "program",
+     "facts": [
+      {
+       "field": "deadline",
+       "value": "February 10, 2027",
+       "qualifiers": "Fall 2027, On-Campus MCS, early deadline for scholarship consideration",
+       "quote": "February 10, 2027: Early application deadline for scholarship consideration for On-Campus MAI, On-Campus MCS  and  On-Campus MDS."
+      },
+      {
+       "field": "deadline",
+       "value": "May 1, 2027",
+       "qualifiers": "Fall 2027, On-Campus MCS, international applicants",
+       "quote": "May 1, 2027: International deadline for On-Campus MAI, On-Campus MCS and On-Campus MDS"
+      },
+      {
+       "field": "deadline",
+       "value": "July 1, 2027",
+       "qualifiers": "Fall 2027, On-Campus MCS, domestic applicants",
+       "quote": "July 1, 2027: Domestic application deadline for On-Campus MAI, On-Campus, MCS and On-Campus MDS."
+      },
+      {
+       "field": "deadline",
+       "value": "November 1, 2026",
+       "qualifiers": "Spring 2027, On-Campus MCS, final deadline",
+       "quote": "November 1, 2026: Final application deadline for On-Campus MCS, Online MCS and Online MDS."
+      },
+      {
+       "field": "english_test",
+       "value": "TOEFL iBT 90",
+       "qualifiers": "Foreign nationals / non-native English speakers; one of several options",
+       "quote": "At least a 90 on the iBT TOEFL or iBT Home Edition."
+      },
+      {
+       "field": "english_test",
+       "value": "IELTS 7",
+       "qualifiers": "Alternative to TOEFL",
+       "quote": "At least 7 on the IELTS."
+      },
+      {
+       "field": "english_test",
+       "value": "Duolingo 115",
+       "qualifiers": "Alternative to TOEFL",
+       "quote": "At least 115 on the Duolingo test of English proficiency."
+      },
+      {
+       "field": "state",
+       "value": "TX",
+       "qualifiers": null,
+       "quote": "Houston, TX 77251-1892"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

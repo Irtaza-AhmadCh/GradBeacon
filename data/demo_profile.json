@@ -1,0 +1,16 @@
+{
+  "degree_paths": ["masters", "phd"],
+  "field": "Computer Science",
+  "specialization": "Natural Language Processing",
+  "qualification": "BS Computer Science",
+  "qualification_status": "completed",
+  "gpa": {"value": 3.6, "scale": "4.0", "context": "Cumulative GPA"},
+  "destination_country": "US",
+  "research_interests": ["natural language processing", "machine learning", "low-resource languages"],
+  "projects_or_thesis": "Final-year project: sentiment analysis for Urdu social-media text.",
+  "skills": ["Python", "PyTorch"],
+  "language_test_scores": [{"test": "IELTS", "overall": 7.5}],
+  "budget": {"max_tuition_per_year_usd": 35000},
+  "funding_preference": "need_full_funding",
+  "preferred_states": []
+}

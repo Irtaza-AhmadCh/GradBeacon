@@ -1,0 +1,576 @@
+{
+ "records": [
+  {
+   "institution": "Carnegie Mellon University",
+   "program_name": "MS in Electrical and Computer Engineering",
+   "degree_level": "masters",
+   "field": "Electrical and Computer Engineering",
+   "pages": [
+    {
+     "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+     "page_kind": "program_overview",
+     "scope": "program",
+     "program_quote": "Students in the Master of Science (MS) in ECE program are provided with a thorough background in the fundamentals of electrical and computer engineering",
+     "facts": [
+      {
+       "field": "research_area",
+       "value": "AI/ML Systems",
+       "qualifiers": "MS in ECE concentration",
+       "quote": "AI/ML Systems"
+      },
+      {
+       "field": "research_area",
+       "value": "Intelligent Physical Systems",
+       "qualifiers": "MS in ECE concentration",
+       "quote": "Intelligent Physical Systems"
+      },
+      {
+       "field": "research_area",
+       "value": "Computational Engineering Methods/Systems",
+       "qualifiers": "MS in ECE concentration",
+       "quote": "Computational Engineering Methods/Systems"
+      },
+      {
+       "field": "research_area",
+       "value": "Computer Security",
+       "qualifiers": "MS in ECE concentration",
+       "quote": "Computer Security"
+      },
+      {
+       "field": "research_area",
+       "value": "Network/Distributed Systems",
+       "qualifiers": "MS in ECE concentration",
+       "quote": "Network/Distributed Systems"
+      },
+      {
+       "field": "research_area",
+       "value": "Wireless/Embedded Systems",
+       "qualifiers": "MS in ECE concentration",
+       "quote": "Wireless/Embedded Systems"
+      }
+     ]
+    },
+    {
+     "url": "https://www.ece.cmu.edu/admissions/graduate-application-deadlines.html",
+     "page_kind": "deadlines",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "deadline",
+       "value": "January 15",
+       "qualifiers": "Fall admission, MS submission deadline (11:59pm ET)",
+       "quote": "January 15: MS submission deadline"
+      },
+      {
+       "field": "deadline",
+       "value": "December 15",
+       "qualifiers": "Fall admission, MS early review deadline",
+       "quote": "December 15: MS early review deadline"
+      },
+      {
+       "field": "deadline",
+       "value": "August 31",
+       "qualifiers": "Spring admission, submission deadline",
+       "quote": "August 31: Submission deadline"
+      }
+     ]
+    },
+    {
+     "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+     "page_kind": "admissions_requirements",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "funding",
+       "value": "Professional MS programs are self-funded, course-only degree programs",
+       "qualifiers": null,
+       "funding_type": "other",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": null,
+       "quote": "Our Professional MS programs are self-funded, course-only degree programs."
+      },
+      {
+       "field": "application_fee",
+       "value": "$75",
+       "qualifiers": "nonrefundable, one-time",
+       "quote": "The application fee is a nonrefundable one-time charge of $75."
+      },
+      {
+       "field": "document",
+       "value": "Statement of purpose",
+       "qualifiers": null,
+       "quote": "A complete application consists of the application itself, statement of purpose, resume, three recommendation letters, transcripts, GRE score report (optional for Spring 2027 and Fall 2027 Admissions), and nonrefundable application fee."
+      },
+      {
+       "field": "document",
+       "value": "Resume",
+       "qualifiers": null,
+       "quote": "A complete application consists of the application itself, statement of purpose, resume, three recommendation letters, transcripts, GRE score report (optional for Spring 2027 and Fall 2027 Admissions), and nonrefundable application fee."
+      },
+      {
+       "field": "document",
+       "value": "Three letters of recommendation",
+       "qualifiers": null,
+       "quote": "A complete application consists of the application itself, statement of purpose, resume, three recommendation letters, transcripts, GRE score report (optional for Spring 2027 and Fall 2027 Admissions), and nonrefundable application fee."
+      },
+      {
+       "field": "document",
+       "value": "Transcripts",
+       "qualifiers": "unofficial transcripts uploaded; official copy only if admitted",
+       "quote": "Unofficial transcripts must be uploaded to the online application and school information must be entered."
+      },
+      {
+       "field": "document",
+       "value": "English proficiency test score (DET, TOEFL, or IELTS)",
+       "qualifiers": "international applicants",
+       "quote": "International applicants are also required to submit a Duolingo English Test (DET), TOEFL, or IELTS score report."
+      },
+      {
+       "field": "gre",
+       "value": "GRE optional",
+       "qualifiers": "Spring 2027 and Fall 2027 admission cycles",
+       "quote": "Please note that the GRE is optional for the Spring 2027 and Fall 2027 admissions cycles."
+      },
+      {
+       "field": "english_test",
+       "value": "TOEFL iBT 86",
+       "qualifiers": "minimum overall on 0-120 scale; subscores R 22, L 22, S 20, W 22",
+       "quote": "On the 0-120 scale, a minimum overall score of 86 is required, with minimum subscores of IBT-R 22, IBT-L 22, IBT-S 20, and IBT-W 22."
+      },
+      {
+       "field": "english_test",
+       "value": "IELTS 7",
+       "qualifiers": "minimum overall; subscores Reading 6.5, Listening 6.5, Speaking 6, Writing 6",
+       "quote": "The minimum score requirement is an overall score of 7, with minimum subscores of Reading 6.5, Listening 6.5, Speaking 6, and Writing 6."
+      },
+      {
+       "field": "english_test",
+       "value": "Duolingo English Test 115",
+       "qualifiers": "minimum composite score",
+       "quote": "The minimum score requirement is a composite score of 115, with minimum subscores of Literacy 105, Comprehension 115, Production 90, and Conversation 95."
+      },
+      {
+       "field": "state",
+       "value": "PA",
+       "qualifiers": "Pittsburgh, PA",
+       "quote": "Pittsburgh, PA 15213"
+      }
+     ]
+    },
+    {
+     "url": "https://www.ece.cmu.edu/admissions/index.html",
+     "page_kind": "funding",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "funding",
+       "value": "Professional MS students are primarily self-supported; may be eligible for partial support via hourly wages",
+       "qualifiers": "ineligible for departmental fellowships covering tuition and living expenses",
+       "funding_type": "other",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": null,
+       "quote": "Students in this course-intensive program are primarily self-supported, but may be eligible to receive partial financial support in the form of hourly wages to support the teaching and research missions of the department."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "institution": "University of Illinois",
+   "program_name": "Electrical and Computer Engineering Ph.D.",
+   "degree_level": "phd",
+   "field": "Electrical and Computer Engineering",
+   "pages": [
+    {
+     "url": "https://ece.illinois.edu/admissions/graduate/phd",
+     "page_kind": "program_overview",
+     "scope": "program",
+     "program_quote": "Admission to our Ph.D. program will place you among mentors and peers who are continuously setting new records in academic and research excellence.",
+     "facts": [
+      {
+       "field": "deadline",
+       "value": "January 15",
+       "qualifiers": "Fall semester (apply by December 15 for full fellowship/award consideration)",
+       "quote": "January 15 for the fall semester (Apply by December 15 for complete consideration for fellowships and awards)"
+      },
+      {
+       "field": "deadline",
+       "value": "December 15",
+       "qualifiers": "Fall semester, priority deadline for fellowships and awards",
+       "quote": "January 15 for the fall semester (Apply by December 15 for complete consideration for fellowships and awards)"
+      },
+      {
+       "field": "deadline",
+       "value": "September 1",
+       "qualifiers": "Spring semester",
+       "quote": "September 1 for the spring semester."
+      },
+      {
+       "field": "research_area",
+       "value": "Machine Learning, AI and Data Science",
+       "qualifiers": null,
+       "quote": "Machine Learning, AI and Data Science"
+      },
+      {
+       "field": "research_area",
+       "value": "Networking, Mobile and Distributed Computing",
+       "qualifiers": null,
+       "quote": "Networking, Mobile and Distributed Computing"
+      },
+      {
+       "field": "research_area",
+       "value": "Robotics, Autonomy, Control and Cyber-Physical Systems",
+       "qualifiers": null,
+       "quote": "Robotics, Autonomy, Control and Cyber-Physical Systems"
+      },
+      {
+       "field": "research_area",
+       "value": "Computer Architecture, Circuits and Systems",
+       "qualifiers": null,
+       "quote": "Computer Architecture, Circuits and Systems"
+      },
+      {
+       "field": "research_area",
+       "value": "Signal Processing, Biomedical Imaging and Acoustics",
+       "qualifiers": null,
+       "quote": "Signal Processing, Biomedical Imaging and Acoustics"
+      },
+      {
+       "field": "research_area",
+       "value": "Microelectronics, Photonics and Nanotechnology",
+       "qualifiers": null,
+       "quote": "Microelectronics, Photonics and Nanotechnology"
+      },
+      {
+       "field": "research_area",
+       "value": "Power and Energy Systems",
+       "qualifiers": null,
+       "quote": "Power and Energy Systems"
+      }
+     ],
+     "institution_quote": "At the Department of Electrical and Computer Engineering at the University of Illinois, we empower our students to break boundaries in knowledge, research and innovation."
+    },
+    {
+     "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+     "page_kind": "admissions_requirements",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "direct_entry_phd",
+       "value": "Bachelor's degree holders may apply to the direct Ph.D. program",
+       "qualifiers": "MS holders apply to the PhD program",
+       "quote": "Students with a bachelor’s degree in electrical or computer engineering (or related field) may apply to the MS program or to the direct Ph.D. program."
+      },
+      {
+       "field": "application_fee",
+       "value": "$90",
+       "qualifiers": "all applications",
+       "quote": "The university application fee is $90 for all applications."
+      },
+      {
+       "field": "english_test",
+       "value": "TOEFL iBT 96",
+       "qualifiers": "minimum for non-native English speakers; full admission status requires above 102",
+       "quote": "All applicants whose native language is not English must submit a minimum TOEFL score of 96 (iBT), 243 (CBT), or 590 (PBT); or minimum International English Language Testing System (IELTS) academic exam scores of 6.5 overall and 6.0 in all subsections."
+      },
+      {
+       "field": "english_test",
+       "value": "IELTS 6.5",
+       "qualifiers": "minimum overall, 6.0 in all subsections; full admission status requires 7.0",
+       "quote": "All applicants whose native language is not English must submit a minimum TOEFL score of 96 (iBT), 243 (CBT), or 590 (PBT); or minimum International English Language Testing System (IELTS) academic exam scores of 6.5 overall and 6.0 in all subsections."
+      },
+      {
+       "field": "document",
+       "value": "Three letters of reference",
+       "qualifiers": "MS and PhD applicants",
+       "quote": "Three letters of reference submitted."
+      },
+      {
+       "field": "document",
+       "value": "Statement of purpose",
+       "qualifiers": null,
+       "quote": "Statement of purpose submitted."
+      },
+      {
+       "field": "document",
+       "value": "ECE Graduate Applicant Preferences (interest) Form",
+       "qualifiers": "MS and PhD applicants",
+       "quote": "ECE Interest form submitted (only for MS and PhD applicants)."
+      },
+      {
+       "field": "document",
+       "value": "Transcripts",
+       "qualifiers": "official copies requested once admitted",
+       "quote": "Official copies of transcripts are requested once admitted."
+      },
+      {
+       "field": "gre",
+       "value": "GRE optional",
+       "qualifiers": null,
+       "quote": "Scores on the GRE general aptitude tests verbal, quantitative, and analytical portions are optional."
+      }
+     ]
+    },
+    {
+     "url": "https://ece.illinois.edu/admissions/graduate",
+     "page_kind": "funding",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "funding",
+       "value": "100% of Ph.D. students receive funding",
+       "qualifiers": "department statistic",
+       "funding_type": "other",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": null,
+       "quote": "100% Ph.D. students who receive funding"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "institution": "Purdue University",
+   "program_name": "PhD in Electrical and Computer Engineering",
+   "degree_level": "phd",
+   "field": "Electrical and Computer Engineering",
+   "pages": [
+    {
+     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/phd",
+     "page_kind": "program_overview",
+     "scope": "program",
+     "program_quote": "Our Ph.D. program combines coursework and original research to prepare for a career in academia or industry.",
+     "facts": [
+      {
+       "field": "direct_entry_phd",
+       "value": "Bachelor's degree sufficient: students without an MS can apply to the direct PhD program",
+       "qualifiers": null,
+       "quote": "Students without an MS can apply to our direct PhD program."
+      }
+     ]
+    },
+    {
+     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+     "page_kind": "admissions_requirements",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "deadline",
+       "value": "December 1",
+       "qualifiers": "Fall, residential PhD, priority deadline (priority consideration for financial support)",
+       "quote": "December 1 is the deadline for priority consideration for financial support."
+      },
+      {
+       "field": "deadline",
+       "value": "April 1",
+       "qualifiers": "Fall, residential PhD, final deadline",
+       "quote": "| Residential: PhD, MSECE, and MSSWE | December 1 – Priority\\* April 1 - Final | September 1 | No Entry |"
+      },
+      {
+       "field": "deadline",
+       "value": "September 1",
+       "qualifiers": "Spring, residential PhD",
+       "quote": "| Residential: PhD, MSECE, and MSSWE | December 1 – Priority\\* April 1 - Final | September 1 | No Entry |"
+      },
+      {
+       "field": "gre",
+       "value": "GRE optional for all applicants",
+       "qualifiers": null,
+       "quote": "The GRE is optional for all applicants."
+      },
+      {
+       "field": "english_test",
+       "value": "TOEFL writing 22 (tests before January 21, 2026) or 4.5 (on/after January 21, 2026)",
+       "qualifiers": "ECE writing-score requirement in addition to graduate school minimums",
+       "quote": "TOEFL: 22 or higher for tests taken prior January 21, 2026 OR 4.5 or higher for tests taken on or after January 21, 2026."
+      },
+      {
+       "field": "english_test",
+       "value": "IELTS writing 6",
+       "qualifiers": "ECE writing-score requirement in addition to graduate school minimums",
+       "quote": "IELTS: 6 or higher"
+      },
+      {
+       "field": "funding",
+       "value": "A limited number of outstanding incoming students are offered fellowships each year",
+       "qualifiers": null,
+       "funding_type": "fellowship",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": null,
+       "quote": "A limited number of outstanding incoming students are offered fellowships each year."
+      },
+      {
+       "field": "funding",
+       "value": "Research assistantships funded by faculty research grants, more likely offered to PhD students",
+       "qualifiers": "most RAs offered after at least one semester of coursework",
+       "funding_type": "assistantship",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": null,
+       "quote": "As would be expected, RAs are more likely to be offered to PhD students than to MS students."
+      }
+     ]
+    },
+    {
+     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates",
+     "page_kind": "other",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "state",
+       "value": "IN",
+       "qualifiers": "West Lafayette, IN",
+       "quote": "West Lafayette, IN 47907-2035"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "institution": "Virginia Tech",
+   "program_name": "Master of Science (M.S.) in Electrical and Computer Engineering",
+   "degree_level": "masters",
+   "field": "Electrical and Computer Engineering",
+   "pages": [
+    {
+     "url": "https://ece.vt.edu/grad/degrees/masters.html",
+     "page_kind": "program_overview",
+     "scope": "program",
+     "program_quote": "The ECE department offers both Master of Science (M.S.) thesis and non-thesis degrees.",
+     "facts": [
+      {
+       "field": "min_gpa",
+       "value": "3.3 on a 4.0 scale (encouraged)",
+       "qualifiers": "on most recent 60 credit hours; recommended, not a strict minimum",
+       "quote": "Applicants applying to the Master of Science program are encouraged to have a 3.3/4.0 or higher GPA on their most recent 60 course credit hours in addition to receiving their bachelor's degree."
+      }
+     ]
+    },
+    {
+     "url": "https://ece.vt.edu/grad/msadmissions.html",
+     "page_kind": "admissions_requirements",
+     "scope": "program",
+     "facts": [
+      {
+       "field": "application_fee",
+       "value": "$75",
+       "qualifiers": "nonrefundable",
+       "quote": "Virginia Tech Graduate School online application form; nonrefundable application fee $75.00."
+      },
+      {
+       "field": "document",
+       "value": "Transcripts",
+       "qualifiers": "electronic copy uploaded with application",
+       "quote": "An up-to-date, electronic copy of all official transcript(s) must be submitted with your on-line application."
+      },
+      {
+       "field": "document",
+       "value": "Three letters of recommendation",
+       "qualifiers": null,
+       "quote": "Three (3) letters of recommendation."
+      },
+      {
+       "field": "document",
+       "value": "Resume",
+       "qualifiers": null,
+       "quote": "A Resume and a Statement of Purpose submitted with the on-line application."
+      },
+      {
+       "field": "document",
+       "value": "Statement of purpose",
+       "qualifiers": null,
+       "quote": "A Resume and a Statement of Purpose submitted with the on-line application."
+      },
+      {
+       "field": "document",
+       "value": "TOEFL or IELTS score",
+       "qualifiers": "applicants with degrees from non-English institutions",
+       "quote": "TOEFL or IELTS exam for applicants earning undergraduate or graduate degrees from non-English institutions."
+      },
+      {
+       "field": "gre",
+       "value": "GRE optional for all applicants",
+       "qualifiers": "note: the International Applicants section of the same page still says the GRE is required for some international applicants",
+       "quote": "The GRE is optional for all applicants."
+      },
+      {
+       "field": "deadline",
+       "value": "January 15",
+       "qualifiers": "Fall admission, deadline for full funding consideration (all applicants)",
+       "quote": "To be fully considered for funding, the application deadlines are January 15 for fall admission and September 1 for spring admission."
+      },
+      {
+       "field": "deadline",
+       "value": "Feb 20",
+       "qualifiers": "Fall admission, international applicants",
+       "quote": "Feb 20: Deadline for international students applying for fall admissions"
+      },
+      {
+       "field": "deadline",
+       "value": "July 1",
+       "qualifiers": "Fall admission, domestic applicants",
+       "quote": "July 1: Deadline for domestic students applying for fall admissions"
+      },
+      {
+       "field": "deadline",
+       "value": "Sept 1",
+       "qualifiers": "Spring admission, international applicants",
+       "quote": "Sept 1: Deadline for international students applying for spring admissions"
+      },
+      {
+       "field": "deadline",
+       "value": "Dec 1",
+       "qualifiers": "Spring admission, domestic applicants",
+       "quote": "Dec 1: Deadline for domestic students applying for spring admissions"
+      },
+      {
+       "field": "english_test",
+       "value": "IELTS 7.5",
+       "qualifiers": "recommended band score",
+       "quote": "IELTS Band 7.5"
+      },
+      {
+       "field": "funding",
+       "value": "Financial support is not guaranteed with admission; research-based students given preference",
+       "qualifiers": null,
+       "funding_type": "other",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": null,
+       "quote": "Research-based graduate students are given preference for funding opportunities. Financial support is not guaranteed with admission."
+      }
+     ]
+    },
+    {
+     "url": "https://ece.vt.edu/grad/financialaid.html",
+     "page_kind": "funding",
+     "scope": "department",
+     "facts": [
+      {
+       "field": "funding",
+       "value": "Bradley Fellowship for MS: $2,700/month plus tuition for two years",
+       "qualifiers": "US citizens only; US applicants automatically considered",
+       "funding_type": "fellowship",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": false,
+       "quote": "$2,700/month plus tuition for two years."
+      },
+      {
+       "field": "funding",
+       "value": "Graduate teaching assistantships pay tuition and a portion of medical insurance",
+       "qualifiers": "limited number; apply by December 31",
+       "funding_type": "assistantship",
+       "applies_to_all_admitted": false,
+       "requires_separate_application": true,
+       "quote": "Tuition fees and a portion of medical insurance (often through Virginia Tech) are paid by these assistantships."
+      },
+      {
+       "field": "deadline",
+       "value": "December 31",
+       "qualifiers": "GTA assistantship application for following academic year",
+       "quote": "All incoming and continuing students must apply by December 31 if they want to be considered for GTA assistantships for the following academic year."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

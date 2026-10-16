@@ -1,0 +1,4632 @@
+{
+ "dataset_version": "2026-10-16",
+ "curated_at": "2026-10-16",
+ "note": "Built by scripts/curate_fallback.py from official pages; every claim's quote was verified verbatim at curation time.",
+ "records": [
+  {
+   "program_id": "prg_d6f47e1fc385",
+   "institution_name": "Stanford University",
+   "program_name": "PhD in Computer Science",
+   "degree_level": "phd",
+   "field": "Computer Science",
+   "official_program_url": "https://www.cs.stanford.edu/admissions/phd-admissions-frequently-asked-questions",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "min_gpa",
+     "label": "Minimum GPA",
+     "claim": {
+      "value": "3.6 on a 4.0 scale",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_f4b0704ddb15",
+        "chunk_id": "src_f4b0704ddb15#c7",
+        "url": "https://www.cs.stanford.edu/admissions/phd-admissions-frequently-asked-questions",
+        "quote": "Typically GPA's are at least 3.6 (on a 4.0 scale) for PhD applicants.",
+        "retrieved_at": "2026-10-16T20:47:12.238983Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Typical GPA of PhD applicants, not stated as a hard minimum",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 3.6,
+     "numeric_scale": "4.0",
+     "test": null
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE not required and not considered",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_f4b0704ddb15",
+        "chunk_id": "src_f4b0704ddb15#c10",
+        "url": "https://www.cs.stanford.edu/admissions/phd-admissions-frequently-asked-questions",
+        "quote": "GRE scores are not required and not considered from PhD applicants.",
+        "retrieved_at": "2026-10-16T20:47:12.238983Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    },
+    {
+     "key": "direct_entry_phd",
+     "label": "Direct entry after a bachelor's degree",
+     "claim": {
+      "value": "Applicants must hold a Bachelor's degree (bachelor's suffices)",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_e80912a186a5",
+        "chunk_id": "src_e80912a186a5#c2",
+        "url": "https://www.cs.stanford.edu/admissions/phd-admissions",
+        "quote": "Applicants must hold, or expect to hold before enrollment at Stanford, a Bachelor's degree from a U.S. college or University accredited by a regional accrediting association.",
+        "retrieved_at": "2026-10-16T20:47:12.925551Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": "bachelor_ok"
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "other",
+     "availability": "guaranteed_for_admitted",
+     "availability_statement": "All CS PhD students are guaranteed funding as long as they make satisfactory academic progress",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": false,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "All CS PhD students are guaranteed funding as long as they make satisfactory academic progress",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_7c16099b7bd2",
+        "chunk_id": "src_7c16099b7bd2#c0",
+        "url": "https://www.cs.stanford.edu/phd-program-overview/funding",
+        "quote": "all CS PhD students are guaranteed funding as long as they make satisfactory academic progress.",
+        "retrieved_at": "2026-10-16T20:47:13.223101Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": "2026-12-08",
+     "term": null,
+     "applicant_type": "all",
+     "claim": {
+      "value": "December 8, 2026",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c69d21ebf9ef",
+        "chunk_id": "src_c69d21ebf9ef#c1",
+        "url": "https://www.cs.stanford.edu/admissions-graduate-application-deadlines",
+        "quote": "| PhD Application | Autumn | September 15, 2026 | December 8, 2026 | February 2027 |",
+        "retrieved_at": "2026-10-16T20:47:13.057885Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Autumn 2027 entry, PhD application (application opens September 15, 2026)",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_644d5c7ebddf",
+       "chunk_id": "src_644d5c7ebddf#c1",
+       "url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+       "quote": "The statement of purpose must be no more than two pages in length, single-spaced.",
+       "retrieved_at": "2026-10-16T20:47:13.141783Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "No more than two pages, single-spaced",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Three letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_644d5c7ebddf",
+       "chunk_id": "src_644d5c7ebddf#c2",
+       "url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+       "quote": "You must submit a minimum/maximum of three recommendation letters and they must be submitted through the online application system.",
+       "retrieved_at": "2026-10-16T20:47:13.141783Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Submitted through the online application system",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Resume",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_644d5c7ebddf",
+       "chunk_id": "src_644d5c7ebddf#c2",
+       "url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+       "quote": "Submit your resume in the online application and include any publications.",
+       "retrieved_at": "2026-10-16T20:47:13.141783Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Include any publications",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_644d5c7ebddf",
+       "chunk_id": "src_644d5c7ebddf#c3",
+       "url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+       "quote": "You are required to upload unofficial copies of your transcripts or e-transcripts onto the online application for all institutions you have attended for at least a year as a full time student.",
+       "retrieved_at": "2026-10-16T20:47:13.141783Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Unofficial copies uploaded to the online application",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Supplemental form",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_644d5c7ebddf",
+       "chunk_id": "src_644d5c7ebddf#c2",
+       "url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+       "quote": "Supplemental form. This form is part of the online application.",
+       "retrieved_at": "2026-10-16T20:47:13.141783Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Part of the online application",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$125",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_644d5c7ebddf",
+      "chunk_id": "src_644d5c7ebddf#c1",
+      "url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+      "quote": "The application fee of $125 is to be paid in the online application with a credit card.",
+      "retrieved_at": "2026-10-16T20:47:13.141783Z"
+     }
+    ],
+    "scope": "program",
+    "qualifiers": "PhD and MS applicants",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [],
+   "state": null,
+   "eligibility_status": "likely_eligible",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_f4b0704ddb15",
+     "url": "https://www.cs.stanford.edu/admissions/phd-admissions-frequently-asked-questions",
+     "final_url": "https://www.cs.stanford.edu/admissions/phd-admissions-frequently-asked-questions",
+     "title": "PhD Admissions | Frequently Asked Questions | Computer Science",
+     "domain": "www.cs.stanford.edu",
+     "registrable_domain": "stanford.edu",
+     "retrieved_at": "2026-10-16T20:47:12.238983Z",
+     "content_hash": "7a557e63e6d9bd8c91d2a0315b9622d66cf0220ce9ec8c4cf60e2fb8ebc5ac8e",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_e80912a186a5",
+     "url": "https://www.cs.stanford.edu/admissions/phd-admissions",
+     "final_url": "https://www.cs.stanford.edu/admissions/phd-admissions",
+     "title": "PhD Admissions | Computer Science",
+     "domain": "www.cs.stanford.edu",
+     "registrable_domain": "stanford.edu",
+     "retrieved_at": "2026-10-16T20:47:12.925551Z",
+     "content_hash": "0cb893f6358e86bb501223d583988f31e2a50a361cc88a7c308e8a5253b450f9",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_c69d21ebf9ef",
+     "url": "https://www.cs.stanford.edu/admissions-graduate-application-deadlines",
+     "final_url": "https://www.cs.stanford.edu/admissions-graduate-application-deadlines",
+     "title": "Graduate Application Deadlines | Computer Science",
+     "domain": "www.cs.stanford.edu",
+     "registrable_domain": "stanford.edu",
+     "retrieved_at": "2026-10-16T20:47:13.057885Z",
+     "content_hash": "d410a036b0b9ef0185988b61e222f2956d4534c3522bdcf1b2a7aadd2ddc9687",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "deadlines",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_644d5c7ebddf",
+     "url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+     "final_url": "https://www.cs.stanford.edu/admissions/graduate-application-checklists",
+     "title": "Graduate Application Checklists | Computer Science",
+     "domain": "www.cs.stanford.edu",
+     "registrable_domain": "stanford.edu",
+     "retrieved_at": "2026-10-16T20:47:13.141783Z",
+     "content_hash": "7773c8a9810283b7231efdf224838c35a5b939daf4471259437ff998ee54c2f7",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_7c16099b7bd2",
+     "url": "https://www.cs.stanford.edu/phd-program-overview/funding",
+     "final_url": "https://www.cs.stanford.edu/phd-program-overview/funding",
+     "title": "Funding | Computer Science",
+     "domain": "www.cs.stanford.edu",
+     "registrable_domain": "stanford.edu",
+     "retrieved_at": "2026-10-16T20:47:13.223101Z",
+     "content_hash": "bee43f381f0212ddbfb3503ac73e51f1952429bdd857bd05d392f366e999ed4c",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "funding",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:13.223101Z",
+   "last_verified_at": "2026-10-16T20:47:13.223101Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents",
+    "deadline",
+    "funding"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_f6d07292cc90",
+   "institution_name": "Cornell University",
+   "program_name": "Ph.D. in Computer Science",
+   "degree_level": "phd",
+   "field": "Computer Science",
+   "official_program_url": "https://www.cs.cornell.edu/phd-computer-science",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "direct_entry_phd",
+     "label": "Direct entry after a bachelor's degree",
+     "claim": {
+      "value": "Applicants with a Bachelor's or a Master's degree apply directly to the PhD program",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_ed75154a5b9d",
+        "chunk_id": "src_ed75154a5b9d#c24",
+        "url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+        "quote": "Regardless of if you will have earned either a Bachelor's or a Master's degree, you should be applying directly to our PhD Program.",
+        "retrieved_at": "2026-10-16T20:47:15.440325Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": "bachelor_ok"
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "stipend",
+     "availability": "guaranteed_for_admitted",
+     "availability_statement": "All CS Ph.D. students are fully supported during the academic year while in good academic standing (tuition, health insurance, stipend)",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": false,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "All CS Ph.D. students are fully supported during the academic year while in good academic standing (tuition, health insurance, stipend)",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_ed75154a5b9d",
+        "chunk_id": "src_ed75154a5b9d#c16",
+        "url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+        "quote": "All Ph.D. students in Computer Science are fully supported during the academic year as long as they remain in good academic standing. Support from Cornell includes tuition, health insurance,and stipend.",
+        "retrieved_at": "2026-10-16T20:47:15.440325Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Via teaching assistantships, graduate research assistantships, and fellowships",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [],
+   "deadline_status": "unknown",
+   "required_documents": [
+    {
+     "value": "Transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_ed75154a5b9d",
+       "chunk_id": "src_ed75154a5b9d#c4",
+       "url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+       "quote": "Your application should include completed and scanned transcripts of all previous college and university work, including any work done at Cornell.",
+       "retrieved_at": "2026-10-16T20:47:15.440325Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Scanned transcripts of all previous college and university work",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Two letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_ed75154a5b9d",
+       "chunk_id": "src_ed75154a5b9d#c6",
+       "url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+       "quote": "2 Letters of recommendation are required; 3 - 4 allowed.",
+       "retrieved_at": "2026-10-16T20:47:15.440325Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "3-4 allowed",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_ed75154a5b9d",
+       "chunk_id": "src_ed75154a5b9d#c7",
+       "url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+       "quote": "You should think carefully when writing your Statement of Purpose.",
+       "retrieved_at": "2026-10-16T20:47:15.440325Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Personal statement",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_ed75154a5b9d",
+       "chunk_id": "src_ed75154a5b9d#c8",
+       "url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+       "quote": "The personal statement will ask you to describe within 1,000 words how your background and experiences influenced your decision and ability to pursue a graduate degree.",
+       "retrieved_at": "2026-10-16T20:47:15.440325Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Within 1,000 words",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": null,
+   "research_areas": [
+    {
+     "value": "Artificial intelligence",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_67725006d58a",
+       "chunk_id": "src_67725006d58a#c0",
+       "url": "https://www.cs.cornell.edu/phd-computer-science",
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries",
+       "retrieved_at": "2026-10-16T20:47:14.765966Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Computer graphics",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_67725006d58a",
+       "chunk_id": "src_67725006d58a#c0",
+       "url": "https://www.cs.cornell.edu/phd-computer-science",
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries",
+       "retrieved_at": "2026-10-16T20:47:14.765966Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_67725006d58a",
+       "chunk_id": "src_67725006d58a#c0",
+       "url": "https://www.cs.cornell.edu/phd-computer-science",
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries",
+       "retrieved_at": "2026-10-16T20:47:14.765966Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Security",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_67725006d58a",
+       "chunk_id": "src_67725006d58a#c0",
+       "url": "https://www.cs.cornell.edu/phd-computer-science",
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries",
+       "retrieved_at": "2026-10-16T20:47:14.765966Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Machine learning",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_67725006d58a",
+       "chunk_id": "src_67725006d58a#c0",
+       "url": "https://www.cs.cornell.edu/phd-computer-science",
+       "quote": "Our research excellence spans areas such as: artificial intelligence, computer graphics, systems, security, machine learning, and digital libraries",
+       "retrieved_at": "2026-10-16T20:47:14.765966Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Theory",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_67725006d58a",
+       "chunk_id": "src_67725006d58a#c0",
+       "url": "https://www.cs.cornell.edu/phd-computer-science",
+       "quote": "while maintaining our depth in traditional areas such as theory, programming languages, and scientific computing.",
+       "retrieved_at": "2026-10-16T20:47:14.765966Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "state": null,
+   "eligibility_status": "likely_eligible",
+   "verification_status": "partially_verified",
+   "verification_label": "Partially verified — some fields need checking",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Not yet researched",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_67725006d58a",
+     "url": "https://www.cs.cornell.edu/phd-computer-science",
+     "final_url": "https://www.cs.cornell.edu/phd-computer-science",
+     "title": "Ph.D. in Computer Science | Department of Computer Science | Cornell Bowers",
+     "domain": "www.cs.cornell.edu",
+     "registrable_domain": "cornell.edu",
+     "retrieved_at": "2026-10-16T20:47:14.765966Z",
+     "content_hash": "2c6d600e69077ea98e49d88870cef5bde60490ead51393ffde395106cb8af664",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_ed75154a5b9d",
+     "url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+     "final_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+     "title": "Apply: Ph.D. in Computer Science | Department of Computer Science | Cornell Bowers",
+     "domain": "www.cs.cornell.edu",
+     "registrable_domain": "cornell.edu",
+     "retrieved_at": "2026-10-16T20:47:15.440325Z",
+     "content_hash": "7cb4524296ff5a9eb672677672daacb28013d46a1d972d1204396b6ccb540c4c",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:15.440325Z",
+   "last_verified_at": "2026-10-16T20:47:15.440325Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_92c5c0683423",
+   "institution_name": "Carnegie Mellon University",
+   "program_name": "M.S. in Computer Science",
+   "degree_level": "masters",
+   "field": "Computer Science",
+   "official_program_url": "https://csd.cmu.edu/academics/masters/ms-in-computer-science",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "min_gpa",
+     "label": "Minimum GPA",
+     "claim": {
+      "value": "Maintain a 3.0 QPA",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_58221ef70650",
+        "chunk_id": "src_58221ef70650#c3",
+        "url": "https://csd.cmu.edu/academics/masters/ms-in-computer-science",
+        "quote": "Maintain a 3.0 QPA.",
+        "retrieved_at": "2026-10-16T20:47:16.839380Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Program requirement while enrolled, not an admission minimum",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 3.0,
+     "numeric_scale": "4.0",
+     "test": null
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE strongly recommended (not strictly required)",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_2c45b3667fb3",
+        "chunk_id": "src_2c45b3667fb3#c2",
+        "url": "https://csd.cmu.edu/academics/masters/admissions",
+        "quote": "The GRE is strongly recommended in order to apply to the MSCS program, especially for students who do not have clear documentation of strong mathematical proficiency.",
+        "retrieved_at": "2026-10-16T20:47:17.478621Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Waived for CMU graduates/enrolled students",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    }
+   ],
+   "tuition": [
+    {
+     "amount": 62200.0,
+     "currency": "USD",
+     "period": "per_semester",
+     "residency": "unspecified",
+     "annualized_usd": 124400.0,
+     "claim": {
+      "value": "$62,200 per academic year",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d0c39233f900",
+        "chunk_id": "src_d0c39233f900#c0",
+        "url": "https://www.cmu.edu/sfs/tuition/graduate/scs.html",
+        "quote": "SCS Master's Program | $62,200 | $31,100 | $31,100 | $864",
+        "retrieved_at": "2026-10-16T20:47:19.230382Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "SCS Master's Program; $31,100 per semester; academic year not stated on page",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "amount": 864.0,
+     "currency": "USD",
+     "period": "per_credit",
+     "residency": "unspecified",
+     "annualized_usd": null,
+     "claim": {
+      "value": "$864 per unit",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d0c39233f900",
+        "chunk_id": "src_d0c39233f900#c0",
+        "url": "https://www.cmu.edu/sfs/tuition/graduate/scs.html",
+        "quote": "SCS Master's Program | $62,200 | $31,100 | $31,100 | $864",
+        "retrieved_at": "2026-10-16T20:47:19.230382Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "SCS Master's Program; academic year not stated on page",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "tuition_status": "verified",
+   "funding": [
+    {
+     "type": "other",
+     "availability": "not_offered",
+     "availability_statement": "Scholarships and financial assistance are not offered by the program",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Scholarships and financial assistance are not offered by the program",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_2c45b3667fb3",
+        "chunk_id": "src_2c45b3667fb3#c4",
+        "url": "https://csd.cmu.edu/academics/masters/admissions",
+        "quote": "Scholarships and financial assistance to the Master of Science Program are not offered by the program at this time.",
+        "retrieved_at": "2026-10-16T20:47:17.478621Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": "2026-11-18",
+     "term": null,
+     "applicant_type": "all",
+     "claim": {
+      "value": "November 18, 2026",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_2c45b3667fb3",
+        "chunk_id": "src_2c45b3667fb3#c1",
+        "url": "https://csd.cmu.edu/academics/masters/admissions",
+        "quote": "Early Application Deadline: November 18, 2026 (3 p.m. EST)",
+        "retrieved_at": "2026-10-16T20:47:17.478621Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall admission, MSCS early application deadline (3 p.m. EST)",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_2c45b3667fb3",
+       "chunk_id": "src_2c45b3667fb3#c4",
+       "url": "https://csd.cmu.edu/academics/masters/admissions",
+       "quote": "A PDF of your most recent transcript from each college and/or university you attended, even if no degree was granted.",
+       "retrieved_at": "2026-10-16T20:47:17.478621Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "PDF from each college/university attended",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Resume/CV",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_2c45b3667fb3",
+       "chunk_id": "src_2c45b3667fb3#c4",
+       "url": "https://csd.cmu.edu/academics/masters/admissions",
+       "quote": "Resume/CV: Please submit in PDF format.",
+       "retrieved_at": "2026-10-16T20:47:17.478621Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "PDF format",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_2c45b3667fb3",
+       "chunk_id": "src_2c45b3667fb3#c4",
+       "url": "https://csd.cmu.edu/academics/masters/admissions",
+       "quote": "Statement of Purpose: Provide a concise one- or two-page essay describing your primary research interests",
+       "retrieved_at": "2026-10-16T20:47:17.478621Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "One or two pages",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Three letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_2c45b3667fb3",
+       "chunk_id": "src_2c45b3667fb3#c4",
+       "url": "https://csd.cmu.edu/academics/masters/admissions",
+       "quote": "Three letters of recommendation: At least two letters should be from faculty or recent employers.",
+       "retrieved_at": "2026-10-16T20:47:17.478621Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "At least two from faculty or recent employers",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$80",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_2c45b3667fb3",
+      "chunk_id": "src_2c45b3667fb3#c2",
+      "url": "https://csd.cmu.edu/academics/masters/admissions",
+      "quote": "Early application deadline fee per program - $80 per program",
+      "retrieved_at": "2026-10-16T20:47:17.478621Z"
+     }
+    ],
+    "scope": "program",
+    "qualifiers": "Per program, by the early deadline",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [],
+   "state": null,
+   "eligibility_status": "needs_verification",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Verified from official source",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_58221ef70650",
+     "url": "https://csd.cmu.edu/academics/masters/ms-in-computer-science",
+     "final_url": "https://csd.cmu.edu/academics/masters/ms-in-computer-science",
+     "title": "M.S. in Computer Science | Carnegie Mellon University Computer Science Department",
+     "domain": "csd.cmu.edu",
+     "registrable_domain": "cmu.edu",
+     "retrieved_at": "2026-10-16T20:47:16.839380Z",
+     "content_hash": "c68e6701f6092aea3ca810a6a76692d4b5196d1d31918554954593d7a1b347f0",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_2c45b3667fb3",
+     "url": "https://csd.cmu.edu/academics/masters/admissions",
+     "final_url": "https://csd.cmu.edu/academics/masters/admissions",
+     "title": "Master's Programs Admissions | Carnegie Mellon University Computer Science Department",
+     "domain": "csd.cmu.edu",
+     "registrable_domain": "cmu.edu",
+     "retrieved_at": "2026-10-16T20:47:17.478621Z",
+     "content_hash": "03d361e990e2b14517631e01cac08e518de8664ec77c406ab09cb211486094c7",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_d0c39233f900",
+     "url": "https://www.cmu.edu/sfs/tuition/graduate/scs.html",
+     "final_url": "https://www.cmu.edu/sfs/tuition/graduate/scs.html",
+     "title": "School of Computer Science (SCS) - Student Financial Services - Division of Enrollment Management - Carnegie Mellon University",
+     "domain": "www.cmu.edu",
+     "registrable_domain": "cmu.edu",
+     "retrieved_at": "2026-10-16T20:47:19.230382Z",
+     "content_hash": "4792afd8788ff45e58179e1d92d0aa7206111433f921accd180dece410a9abe8",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "tuition",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:19.230382Z",
+   "last_verified_at": "2026-10-16T20:47:19.230382Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents",
+    "tuition"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_1f4486b2efd8",
+   "institution_name": "Rice University",
+   "program_name": "Master of Computer Science",
+   "degree_level": "masters",
+   "field": "Computer Science",
+   "official_program_url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "min_gpa",
+     "label": "Minimum GPA",
+     "claim": {
+      "value": "3.0+ GPA",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c99313e22fe3",
+        "chunk_id": "src_c99313e22fe3#c5",
+        "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+        "quote": "Undergraduate transcripts 3.0+ GPA CV or resume",
+        "retrieved_at": "2026-10-16T20:47:20.450602Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Listed under admission requirements",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 3.0,
+     "numeric_scale": "4.0",
+     "test": null
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE recommended, but not required",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c99313e22fe3",
+        "chunk_id": "src_c99313e22fe3#c5",
+        "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+        "quote": "$85 application fee GRE recommended, but not required",
+        "retrieved_at": "2026-10-16T20:47:20.450602Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (TOEFL_iBT)",
+     "claim": {
+      "value": "TOEFL iBT 90",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0128a3f12493",
+        "chunk_id": "src_0128a3f12493#c10",
+        "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+        "quote": "At least a 90 on the iBT TOEFL or iBT Home Edition.",
+        "retrieved_at": "2026-10-16T20:47:20.845025Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Foreign nationals / non-native English speakers; one of several options",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 90.0,
+     "numeric_scale": null,
+     "test": "TOEFL_iBT"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (IELTS)",
+     "claim": {
+      "value": "IELTS 7",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0128a3f12493",
+        "chunk_id": "src_0128a3f12493#c10",
+        "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+        "quote": "At least 7 on the IELTS.",
+        "retrieved_at": "2026-10-16T20:47:20.845025Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Alternative to TOEFL",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 7.0,
+     "numeric_scale": null,
+     "test": "IELTS"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (Duolingo)",
+     "claim": {
+      "value": "Duolingo 115",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0128a3f12493",
+        "chunk_id": "src_0128a3f12493#c10",
+        "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+        "quote": "At least 115 on the Duolingo test of English proficiency.",
+        "retrieved_at": "2026-10-16T20:47:20.845025Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Alternative to TOEFL",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 115.0,
+     "numeric_scale": null,
+     "test": "Duolingo"
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "other",
+     "availability": "not_offered",
+     "availability_statement": "No university or departmental financial aid is available for MCS students",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "No university or departmental financial aid is available for MCS students",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c99313e22fe3",
+        "chunk_id": "src_c99313e22fe3#c5",
+        "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+        "quote": "No university or departmental financial aid is available for MCS students.",
+        "retrieved_at": "2026-10-16T20:47:20.450602Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": "2027-02-10",
+     "term": "Fall 2027",
+     "applicant_type": "all",
+     "claim": {
+      "value": "February 10, 2027",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0128a3f12493",
+        "chunk_id": "src_0128a3f12493#c4",
+        "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+        "quote": "February 10, 2027: Early application deadline for scholarship consideration for On-Campus MAI, On-Campus MCS  and  On-Campus MDS.",
+        "retrieved_at": "2026-10-16T20:47:20.845025Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall 2027, On-Campus MCS, early deadline for scholarship consideration",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "date": "2027-05-01",
+     "term": "Fall 2027",
+     "applicant_type": "international",
+     "claim": {
+      "value": "May 1, 2027",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0128a3f12493",
+        "chunk_id": "src_0128a3f12493#c4",
+        "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+        "quote": "May 1, 2027: International deadline for On-Campus MAI, On-Campus MCS and On-Campus MDS",
+        "retrieved_at": "2026-10-16T20:47:20.845025Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall 2027, On-Campus MCS, international applicants",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "date": "2027-07-01",
+     "term": "Fall 2027",
+     "applicant_type": "domestic",
+     "claim": {
+      "value": "July 1, 2027",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0128a3f12493",
+        "chunk_id": "src_0128a3f12493#c4",
+        "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+        "quote": "July 1, 2027: Domestic application deadline for On-Campus MAI, On-Campus, MCS and On-Campus MDS.",
+        "retrieved_at": "2026-10-16T20:47:20.845025Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall 2027, On-Campus MCS, domestic applicants",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "date": "2026-11-01",
+     "term": "Spring 2027",
+     "applicant_type": "all",
+     "claim": {
+      "value": "November 1, 2026",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0128a3f12493",
+        "chunk_id": "src_0128a3f12493#c2",
+        "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+        "quote": "November 1, 2026: Final application deadline for On-Campus MCS, Online MCS and Online MDS.",
+        "retrieved_at": "2026-10-16T20:47:20.845025Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Spring 2027, On-Campus MCS, final deadline",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Undergraduate transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c99313e22fe3",
+       "chunk_id": "src_c99313e22fe3#c5",
+       "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+       "quote": "Applicants should prepare: Undergraduate transcripts",
+       "retrieved_at": "2026-10-16T20:47:20.450602Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "CV or resume",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c99313e22fe3",
+       "chunk_id": "src_c99313e22fe3#c5",
+       "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+       "quote": "3.0+ GPA CV or resume Statement of purpose",
+       "retrieved_at": "2026-10-16T20:47:20.450602Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c99313e22fe3",
+       "chunk_id": "src_c99313e22fe3#c5",
+       "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+       "quote": "CV or resume Statement of purpose Two letters of recommendation",
+       "retrieved_at": "2026-10-16T20:47:20.450602Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Two letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c99313e22fe3",
+       "chunk_id": "src_c99313e22fe3#c5",
+       "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+       "quote": "Statement of purpose Two letters of recommendation $85 application fee",
+       "retrieved_at": "2026-10-16T20:47:20.450602Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Program page; department application page says at least three",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$85",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_c99313e22fe3",
+      "chunk_id": "src_c99313e22fe3#c5",
+      "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+      "quote": "Two letters of recommendation $85 application fee",
+      "retrieved_at": "2026-10-16T20:47:20.450602Z"
+     }
+    ],
+    "scope": "program",
+    "qualifiers": null,
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [
+    {
+     "value": "Artificial intelligence",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c99313e22fe3",
+       "chunk_id": "src_c99313e22fe3#c1",
+       "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+       "quote": "Rice Computer Science faculty are advancing research in artificial intelligence, robotics, security, computational biology and other areas shaping the future of computing.",
+       "retrieved_at": "2026-10-16T20:47:20.450602Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Faculty research",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Robotics",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c99313e22fe3",
+       "chunk_id": "src_c99313e22fe3#c1",
+       "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+       "quote": "Rice Computer Science faculty are advancing research in artificial intelligence, robotics, security, computational biology and other areas shaping the future of computing.",
+       "retrieved_at": "2026-10-16T20:47:20.450602Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Faculty research",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Security",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c99313e22fe3",
+       "chunk_id": "src_c99313e22fe3#c1",
+       "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+       "quote": "Rice Computer Science faculty are advancing research in artificial intelligence, robotics, security, computational biology and other areas shaping the future of computing.",
+       "retrieved_at": "2026-10-16T20:47:20.450602Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Faculty research",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Computational biology",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c99313e22fe3",
+       "chunk_id": "src_c99313e22fe3#c1",
+       "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+       "quote": "Rice Computer Science faculty are advancing research in artificial intelligence, robotics, security, computational biology and other areas shaping the future of computing.",
+       "retrieved_at": "2026-10-16T20:47:20.450602Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "Faculty research",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "state": "TX",
+   "eligibility_status": "needs_verification",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_c99313e22fe3",
+     "url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+     "final_url": "https://cs.rice.edu/academics/graduate-programs/person-master-computer-science",
+     "title": "In-Person Master of Computer Science | Computer Science | Rice University",
+     "domain": "cs.rice.edu",
+     "registrable_domain": "rice.edu",
+     "retrieved_at": "2026-10-16T20:47:20.450602Z",
+     "content_hash": "d2f2b46b1d9e1a5aad11f59b446ae29052c4787441b56b6adab75dbbc1248da8",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_0128a3f12493",
+     "url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+     "final_url": "https://cs.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+     "title": "Graduate Program Application | Computer Science | Rice University",
+     "domain": "cs.rice.edu",
+     "registrable_domain": "rice.edu",
+     "retrieved_at": "2026-10-16T20:47:20.845025Z",
+     "content_hash": "bf588242f6c2a00ac9407a0ebfa04b5a9bec4f6f35dcdf8318bcfdf90dbdfb97",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "deadlines",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:20.845025Z",
+   "last_verified_at": "2026-10-16T20:47:20.845025Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "deadline"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_b94be5a8420c",
+   "institution_name": "University of Rochester",
+   "program_name": "MS in Data Science",
+   "degree_level": "masters",
+   "field": "Data Science",
+   "official_program_url": "https://www.hajim.rochester.edu/dsc/graduate/ms.html",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "english_test",
+     "label": "English test minimum (TOEFL_iBT)",
+     "claim": {
+      "value": "TOEFL iBT 100",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_ebacc1414084",
+        "chunk_id": "src_ebacc1414084#c18",
+        "url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+        "quote": "For exams taken before January 21, 2026: We require a minimum TOEFL iBT score of 100.",
+        "retrieved_at": "2026-10-16T20:47:22.227094Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "for exams taken before January 21, 2026",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 100.0,
+     "numeric_scale": null,
+     "test": "TOEFL_iBT"
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE not required (optional)",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_ebacc1414084",
+        "chunk_id": "src_ebacc1414084#c23",
+        "url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+        "quote": "GRE test scores are NOT an application requirement, however applicants can submit their scores for consideration.",
+        "retrieved_at": "2026-10-16T20:47:22.227094Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    }
+   ],
+   "tuition": [
+    {
+     "amount": 2234.0,
+     "currency": "USD",
+     "period": "per_credit",
+     "residency": "unspecified",
+     "annualized_usd": null,
+     "claim": {
+      "value": "$2,234 per credit hour",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_59378d2d35b3",
+        "chunk_id": "src_59378d2d35b3#c2",
+        "url": "https://www.hajim.rochester.edu/dsc/graduate/tuition-fees.html",
+        "quote": "In 2026-27, the cost for SAS/Hajim courses is $2,234/credit hour and $2,366/credit hour for Simon School courses.",
+        "retrieved_at": "2026-10-16T20:47:22.568821Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "2026-27, SAS/Hajim courses",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "amount": 71488.0,
+     "currency": "USD",
+     "period": "total_program",
+     "residency": "unspecified",
+     "annualized_usd": null,
+     "claim": {
+      "value": "$71,488 total program",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_59378d2d35b3",
+        "chunk_id": "src_59378d2d35b3#c2",
+        "url": "https://www.hajim.rochester.edu/dsc/graduate/tuition-fees.html",
+        "quote": "Based on 2026-27 tuition, the Master of Science in Data Science program is $71,488 which assumes 32 SAS/Hajim credits.",
+        "retrieved_at": "2026-10-16T20:47:22.568821Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "2026-27 tuition, assumes 32 SAS/Hajim credits",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "tuition_status": "verified",
+   "funding": [
+    {
+     "type": "scholarship",
+     "availability": "appears_available",
+     "availability_statement": "Full-time admitted students typically receive a partial merit-based scholarship applied to tuition",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Full-time admitted students typically receive a partial merit-based scholarship applied to tuition",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_59378d2d35b3",
+        "chunk_id": "src_59378d2d35b3#c5",
+        "url": "https://www.hajim.rochester.edu/dsc/graduate/tuition-fees.html",
+        "quote": "Full-time students admitted to the program typically receive a partial merit based scholarship award applicable to tuition in the offer letter.",
+        "retrieved_at": "2026-10-16T20:47:22.568821Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "all",
+     "claim": {
+      "value": "January 5",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_ebacc1414084",
+        "chunk_id": "src_ebacc1414084#c4",
+        "url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+        "quote": "January 5 (EARLY ACTION ROUND for full-time Fall entry): Applicants who submit by January 5 receive review for Fall admission.",
+        "retrieved_at": "2026-10-16T20:47:22.227094Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall entry, full-time applicants, early action round",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Academic transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_ebacc1414084",
+       "chunk_id": "src_ebacc1414084#c11",
+       "url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+       "quote": "Applicants are required to submit academic transcripts from each post-secondary college/university attended or at which you have completed courses.",
+       "retrieved_at": "2026-10-16T20:47:22.227094Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Three letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_ebacc1414084",
+       "chunk_id": "src_ebacc1414084#c14",
+       "url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+       "quote": "Data Science MS and Data Science - Genomics Track MS require three (3) letters.",
+       "retrieved_at": "2026-10-16T20:47:22.227094Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_ebacc1414084",
+       "chunk_id": "src_ebacc1414084#c12",
+       "url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+       "quote": "The Statement of Purpose should clearly describe your:",
+       "retrieved_at": "2026-10-16T20:47:22.227094Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Resume/CV",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_ebacc1414084",
+       "chunk_id": "src_ebacc1414084#c0",
+       "url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+       "quote": "Committee members consider many factors in their final decision including GPA, past coursework, academic transcripts, experiences related to data science, letters of recommendation, statements of purpose, resumes/CV and standardized test scores.",
+       "retrieved_at": "2026-10-16T20:47:22.227094Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$30",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_59378d2d35b3",
+      "chunk_id": "src_59378d2d35b3#c1",
+      "url": "https://www.hajim.rochester.edu/dsc/graduate/tuition-fees.html",
+      "quote": "The application fee is $30 for the master's program.",
+      "retrieved_at": "2026-10-16T20:47:22.568821Z"
+     }
+    ],
+    "scope": "program",
+    "qualifiers": "master's program",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [],
+   "state": null,
+   "eligibility_status": "needs_verification",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Verified from official source",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_03227b8411c5",
+     "url": "https://www.hajim.rochester.edu/dsc/graduate/ms.html",
+     "final_url": "https://www.hajim.rochester.edu/dsc/graduate/ms.html",
+     "title": "MS in Data Science : Graduate Program : Goergen Institute for Data Science and Artificial Intelligence : University of Rochester",
+     "domain": "www.hajim.rochester.edu",
+     "registrable_domain": "rochester.edu",
+     "retrieved_at": "2026-10-16T20:47:21.854878Z",
+     "content_hash": "49be7cbf50a228a53fbdda8cb585c28fae0479466359af1c949d547dfa2b5add",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_ebacc1414084",
+     "url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+     "final_url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html",
+     "title": "Apply : Graduate Program : Goergen Institute for Data Science and Artificial Intelligence : University of Rochester",
+     "domain": "www.hajim.rochester.edu",
+     "registrable_domain": "rochester.edu",
+     "retrieved_at": "2026-10-16T20:47:22.227094Z",
+     "content_hash": "5c547f37cf571427fea50a148c702ee93299f258dbc5bb3b03c52a18a61d485e",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_59378d2d35b3",
+     "url": "https://www.hajim.rochester.edu/dsc/graduate/tuition-fees.html",
+     "final_url": "https://www.hajim.rochester.edu/dsc/graduate/tuition-fees.html",
+     "title": "Tuition and Fees : Graduate Program : Goergen Institute for Data Science and Artificial Intelligence : University of Rochester",
+     "domain": "www.hajim.rochester.edu",
+     "registrable_domain": "rochester.edu",
+     "retrieved_at": "2026-10-16T20:47:22.568821Z",
+     "content_hash": "318a7177d70ccd09b3d2d102bef498607d6041a192a6784354eee25d0d5b6149",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "tuition",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:22.568821Z",
+   "last_verified_at": "2026-10-16T20:47:22.568821Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents",
+    "tuition"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_279cd5305088",
+   "institution_name": "University of Miami",
+   "program_name": "Master of Science in Data Science",
+   "degree_level": "masters",
+   "field": "Data Science",
+   "official_program_url": "https://msdatascience.as.miami.edu/index.html",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "min_gpa",
+     "label": "Minimum GPA",
+     "claim": {
+      "value": "3.0 on a 4.0 scale",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c61fdf21c82e",
+        "chunk_id": "src_c61fdf21c82e#c7",
+        "url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+        "quote": "A minimum overall undergraduate grade point average (GPA) of 3.0 on a 4.0 scale.",
+        "retrieved_at": "2026-10-16T20:47:23.846315Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "overall undergraduate GPA",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 3.0,
+     "numeric_scale": "4.0",
+     "test": null
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "tuition_waiver",
+     "availability": "appears_available",
+     "availability_statement": "Partial tuition waivers to all accepted students not receiving full outside funding",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": false,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Partial tuition waivers to all accepted students not receiving full outside funding",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_cc8465799cd7",
+        "chunk_id": "src_cc8465799cd7#c1",
+        "url": "https://msdatascience.as.miami.edu/admissions/financial-assistance/index.html",
+        "quote": "Our pledge is to provide partial tuition waivers to ALL accepted students who are not receiving full funding from outside sources.",
+        "retrieved_at": "2026-10-16T20:47:24.193027Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "typically 20-30%",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "funding_consideration",
+     "claim": {
+      "value": "March 1",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c61fdf21c82e",
+        "chunk_id": "src_c61fdf21c82e#c2",
+        "url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+        "quote": "Fall March 1 July 1",
+        "retrieved_at": "2026-10-16T20:47:23.846315Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall, priority deadline",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "all",
+     "claim": {
+      "value": "July 1",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c61fdf21c82e",
+        "chunk_id": "src_c61fdf21c82e#c2",
+        "url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+        "quote": "Fall March 1 July 1",
+        "retrieved_at": "2026-10-16T20:47:23.846315Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall, extended deadline",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c61fdf21c82e",
+       "chunk_id": "src_c61fdf21c82e#c4",
+       "url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+       "quote": "The statement of purpose should be no more than two pages in length.",
+       "retrieved_at": "2026-10-16T20:47:23.846315Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "no more than two pages",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Three letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c61fdf21c82e",
+       "chunk_id": "src_c61fdf21c82e#c5",
+       "url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+       "quote": "Three letters of recommendation must be provided.",
+       "retrieved_at": "2026-10-16T20:47:23.846315Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Official transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c61fdf21c82e",
+       "chunk_id": "src_c61fdf21c82e#c6",
+       "url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+       "quote": "You must provide official transcripts from each post-secondary institution attended.",
+       "retrieved_at": "2026-10-16T20:47:23.846315Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$85.00",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_c61fdf21c82e",
+      "chunk_id": "src_c61fdf21c82e#c3",
+      "url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+      "quote": "An $85.00 non-refundable application fee is paid online upon submission of the application.",
+      "retrieved_at": "2026-10-16T20:47:23.846315Z"
+     }
+    ],
+    "scope": "program",
+    "qualifiers": "non-refundable",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [],
+   "state": "FL",
+   "eligibility_status": "needs_verification",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_3e41665b9eb7",
+     "url": "https://msdatascience.as.miami.edu/index.html",
+     "final_url": "https://msdatascience.as.miami.edu/index.html",
+     "title": "Home | Master of Science in Data Science | University of Miami",
+     "domain": "msdatascience.as.miami.edu",
+     "registrable_domain": "miami.edu",
+     "retrieved_at": "2026-10-16T20:47:23.528335Z",
+     "content_hash": "a372103d7f8176150889e39a2fecfd94524c7dcbf5b9a75665bf56139a17e1cd",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_c61fdf21c82e",
+     "url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+     "final_url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html",
+     "title": "Admissions Requirements | Master of Science in Data Science | University of Miami",
+     "domain": "msdatascience.as.miami.edu",
+     "registrable_domain": "miami.edu",
+     "retrieved_at": "2026-10-16T20:47:23.846315Z",
+     "content_hash": "98b72358008b986a82fae4b709c285f7aad128787ddc6f06c723c5dc5ecf6a35",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_cc8465799cd7",
+     "url": "https://msdatascience.as.miami.edu/admissions/financial-assistance/index.html",
+     "final_url": "https://msdatascience.as.miami.edu/admissions/financial-assistance/index.html",
+     "title": "Financial Assistance | Master of Science in Data Science | University of Miami",
+     "domain": "msdatascience.as.miami.edu",
+     "registrable_domain": "miami.edu",
+     "retrieved_at": "2026-10-16T20:47:24.193027Z",
+     "content_hash": "a319c20aa9fc0483e849ba30bba99bab63ea77dd99ecb2ef79835ebc231e3c31",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "funding",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:24.193027Z",
+   "last_verified_at": "2026-10-16T20:47:24.193027Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents",
+    "funding"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_e9c785aedddc",
+   "institution_name": "University of Virginia",
+   "program_name": "Ph.D. in Data Science",
+   "degree_level": "phd",
+   "field": "Data Science",
+   "official_program_url": "https://datascience.virginia.edu/degrees/phd",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "direct_entry_phd",
+     "label": "Direct entry after a bachelor's degree",
+     "claim": {
+      "value": "Master's degree not required; bachelor's degree holders may apply",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_a49512ee5318",
+        "chunk_id": "src_a49512ee5318#c1",
+        "url": "https://datascience.virginia.edu/phd/admissions",
+        "quote": "A master’s degree is not required and does not make an applicant more competitive in the admissions process.",
+        "retrieved_at": "2026-10-16T20:47:26.758665Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": "bachelor_ok"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (IELTS)",
+     "claim": {
+      "value": "IELTS 7.0",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_a49512ee5318",
+        "chunk_id": "src_a49512ee5318#c16",
+        "url": "https://datascience.virginia.edu/phd/admissions",
+        "quote": "IELTS: 7.0 overall (including minimum section scores of 6.5 in speaking, 6.5 in writing, 7.0 in reading, and 7.0 in listening).",
+        "retrieved_at": "2026-10-16T20:47:26.758665Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "overall; section minimums apply",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 7.0,
+     "numeric_scale": null,
+     "test": "IELTS"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (TOEFL_iBT)",
+     "claim": {
+      "value": "TOEFL 100",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_a49512ee5318",
+        "chunk_id": "src_a49512ee5318#c16",
+        "url": "https://datascience.virginia.edu/phd/admissions",
+        "quote": "TOEFL taken prior to Jan. 21, 2026: 100 overall",
+        "retrieved_at": "2026-10-16T20:47:26.758665Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "TOEFL taken prior to Jan. 21, 2026",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 100.0,
+     "numeric_scale": null,
+     "test": "TOEFL_iBT"
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE not reviewed",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_a49512ee5318",
+        "chunk_id": "src_a49512ee5318#c17",
+        "url": "https://datascience.virginia.edu/phd/admissions",
+        "quote": "The Ph.D. in Data Science does not review other standardized test scores (i.e., GRE, GMAT, MCAT) in its holistic evaluation of applicants.",
+        "retrieved_at": "2026-10-16T20:47:26.758665Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "tuition_waiver",
+     "availability": "appears_available",
+     "availability_statement": "Admitted applicants receive financial support for the duration of enrollment, including full tuition and fee remission, health insurance premium, and annual wages",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": false,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Admitted applicants receive financial support for the duration of enrollment, including full tuition and fee remission, health insurance premium, and annual wages",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_a49512ee5318",
+        "chunk_id": "src_a49512ee5318#c27",
+        "url": "https://datascience.virginia.edu/phd/admissions",
+        "quote": "Admitted applicants will receive financial support from the School of Data Science for the duration of their enrollment in the program, pending continued enrollment, satisfactory completion of requirements, and progression through the program.",
+        "retrieved_at": "2026-10-16T20:47:26.758665Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "pending continued enrollment and satisfactory progress",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "type": "assistantship",
+     "availability": "appears_available",
+     "availability_statement": "Assistantship compensation approximately $41,400 total for fall, spring, and summer",
+     "amount": 41400.0,
+     "amount_period": "total_program",
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Assistantship compensation approximately $41,400 total for fall, spring, and summer",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_a49512ee5318",
+        "chunk_id": "src_a49512ee5318#c2",
+        "url": "https://datascience.virginia.edu/phd/admissions",
+        "quote": "The compensation for the assistantship is approximately $41,400 total for all three terms (fall, spring, and summer).",
+        "retrieved_at": "2026-10-16T20:47:26.758665Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "type": "stipend",
+     "availability": "appears_available",
+     "availability_statement": "Fellowship, research assistantship, or teaching assistantship with annual living support of approximately $41,400 per year",
+     "amount": 41400.0,
+     "amount_period": "per_year",
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Fellowship, research assistantship, or teaching assistantship with annual living support of approximately $41,400 per year",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_b9cca85a36b5",
+        "chunk_id": "src_b9cca85a36b5#c0",
+        "url": "https://datascience.virginia.edu/degrees/phd/tuition-and-fees",
+        "quote": "In addition, Ph.D. students will receive either a fellowship, research assistantship, or teaching assistantship that includes annual living support in the approximate amount of $41,400 per year, distributed over 12 months.",
+        "retrieved_at": "2026-10-16T20:47:27.990744Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "distributed over 12 months",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": "2027-01-08",
+     "term": "Fall 2027",
+     "applicant_type": "all",
+     "claim": {
+      "value": "Jan. 8, 2027",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_562aa9396a44",
+        "chunk_id": "src_562aa9396a44#c1",
+        "url": "https://datascience.virginia.edu/degrees/phd/deadlines",
+        "quote": "Application Deadline Friday, Jan. 8, 2027 (11:59 pm ET)",
+        "retrieved_at": "2026-10-16T20:47:27.580852Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall 2027, all applicants (11:59 pm ET)",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Three letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c13",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "Three letters of recommendation are required as part of the application.",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Curriculum Vitae (CV)",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c14",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "Your Curriculum Vitae (CV) will demonstrate your preparedness for graduate study",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Unofficial transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c19",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "All applicants must upload unofficial transcripts of their entire post-secondary academic record to the online application",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$85",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_a49512ee5318",
+      "chunk_id": "src_a49512ee5318#c25",
+      "url": "https://datascience.virginia.edu/phd/admissions",
+      "quote": "All graduate applications to the School of Data Science require an application fee of $85 USD or qualifying waiver.",
+      "retrieved_at": "2026-10-16T20:47:26.758665Z"
+     }
+    ],
+    "scope": "program",
+    "qualifiers": "or qualifying waiver",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [
+    {
+     "value": "Mathematical and Statistical Foundations of Data Science",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c10",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "Mathematical and Statistical Foundations of Data Science",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Data Systems, Infrastructure, and Scalable Computing",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c10",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "Data Systems, Infrastructure, and Scalable Computing",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Machine Learning and Statistical Learning",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c10",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "Machine Learning and Statistical Learning",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Trustworthy AI, Interpretability, and Robustness",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c10",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "Trustworthy AI, Interpretability, and Robustness",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Network Science and Complex Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c10",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "Network Science and Complex Systems",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Health, Biomedicine, and Life Sciences",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_a49512ee5318",
+       "chunk_id": "src_a49512ee5318#c10",
+       "url": "https://datascience.virginia.edu/phd/admissions",
+       "quote": "Health, Biomedicine, and Life Sciences",
+       "retrieved_at": "2026-10-16T20:47:26.758665Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "state": "VA",
+   "eligibility_status": "likely_eligible",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_ad39bbabff0a",
+     "url": "https://datascience.virginia.edu/degrees/phd",
+     "final_url": "https://datascience.virginia.edu/degrees/phd",
+     "title": "Doctor of Philosophy in Data Science — School of Data Science",
+     "domain": "datascience.virginia.edu",
+     "registrable_domain": "virginia.edu",
+     "retrieved_at": "2026-10-16T20:47:25.923438Z",
+     "content_hash": "df86728aaecc7de83dcea27b897cd651b4670cca4e38b64d8d883bcf287a618f",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_a49512ee5318",
+     "url": "https://datascience.virginia.edu/phd/admissions",
+     "final_url": "https://datascience.virginia.edu/phd/admissions",
+     "title": "Admissions — School of Data Science",
+     "domain": "datascience.virginia.edu",
+     "registrable_domain": "virginia.edu",
+     "retrieved_at": "2026-10-16T20:47:26.758665Z",
+     "content_hash": "cffad893b5488113a244c7198267809d99012f3c058d0610c373ad47db3cec85",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_562aa9396a44",
+     "url": "https://datascience.virginia.edu/degrees/phd/deadlines",
+     "final_url": "https://datascience.virginia.edu/degrees/phd/deadlines",
+     "title": "Deadlines and Events — School of Data Science",
+     "domain": "datascience.virginia.edu",
+     "registrable_domain": "virginia.edu",
+     "retrieved_at": "2026-10-16T20:47:27.580852Z",
+     "content_hash": "421e57ff5539463873ad8256ee6c236ab56f92a215b28c23d18e8fabda116db8",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "deadlines",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_b9cca85a36b5",
+     "url": "https://datascience.virginia.edu/degrees/phd/tuition-and-fees",
+     "final_url": "https://datascience.virginia.edu/degrees/phd/tuition-and-fees",
+     "title": "Tuition and Fees — School of Data Science",
+     "domain": "datascience.virginia.edu",
+     "registrable_domain": "virginia.edu",
+     "retrieved_at": "2026-10-16T20:47:27.990744Z",
+     "content_hash": "b8926fd9b85335c8f26be3b5eba2a84ef2b784230941ac60b608467b3133dfbc",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "funding",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:27.990744Z",
+   "last_verified_at": "2026-10-16T20:47:27.990744Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents",
+    "deadline",
+    "funding"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_ab0c02c6325a",
+   "institution_name": "UNC Charlotte",
+   "program_name": "Doctor of Philosophy in Data Science",
+   "degree_level": "phd",
+   "field": "Data Science",
+   "official_program_url": "https://datasciencephd.charlotte.edu/",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "direct_entry_phd",
+     "label": "Direct entry after a bachelor's degree",
+     "claim": {
+      "value": "Bachelor's degree holders may apply (undergraduate GPA of 3.2 or higher)",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d05178ea4664",
+        "chunk_id": "src_d05178ea4664#c1",
+        "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+        "quote": "A baccalaureate degree from a college or university accredited by an accepted accrediting body, with an undergraduate GPA of 3.2 or higher and outstanding overall academic credentials.",
+        "retrieved_at": "2026-10-16T20:47:31.306011Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": "bachelor_ok"
+    },
+    {
+     "key": "min_gpa",
+     "label": "Minimum GPA",
+     "claim": {
+      "value": "3.2",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d05178ea4664",
+        "chunk_id": "src_d05178ea4664#c1",
+        "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+        "quote": "A baccalaureate degree from a college or university accredited by an accepted accrediting body, with an undergraduate GPA of 3.2 or higher and outstanding overall academic credentials.",
+        "retrieved_at": "2026-10-16T20:47:31.306011Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "undergraduate GPA, applicants with a bachelor's degree",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 3.2,
+     "numeric_scale": "4.0",
+     "test": null
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (TOEFL_iBT)",
+     "claim": {
+      "value": "TOEFL iBT 83",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d05178ea4664",
+        "chunk_id": "src_d05178ea4664#c2",
+        "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+        "quote": "TOEFL: (Internet-based): 83 or higher",
+        "retrieved_at": "2026-10-16T20:47:31.306011Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 83.0,
+     "numeric_scale": null,
+     "test": "TOEFL_iBT"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (IELTS)",
+     "claim": {
+      "value": "IELTS 6.5",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d05178ea4664",
+        "chunk_id": "src_d05178ea4664#c2",
+        "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+        "quote": "IELTS: Overall band score of 6.5 or higher",
+        "retrieved_at": "2026-10-16T20:47:31.306011Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 6.5,
+     "numeric_scale": null,
+     "test": "IELTS"
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE required; waivers available",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d05178ea4664",
+        "chunk_id": "src_d05178ea4664#c6",
+        "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+        "quote": "GRE scores (waivers available)",
+        "retrieved_at": "2026-10-16T20:47:31.306011Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    }
+   ],
+   "tuition": [
+    {
+     "amount": 4414.5,
+     "currency": "USD",
+     "period": "per_semester",
+     "residency": "unspecified",
+     "annualized_usd": 8829.0,
+     "claim": {
+      "value": "$4414.50 per semester",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_14a5d50c945b",
+        "chunk_id": "src_14a5d50c945b#c0",
+        "url": "https://datasciencephd.charlotte.edu/tuition-funding",
+        "quote": "9+ Credits | $4414.50 | $13096.50",
+        "retrieved_at": "2026-10-16T20:47:31.926860Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "North Carolina residents, 9+ credits, estimated 2026-2027",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "amount": 13096.5,
+     "currency": "USD",
+     "period": "per_semester",
+     "residency": "out_of_state",
+     "annualized_usd": 26193.0,
+     "claim": {
+      "value": "$13096.50 per semester",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_14a5d50c945b",
+        "chunk_id": "src_14a5d50c945b#c0",
+        "url": "https://datasciencephd.charlotte.edu/tuition-funding",
+        "quote": "9+ Credits | $4414.50 | $13096.50",
+        "retrieved_at": "2026-10-16T20:47:31.926860Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "non-residents of North Carolina, 9+ credits, estimated 2026-2027",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "tuition_status": "verified",
+   "funding": [
+    {
+     "type": "assistantship",
+     "availability": "appears_available",
+     "availability_statement": "Funding package covering tuition, health insurance, and a teaching assistantship typically offered to admitted, well-qualified full-time students",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Funding package covering tuition, health insurance, and a teaching assistantship typically offered to admitted, well-qualified full-time students",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0194e3b3e904",
+        "chunk_id": "src_0194e3b3e904#c0",
+        "url": "https://datasciencephd.charlotte.edu/sds-funding",
+        "quote": "Admitted, well-qualified Ph.D. students are typically offered a funding package that covers tuition, health insurance, and a Teaching Assistantship (TA).",
+        "retrieved_at": "2026-10-16T20:47:32.564981Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "full-time doctoral students",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "type": "stipend",
+     "availability": "appears_available",
+     "availability_statement": "TA stipend of $23,600 for the first year",
+     "amount": 23600.0,
+     "amount_period": "other",
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "TA stipend of $23,600 for the first year",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_0194e3b3e904",
+        "chunk_id": "src_0194e3b3e904#c0",
+        "url": "https://datasciencephd.charlotte.edu/sds-funding",
+        "quote": "The TA provides a stipend of $23,600 for the first year, distributed as $11,800 in the fall and $11,800 in the spring.",
+        "retrieved_at": "2026-10-16T20:47:32.564981Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "$11,800 fall and $11,800 spring",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": "2026-02-01",
+     "term": "Fall 2026",
+     "applicant_type": "funding_consideration",
+     "claim": {
+      "value": "February 1, 2026",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d05178ea4664",
+        "chunk_id": "src_d05178ea4664#c0",
+        "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+        "quote": "Applications for admission to the Ph.D. in Data Science program in Fall 2026 must be received by February 1, 2026.",
+        "retrieved_at": "2026-10-16T20:47:31.306011Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall 2026, priority admission deadline",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Unofficial transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d05178ea4664",
+       "chunk_id": "src_d05178ea4664#c6",
+       "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+       "quote": "Unofficial transcripts from all post-secondary education (official transcripts will be required upon admission)",
+       "retrieved_at": "2026-10-16T20:47:31.306011Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "official transcripts required upon admission",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d05178ea4664",
+       "chunk_id": "src_d05178ea4664#c6",
+       "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+       "quote": "A personal statement of purpose (e.g., career goal, research interest, potential mentor(s))",
+       "retrieved_at": "2026-10-16T20:47:31.306011Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Three letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d05178ea4664",
+       "chunk_id": "src_d05178ea4664#c6",
+       "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+       "quote": "Three letters of recommendation (at least two from faculty members)",
+       "retrieved_at": "2026-10-16T20:47:31.306011Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "at least two from faculty members",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$75",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_d05178ea4664",
+      "chunk_id": "src_d05178ea4664#c6",
+      "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+      "quote": "$75 USD for U.S. Citizens and Permanent Residents, and $85 USD for International Applicants.",
+      "retrieved_at": "2026-10-16T20:47:31.306011Z"
+     }
+    ],
+    "scope": "program",
+    "qualifiers": "U.S. citizens and permanent residents",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [],
+   "state": null,
+   "eligibility_status": "likely_eligible",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Verified from official source",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_cf0e4e7e2109",
+     "url": "https://datasciencephd.charlotte.edu/",
+     "final_url": "https://datasciencephd.charlotte.edu/",
+     "title": "HOME - Doctor of Philosophy in Data Science",
+     "domain": "datasciencephd.charlotte.edu",
+     "registrable_domain": "charlotte.edu",
+     "retrieved_at": "2026-10-16T20:47:30.646362Z",
+     "content_hash": "2c703b3617ad81e47ccf305df426830e6488b54599375824419274dbacfa0530",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_d05178ea4664",
+     "url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+     "final_url": "https://datasciencephd.charlotte.edu/admissions/application-requirements",
+     "title": "Admission Requirements - Doctor of Philosophy in Data Science",
+     "domain": "datasciencephd.charlotte.edu",
+     "registrable_domain": "charlotte.edu",
+     "retrieved_at": "2026-10-16T20:47:31.306011Z",
+     "content_hash": "2ab001afec4734039abf29041d3b6db07c3cd1fb92b1ee1be2a5d1781b01fa09",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_14a5d50c945b",
+     "url": "https://datasciencephd.charlotte.edu/tuition-funding",
+     "final_url": "https://datasciencephd.charlotte.edu/tuition-funding",
+     "title": "Tuition and Funding - Doctor of Philosophy in Data Science",
+     "domain": "datasciencephd.charlotte.edu",
+     "registrable_domain": "charlotte.edu",
+     "retrieved_at": "2026-10-16T20:47:31.926860Z",
+     "content_hash": "39d212ad91188dace1978560845ada00d4357a725e340abdc668467621a2ef3b",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "tuition",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_0194e3b3e904",
+     "url": "https://datasciencephd.charlotte.edu/sds-funding",
+     "final_url": "https://datasciencephd.charlotte.edu/sds-funding",
+     "title": "Program Funding - Doctor of Philosophy in Data Science",
+     "domain": "datasciencephd.charlotte.edu",
+     "registrable_domain": "charlotte.edu",
+     "retrieved_at": "2026-10-16T20:47:32.564981Z",
+     "content_hash": "ab05d645536351b5d7cac66d03d285e144ac96b335f26209fea80179bb95b2ed",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "funding",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:32.564981Z",
+   "last_verified_at": "2026-10-16T20:47:32.564981Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [
+    "A sourced deadline (2026-02-01, Fall 2026) has already passed; the official page may not yet show the next cycle — verify current dates."
+   ],
+   "attempted_fields": [
+    "requirements",
+    "documents",
+    "tuition",
+    "funding"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_28b3215b9b8a",
+   "institution_name": "Carnegie Mellon University",
+   "program_name": "MS in Electrical and Computer Engineering",
+   "degree_level": "masters",
+   "field": "Electrical and Computer Engineering",
+   "official_program_url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE optional",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_71792320f30d",
+        "chunk_id": "src_71792320f30d#c2",
+        "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+        "quote": "Please note that the GRE is optional for the Spring 2027 and Fall 2027 admissions cycles.",
+        "retrieved_at": "2026-10-16T20:47:35.546326Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "Spring 2027 and Fall 2027 admission cycles",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (TOEFL_iBT)",
+     "claim": {
+      "value": "TOEFL iBT 86",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_71792320f30d",
+        "chunk_id": "src_71792320f30d#c7",
+        "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+        "quote": "On the 0-120 scale, a minimum overall score of 86 is required, with minimum subscores of IBT-R 22, IBT-L 22, IBT-S 20, and IBT-W 22.",
+        "retrieved_at": "2026-10-16T20:47:35.546326Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "minimum overall on 0-120 scale; subscores R 22, L 22, S 20, W 22",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 86.0,
+     "numeric_scale": null,
+     "test": "TOEFL_iBT"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (IELTS)",
+     "claim": {
+      "value": "IELTS 7",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_71792320f30d",
+        "chunk_id": "src_71792320f30d#c7",
+        "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+        "quote": "The minimum score requirement is an overall score of 7, with minimum subscores of Reading 6.5, Listening 6.5, Speaking 6, and Writing 6.",
+        "retrieved_at": "2026-10-16T20:47:35.546326Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "minimum overall; subscores Reading 6.5, Listening 6.5, Speaking 6, Writing 6",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 7.0,
+     "numeric_scale": null,
+     "test": "IELTS"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (Duolingo)",
+     "claim": {
+      "value": "Duolingo English Test 115",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_71792320f30d",
+        "chunk_id": "src_71792320f30d#c6",
+        "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+        "quote": "The minimum score requirement is a composite score of 115, with minimum subscores of Literacy 105, Comprehension 115, Production 90, and Conversation 95.",
+        "retrieved_at": "2026-10-16T20:47:35.546326Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "minimum composite score",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 115.0,
+     "numeric_scale": null,
+     "test": "Duolingo"
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "other",
+     "availability": "not_offered",
+     "availability_statement": "Professional MS programs are self-funded, course-only degree programs",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Professional MS programs are self-funded, course-only degree programs",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_71792320f30d",
+        "chunk_id": "src_71792320f30d#c11",
+        "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+        "quote": "Our Professional MS programs are self-funded, course-only degree programs.",
+        "retrieved_at": "2026-10-16T20:47:35.546326Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "type": "other",
+     "availability": "not_offered",
+     "availability_statement": "Professional MS students are primarily self-supported; may be eligible for partial support via hourly wages",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Professional MS students are primarily self-supported; may be eligible for partial support via hourly wages",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_74cb6ceb8439",
+        "chunk_id": "src_74cb6ceb8439#c7",
+        "url": "https://www.ece.cmu.edu/admissions/index.html",
+        "quote": "Students in this course-intensive program are primarily self-supported, but may be eligible to receive partial financial support in the form of hourly wages to support the teaching and research missions of the department.",
+        "retrieved_at": "2026-10-16T20:47:36.178554Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "ineligible for departmental fellowships covering tuition and living expenses",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "all",
+     "claim": {
+      "value": "January 15",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c3e5495b8237",
+        "chunk_id": "src_c3e5495b8237#c2",
+        "url": "https://www.ece.cmu.edu/admissions/graduate-application-deadlines.html",
+        "quote": "January 15: MS submission deadline",
+        "retrieved_at": "2026-10-16T20:47:34.918276Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "Fall admission, MS submission deadline (11:59pm ET)",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_71792320f30d",
+       "chunk_id": "src_71792320f30d#c0",
+       "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+       "quote": "A complete application consists of the application itself, statement of purpose, resume, three recommendation letters, transcripts, GRE score report (optional for Spring 2027 and Fall 2027 Admissions), and nonrefundable application fee.",
+       "retrieved_at": "2026-10-16T20:47:35.546326Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Resume",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_71792320f30d",
+       "chunk_id": "src_71792320f30d#c0",
+       "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+       "quote": "A complete application consists of the application itself, statement of purpose, resume, three recommendation letters, transcripts, GRE score report (optional for Spring 2027 and Fall 2027 Admissions), and nonrefundable application fee.",
+       "retrieved_at": "2026-10-16T20:47:35.546326Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Three letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_71792320f30d",
+       "chunk_id": "src_71792320f30d#c0",
+       "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+       "quote": "A complete application consists of the application itself, statement of purpose, resume, three recommendation letters, transcripts, GRE score report (optional for Spring 2027 and Fall 2027 Admissions), and nonrefundable application fee.",
+       "retrieved_at": "2026-10-16T20:47:35.546326Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_71792320f30d",
+       "chunk_id": "src_71792320f30d#c1",
+       "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+       "quote": "Unofficial transcripts must be uploaded to the online application and school information must be entered.",
+       "retrieved_at": "2026-10-16T20:47:35.546326Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": "unofficial transcripts uploaded; official copy only if admitted",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "English proficiency test score (DET, TOEFL, or IELTS)",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_71792320f30d",
+       "chunk_id": "src_71792320f30d#c0",
+       "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+       "quote": "International applicants are also required to submit a Duolingo English Test (DET), TOEFL, or IELTS score report.",
+       "retrieved_at": "2026-10-16T20:47:35.546326Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": "international applicants",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$75",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_71792320f30d",
+      "chunk_id": "src_71792320f30d#c12",
+      "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+      "quote": "The application fee is a nonrefundable one-time charge of $75.",
+      "retrieved_at": "2026-10-16T20:47:35.546326Z"
+     }
+    ],
+    "scope": "department",
+    "qualifiers": "nonrefundable, one-time",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [
+    {
+     "value": "AI/ML Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c79ccec2ecf7",
+       "chunk_id": "src_c79ccec2ecf7#c2",
+       "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+       "quote": "AI/ML Systems",
+       "retrieved_at": "2026-10-16T20:47:34.296081Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "MS in ECE concentration",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Intelligent Physical Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c79ccec2ecf7",
+       "chunk_id": "src_c79ccec2ecf7#c2",
+       "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+       "quote": "Intelligent Physical Systems",
+       "retrieved_at": "2026-10-16T20:47:34.296081Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "MS in ECE concentration",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Computational Engineering Methods/Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c79ccec2ecf7",
+       "chunk_id": "src_c79ccec2ecf7#c2",
+       "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+       "quote": "Computational Engineering Methods/Systems",
+       "retrieved_at": "2026-10-16T20:47:34.296081Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "MS in ECE concentration",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Computer Security",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c79ccec2ecf7",
+       "chunk_id": "src_c79ccec2ecf7#c2",
+       "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+       "quote": "Computer Security",
+       "retrieved_at": "2026-10-16T20:47:34.296081Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "MS in ECE concentration",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Network/Distributed Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c79ccec2ecf7",
+       "chunk_id": "src_c79ccec2ecf7#c2",
+       "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+       "quote": "Network/Distributed Systems",
+       "retrieved_at": "2026-10-16T20:47:34.296081Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "MS in ECE concentration",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Wireless/Embedded Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c79ccec2ecf7",
+       "chunk_id": "src_c79ccec2ecf7#c2",
+       "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+       "quote": "Wireless/Embedded Systems",
+       "retrieved_at": "2026-10-16T20:47:34.296081Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "MS in ECE concentration",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "state": "PA",
+   "eligibility_status": "needs_verification",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_c79ccec2ecf7",
+     "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+     "final_url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+     "title": "MS in ECE - Electrical and Computer Engineering - College of Engineering - Carnegie Mellon University",
+     "domain": "www.ece.cmu.edu",
+     "registrable_domain": "cmu.edu",
+     "retrieved_at": "2026-10-16T20:47:34.296081Z",
+     "content_hash": "2cd140443b0dd499d73de3c0d47bd05feaf88e5fb3a71ce3306632b557e2366f",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_c3e5495b8237",
+     "url": "https://www.ece.cmu.edu/admissions/graduate-application-deadlines.html",
+     "final_url": "https://www.ece.cmu.edu/admissions/graduate-application-deadlines.html",
+     "title": "Graduate Application Deadlines - Electrical and Computer Engineering - College of Engineering - Carnegie Mellon University",
+     "domain": "www.ece.cmu.edu",
+     "registrable_domain": "cmu.edu",
+     "retrieved_at": "2026-10-16T20:47:34.918276Z",
+     "content_hash": "30e079b7f5d489fc2c1785953d055b51e513aa34dca64d5ec03e6c5cc60ba3fe",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "deadlines",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_71792320f30d",
+     "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+     "final_url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+     "title": "Graduate FAQs - Electrical and Computer Engineering - College of Engineering - Carnegie Mellon University",
+     "domain": "www.ece.cmu.edu",
+     "registrable_domain": "cmu.edu",
+     "retrieved_at": "2026-10-16T20:47:35.546326Z",
+     "content_hash": "c3ddcc5471b73ef4ed84811e1cadfa8e2eaf63c58027189ab8fd6a908d4c5e0a",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_74cb6ceb8439",
+     "url": "https://www.ece.cmu.edu/admissions/index.html",
+     "final_url": "https://www.ece.cmu.edu/admissions/index.html",
+     "title": "Admissions - Electrical and Computer Engineering - College of Engineering - Carnegie Mellon University",
+     "domain": "www.ece.cmu.edu",
+     "registrable_domain": "cmu.edu",
+     "retrieved_at": "2026-10-16T20:47:36.178554Z",
+     "content_hash": "7ca65bb8599ba51788e92569d7c495291bba37e5025b94616099a002224e94de",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "funding",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:36.178554Z",
+   "last_verified_at": "2026-10-16T20:47:36.178554Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "deadline",
+    "requirements",
+    "documents",
+    "funding"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_dd5e81f0fabe",
+   "institution_name": "University of Illinois",
+   "program_name": "Electrical and Computer Engineering Ph.D.",
+   "degree_level": "phd",
+   "field": "Electrical and Computer Engineering",
+   "official_program_url": "https://ece.illinois.edu/admissions/graduate/phd",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "direct_entry_phd",
+     "label": "Direct entry after a bachelor's degree",
+     "claim": {
+      "value": "Bachelor's degree holders may apply to the direct Ph.D. program",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c22091198722",
+        "chunk_id": "src_c22091198722#c0",
+        "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+        "quote": "Students with a bachelor’s degree in electrical or computer engineering (or related field) may apply to the MS program or to the direct Ph.D. program.",
+        "retrieved_at": "2026-10-16T20:47:39.110574Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "MS holders apply to the PhD program",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": "bachelor_ok"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (TOEFL_iBT)",
+     "claim": {
+      "value": "TOEFL iBT 96",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c22091198722",
+        "chunk_id": "src_c22091198722#c2",
+        "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+        "quote": "All applicants whose native language is not English must submit a minimum TOEFL score of 96 (iBT), 243 (CBT), or 590 (PBT); or minimum International English Language Testing System (IELTS) academic exam scores of 6.5 overall and 6.0 in all subsections.",
+        "retrieved_at": "2026-10-16T20:47:39.110574Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "minimum for non-native English speakers; full admission status requires above 102",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 96.0,
+     "numeric_scale": null,
+     "test": "TOEFL_iBT"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (IELTS)",
+     "claim": {
+      "value": "IELTS 6.5",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c22091198722",
+        "chunk_id": "src_c22091198722#c2",
+        "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+        "quote": "All applicants whose native language is not English must submit a minimum TOEFL score of 96 (iBT), 243 (CBT), or 590 (PBT); or minimum International English Language Testing System (IELTS) academic exam scores of 6.5 overall and 6.0 in all subsections.",
+        "retrieved_at": "2026-10-16T20:47:39.110574Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "minimum overall, 6.0 in all subsections; full admission status requires 7.0",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 6.5,
+     "numeric_scale": null,
+     "test": "IELTS"
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE optional",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_c22091198722",
+        "chunk_id": "src_c22091198722#c3",
+        "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+        "quote": "Scores on the GRE general aptitude tests verbal, quantitative, and analytical portions are optional.",
+        "retrieved_at": "2026-10-16T20:47:39.110574Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "other",
+     "availability": "appears_available",
+     "availability_statement": "100% of Ph.D. students receive funding",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "100% of Ph.D. students receive funding",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_ee205694c4af",
+        "chunk_id": "src_ee205694c4af#c0",
+        "url": "https://ece.illinois.edu/admissions/graduate",
+        "quote": "100% Ph.D. students who receive funding",
+        "retrieved_at": "2026-10-16T20:47:39.467458Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "department statistic",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "funding_consideration",
+     "claim": {
+      "value": "January 15",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d21d77394bd3",
+        "chunk_id": "src_d21d77394bd3#c2",
+        "url": "https://ece.illinois.edu/admissions/graduate/phd",
+        "quote": "January 15 for the fall semester (Apply by December 15 for complete consideration for fellowships and awards)",
+        "retrieved_at": "2026-10-16T20:47:38.775364Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall semester (apply by December 15 for full fellowship/award consideration)",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "all",
+     "claim": {
+      "value": "September 1",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_d21d77394bd3",
+        "chunk_id": "src_d21d77394bd3#c2",
+        "url": "https://ece.illinois.edu/admissions/graduate/phd",
+        "quote": "September 1 for the spring semester.",
+        "retrieved_at": "2026-10-16T20:47:38.775364Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Spring semester",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Three letters of reference",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c22091198722",
+       "chunk_id": "src_c22091198722#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+       "quote": "Three letters of reference submitted.",
+       "retrieved_at": "2026-10-16T20:47:39.110574Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": "MS and PhD applicants",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c22091198722",
+       "chunk_id": "src_c22091198722#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+       "quote": "Statement of purpose submitted.",
+       "retrieved_at": "2026-10-16T20:47:39.110574Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "ECE Graduate Applicant Preferences (interest) Form",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c22091198722",
+       "chunk_id": "src_c22091198722#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+       "quote": "ECE Interest form submitted (only for MS and PhD applicants).",
+       "retrieved_at": "2026-10-16T20:47:39.110574Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": "MS and PhD applicants",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_c22091198722",
+       "chunk_id": "src_c22091198722#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+       "quote": "Official copies of transcripts are requested once admitted.",
+       "retrieved_at": "2026-10-16T20:47:39.110574Z"
+      }
+     ],
+     "scope": "department",
+     "qualifiers": "official copies requested once admitted",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$90",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_c22091198722",
+      "chunk_id": "src_c22091198722#c1",
+      "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+      "quote": "The university application fee is $90 for all applications.",
+      "retrieved_at": "2026-10-16T20:47:39.110574Z"
+     }
+    ],
+    "scope": "department",
+    "qualifiers": "all applications",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [
+    {
+     "value": "Machine Learning, AI and Data Science",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d21d77394bd3",
+       "chunk_id": "src_d21d77394bd3#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/phd",
+       "quote": "Machine Learning, AI and Data Science",
+       "retrieved_at": "2026-10-16T20:47:38.775364Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Networking, Mobile and Distributed Computing",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d21d77394bd3",
+       "chunk_id": "src_d21d77394bd3#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/phd",
+       "quote": "Networking, Mobile and Distributed Computing",
+       "retrieved_at": "2026-10-16T20:47:38.775364Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Robotics, Autonomy, Control and Cyber-Physical Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d21d77394bd3",
+       "chunk_id": "src_d21d77394bd3#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/phd",
+       "quote": "Robotics, Autonomy, Control and Cyber-Physical Systems",
+       "retrieved_at": "2026-10-16T20:47:38.775364Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Computer Architecture, Circuits and Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d21d77394bd3",
+       "chunk_id": "src_d21d77394bd3#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/phd",
+       "quote": "Computer Architecture, Circuits and Systems",
+       "retrieved_at": "2026-10-16T20:47:38.775364Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Signal Processing, Biomedical Imaging and Acoustics",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d21d77394bd3",
+       "chunk_id": "src_d21d77394bd3#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/phd",
+       "quote": "Signal Processing, Biomedical Imaging and Acoustics",
+       "retrieved_at": "2026-10-16T20:47:38.775364Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Microelectronics, Photonics and Nanotechnology",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d21d77394bd3",
+       "chunk_id": "src_d21d77394bd3#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/phd",
+       "quote": "Microelectronics, Photonics and Nanotechnology",
+       "retrieved_at": "2026-10-16T20:47:38.775364Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Power and Energy Systems",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_d21d77394bd3",
+       "chunk_id": "src_d21d77394bd3#c3",
+       "url": "https://ece.illinois.edu/admissions/graduate/phd",
+       "quote": "Power and Energy Systems",
+       "retrieved_at": "2026-10-16T20:47:38.775364Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "state": null,
+   "eligibility_status": "likely_eligible",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_d21d77394bd3",
+     "url": "https://ece.illinois.edu/admissions/graduate/phd",
+     "final_url": "https://ece.illinois.edu/admissions/graduate/phd",
+     "title": "Ph.D. Admissions | Electrical & Computer Engineering | Illinois",
+     "domain": "ece.illinois.edu",
+     "registrable_domain": "illinois.edu",
+     "retrieved_at": "2026-10-16T20:47:38.775364Z",
+     "content_hash": "f0b52da5d9788cc159f3ffc968e008c7a217bda7e952569371f1895ebc6ef6c3",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_c22091198722",
+     "url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+     "final_url": "https://ece.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+     "title": "Admissions Requirements and Process | Electrical & Computer Engineering | Illinois",
+     "domain": "ece.illinois.edu",
+     "registrable_domain": "illinois.edu",
+     "retrieved_at": "2026-10-16T20:47:39.110574Z",
+     "content_hash": "3f300629a98a6651e26cc6e8f9fbe84ec6af762c10e26b2cc93a2cfcc1a49a60",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_ee205694c4af",
+     "url": "https://ece.illinois.edu/admissions/graduate",
+     "final_url": "https://ece.illinois.edu/admissions/graduate",
+     "title": "Graduate Admissions | Electrical & Computer Engineering | Illinois",
+     "domain": "ece.illinois.edu",
+     "registrable_domain": "illinois.edu",
+     "retrieved_at": "2026-10-16T20:47:39.467458Z",
+     "content_hash": "3b5da36ae3b345323814a9e83d42868b381edc2fbb907b8108e6729718c700a0",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "funding",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:39.467458Z",
+   "last_verified_at": "2026-10-16T20:47:39.467458Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents",
+    "funding"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_d49c23f1ef54",
+   "institution_name": "Purdue University",
+   "program_name": "PhD in Electrical and Computer Engineering",
+   "degree_level": "phd",
+   "field": "Electrical and Computer Engineering",
+   "official_program_url": "https://engineering.purdue.edu/ECE/Academics/Graduates/phd",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "direct_entry_phd",
+     "label": "Direct entry after a bachelor's degree",
+     "claim": {
+      "value": "Bachelor's degree sufficient: students without an MS can apply to the direct PhD program",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_512930a1db09",
+        "chunk_id": "src_512930a1db09#c1",
+        "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/phd",
+        "quote": "Students without an MS can apply to our direct PhD program.",
+        "retrieved_at": "2026-10-16T20:47:40.544571Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": "bachelor_ok"
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE optional for all applicants",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_6bc4b9f874a9",
+        "chunk_id": "src_6bc4b9f874a9#c9",
+        "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+        "quote": "The GRE is optional for all applicants.",
+        "retrieved_at": "2026-10-16T20:47:40.965991Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (TOEFL_iBT)",
+     "claim": {
+      "value": "TOEFL writing 22 (tests before January 21, 2026) or 4.5 (on/after January 21, 2026)",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_6bc4b9f874a9",
+        "chunk_id": "src_6bc4b9f874a9#c10",
+        "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+        "quote": "TOEFL: 22 or higher for tests taken prior January 21, 2026 OR 4.5 or higher for tests taken on or after January 21, 2026.",
+        "retrieved_at": "2026-10-16T20:47:40.965991Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "ECE writing-score requirement in addition to graduate school minimums",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 22.0,
+     "numeric_scale": null,
+     "test": "TOEFL_iBT"
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (IELTS)",
+     "claim": {
+      "value": "IELTS writing 6",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_6bc4b9f874a9",
+        "chunk_id": "src_6bc4b9f874a9#c10",
+        "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+        "quote": "IELTS: 6 or higher",
+        "retrieved_at": "2026-10-16T20:47:40.965991Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "ECE writing-score requirement in addition to graduate school minimums",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 6.0,
+     "numeric_scale": null,
+     "test": "IELTS"
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "fellowship",
+     "availability": "appears_available",
+     "availability_statement": "A limited number of outstanding incoming students are offered fellowships each year",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "A limited number of outstanding incoming students are offered fellowships each year",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_6bc4b9f874a9",
+        "chunk_id": "src_6bc4b9f874a9#c16",
+        "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+        "quote": "A limited number of outstanding incoming students are offered fellowships each year.",
+        "retrieved_at": "2026-10-16T20:47:40.965991Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "type": "assistantship",
+     "availability": "appears_available",
+     "availability_statement": "Research assistantships funded by faculty research grants, more likely offered to PhD students",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Research assistantships funded by faculty research grants, more likely offered to PhD students",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_6bc4b9f874a9",
+        "chunk_id": "src_6bc4b9f874a9#c19",
+        "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+        "quote": "As would be expected, RAs are more likely to be offered to PhD students than to MS students.",
+        "retrieved_at": "2026-10-16T20:47:40.965991Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "most RAs offered after at least one semester of coursework",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "funding_consideration",
+     "claim": {
+      "value": "December 1",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_6bc4b9f874a9",
+        "chunk_id": "src_6bc4b9f874a9#c6",
+        "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+        "quote": "December 1 is the deadline for priority consideration for financial support.",
+        "retrieved_at": "2026-10-16T20:47:40.965991Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "Fall, residential PhD, priority deadline (priority consideration for financial support)",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "all",
+     "claim": {
+      "value": "April 1",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_6bc4b9f874a9",
+        "chunk_id": "src_6bc4b9f874a9#c6",
+        "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+        "quote": "| Residential: PhD, MSECE, and MSSWE | December 1 – Priority\\* April 1 - Final | September 1 | No Entry |",
+        "retrieved_at": "2026-10-16T20:47:40.965991Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "Fall, residential PhD, final deadline",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [],
+   "documents_status": "not_found",
+   "requirements_status": "verified",
+   "application_fee": null,
+   "research_areas": [],
+   "state": "IN",
+   "eligibility_status": "likely_eligible",
+   "verification_status": "partially_verified",
+   "verification_label": "Partially verified — some fields need checking",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Needs verification — not found",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_512930a1db09",
+     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/phd",
+     "final_url": "https://engineering.purdue.edu/ECE/Academics/Graduates/phd",
+     "title": "Graduate Programs : Academics - Elmore Family School of Electrical and Computer Engineering - Purdue University",
+     "domain": "engineering.purdue.edu",
+     "registrable_domain": "purdue.edu",
+     "retrieved_at": "2026-10-16T20:47:40.544571Z",
+     "content_hash": "3496ed01c5e4d9425c79c87e10f10c774efe28015e229c9c3ee9eccd8dd2468f",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_6bc4b9f874a9",
+     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+     "final_url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Admissions",
+     "title": "ECE Admissions Guide - Elmore Family School of Electrical and Computer Engineering - Purdue University",
+     "domain": "engineering.purdue.edu",
+     "registrable_domain": "purdue.edu",
+     "retrieved_at": "2026-10-16T20:47:40.965991Z",
+     "content_hash": "e6921e3e32abb5d7f227b4da1ac004038fe585968dba9cdc96082db101ef0763",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_54674af667cf",
+     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates",
+     "final_url": "https://engineering.purdue.edu/ECE/Academics/Graduates",
+     "title": "Graduate Programs : Academics - Elmore Family School of Electrical and Computer Engineering - Purdue University",
+     "domain": "engineering.purdue.edu",
+     "registrable_domain": "purdue.edu",
+     "retrieved_at": "2026-10-16T20:47:41.379950Z",
+     "content_hash": "5240f06d938fc695845bbe8a3774dc06252d1b35798c9e1be4e0c516b6bc0bd3",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "other",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:41.379950Z",
+   "last_verified_at": "2026-10-16T20:47:41.379950Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  },
+  {
+   "program_id": "prg_53d86fa02061",
+   "institution_name": "Virginia Tech",
+   "program_name": "Master of Science (M.S.) in Electrical and Computer Engineering",
+   "degree_level": "masters",
+   "field": "Electrical and Computer Engineering",
+   "official_program_url": "https://ece.vt.edu/grad/degrees/masters.html",
+   "department_url": null,
+   "official_funding_url": null,
+   "application_url": null,
+   "requirements": [
+    {
+     "key": "min_gpa",
+     "label": "Minimum GPA",
+     "claim": {
+      "value": "3.3 on a 4.0 scale (encouraged)",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_3452654c22d3",
+        "chunk_id": "src_3452654c22d3#c6",
+        "url": "https://ece.vt.edu/grad/degrees/masters.html",
+        "quote": "Applicants applying to the Master of Science program are encouraged to have a 3.3/4.0 or higher GPA on their most recent 60 course credit hours in addition to receiving their bachelor's degree.",
+        "retrieved_at": "2026-10-16T20:47:42.366140Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "on most recent 60 credit hours; recommended, not a strict minimum",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 3.3,
+     "numeric_scale": "4.0",
+     "test": null
+    },
+    {
+     "key": "gre",
+     "label": "GRE policy",
+     "claim": {
+      "value": "GRE optional for all applicants",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_10e44d4be19a",
+        "chunk_id": "src_10e44d4be19a#c2",
+        "url": "https://ece.vt.edu/grad/msadmissions.html",
+        "quote": "The GRE is optional for all applicants.",
+        "retrieved_at": "2026-10-16T20:47:42.738659Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "note: the International Applicants section of the same page still says the GRE is required for some international applicants",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": null,
+     "numeric_scale": null,
+     "test": null
+    },
+    {
+     "key": "english_test",
+     "label": "English test minimum (IELTS)",
+     "claim": {
+      "value": "IELTS 7.5",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_10e44d4be19a",
+        "chunk_id": "src_10e44d4be19a#c12",
+        "url": "https://ece.vt.edu/grad/msadmissions.html",
+        "quote": "IELTS Band 7.5",
+        "retrieved_at": "2026-10-16T20:47:42.738659Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "recommended band score",
+      "note": null,
+      "alternatives": []
+     },
+     "numeric_min": 7.5,
+     "numeric_scale": null,
+     "test": "IELTS"
+    }
+   ],
+   "tuition": [],
+   "tuition_status": "unknown",
+   "funding": [
+    {
+     "type": "other",
+     "availability": "appears_available",
+     "availability_statement": "Financial support is not guaranteed with admission; research-based students given preference",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": null,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Financial support is not guaranteed with admission; research-based students given preference",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_10e44d4be19a",
+        "chunk_id": "src_10e44d4be19a#c3",
+        "url": "https://ece.vt.edu/grad/msadmissions.html",
+        "quote": "Research-based graduate students are given preference for funding opportunities. Financial support is not guaranteed with admission.",
+        "retrieved_at": "2026-10-16T20:47:42.738659Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": null,
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "type": "fellowship",
+     "availability": "appears_available",
+     "availability_statement": "Bradley Fellowship for MS: $2,700/month plus tuition for two years",
+     "amount": 2700.0,
+     "amount_period": "other",
+     "requires_separate_application": false,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Bradley Fellowship for MS: $2,700/month plus tuition for two years",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_638e78c41e17",
+        "chunk_id": "src_638e78c41e17#c1",
+        "url": "https://ece.vt.edu/grad/financialaid.html",
+        "quote": "$2,700/month plus tuition for two years.",
+        "retrieved_at": "2026-10-16T20:47:43.072584Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "US citizens only; US applicants automatically considered",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "type": "assistantship",
+     "availability": "appears_available",
+     "availability_statement": "Graduate teaching assistantships pay tuition and a portion of medical insurance",
+     "amount": null,
+     "amount_period": null,
+     "requires_separate_application": true,
+     "student_eligibility_status": "not_confirmed",
+     "claim": {
+      "value": "Graduate teaching assistantships pay tuition and a portion of medical insurance",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_638e78c41e17",
+        "chunk_id": "src_638e78c41e17#c3",
+        "url": "https://ece.vt.edu/grad/financialaid.html",
+        "quote": "Tuition fees and a portion of medical insurance (often through Virginia Tech) are paid by these assistantships.",
+        "retrieved_at": "2026-10-16T20:47:43.072584Z"
+       }
+      ],
+      "scope": "department",
+      "qualifiers": "limited number; apply by December 31",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "funding_status": "verified",
+   "deadlines": [
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "funding_consideration",
+     "claim": {
+      "value": "January 15",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_10e44d4be19a",
+        "chunk_id": "src_10e44d4be19a#c10",
+        "url": "https://ece.vt.edu/grad/msadmissions.html",
+        "quote": "To be fully considered for funding, the application deadlines are January 15 for fall admission and September 1 for spring admission.",
+        "retrieved_at": "2026-10-16T20:47:42.738659Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall admission, deadline for full funding consideration (all applicants)",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "international",
+     "claim": {
+      "value": "Feb 20",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_10e44d4be19a",
+        "chunk_id": "src_10e44d4be19a#c13",
+        "url": "https://ece.vt.edu/grad/msadmissions.html",
+        "quote": "Feb 20: Deadline for international students applying for fall admissions",
+        "retrieved_at": "2026-10-16T20:47:42.738659Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall admission, international applicants",
+      "note": null,
+      "alternatives": []
+     }
+    },
+    {
+     "date": null,
+     "term": null,
+     "applicant_type": "domestic",
+     "claim": {
+      "value": "July 1",
+      "status": "verified",
+      "evidence": [
+       {
+        "source_id": "src_10e44d4be19a",
+        "chunk_id": "src_10e44d4be19a#c13",
+        "url": "https://ece.vt.edu/grad/msadmissions.html",
+        "quote": "July 1: Deadline for domestic students applying for fall admissions",
+        "retrieved_at": "2026-10-16T20:47:42.738659Z"
+       }
+      ],
+      "scope": "program",
+      "qualifiers": "Fall admission, domestic applicants",
+      "note": null,
+      "alternatives": []
+     }
+    }
+   ],
+   "deadline_status": "verified",
+   "required_documents": [
+    {
+     "value": "Transcripts",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_10e44d4be19a",
+       "chunk_id": "src_10e44d4be19a#c2",
+       "url": "https://ece.vt.edu/grad/msadmissions.html",
+       "quote": "An up-to-date, electronic copy of all official transcript(s) must be submitted with your on-line application.",
+       "retrieved_at": "2026-10-16T20:47:42.738659Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "electronic copy uploaded with application",
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Three letters of recommendation",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_10e44d4be19a",
+       "chunk_id": "src_10e44d4be19a#c2",
+       "url": "https://ece.vt.edu/grad/msadmissions.html",
+       "quote": "Three (3) letters of recommendation.",
+       "retrieved_at": "2026-10-16T20:47:42.738659Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Resume",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_10e44d4be19a",
+       "chunk_id": "src_10e44d4be19a#c2",
+       "url": "https://ece.vt.edu/grad/msadmissions.html",
+       "quote": "A Resume and a Statement of Purpose submitted with the on-line application.",
+       "retrieved_at": "2026-10-16T20:47:42.738659Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "Statement of purpose",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_10e44d4be19a",
+       "chunk_id": "src_10e44d4be19a#c2",
+       "url": "https://ece.vt.edu/grad/msadmissions.html",
+       "quote": "A Resume and a Statement of Purpose submitted with the on-line application.",
+       "retrieved_at": "2026-10-16T20:47:42.738659Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": null,
+     "note": null,
+     "alternatives": []
+    },
+    {
+     "value": "TOEFL or IELTS score",
+     "status": "verified",
+     "evidence": [
+      {
+       "source_id": "src_10e44d4be19a",
+       "chunk_id": "src_10e44d4be19a#c2",
+       "url": "https://ece.vt.edu/grad/msadmissions.html",
+       "quote": "TOEFL or IELTS exam for applicants earning undergraduate or graduate degrees from non-English institutions.",
+       "retrieved_at": "2026-10-16T20:47:42.738659Z"
+      }
+     ],
+     "scope": "program",
+     "qualifiers": "applicants with degrees from non-English institutions",
+     "note": null,
+     "alternatives": []
+    }
+   ],
+   "documents_status": "verified",
+   "requirements_status": "verified",
+   "application_fee": {
+    "value": "$75",
+    "status": "verified",
+    "evidence": [
+     {
+      "source_id": "src_10e44d4be19a",
+      "chunk_id": "src_10e44d4be19a#c2",
+      "url": "https://ece.vt.edu/grad/msadmissions.html",
+      "quote": "Virginia Tech Graduate School online application form; nonrefundable application fee $75.00.",
+      "retrieved_at": "2026-10-16T20:47:42.738659Z"
+     }
+    ],
+    "scope": "program",
+    "qualifiers": "nonrefundable",
+    "note": null,
+    "alternatives": []
+   },
+   "research_areas": [],
+   "state": null,
+   "eligibility_status": "needs_verification",
+   "verification_status": "verified",
+   "verification_label": "Verified from official source",
+   "field_labels": {
+    "tuition": "Not yet researched",
+    "funding": "Verified from official source",
+    "deadline": "Verified from official source",
+    "documents": "Verified from official source",
+    "requirements": "Verified from official source"
+   },
+   "sources": [
+    {
+     "source_id": "src_3452654c22d3",
+     "url": "https://ece.vt.edu/grad/degrees/masters.html",
+     "final_url": "https://ece.vt.edu/grad/degrees/masters.html",
+     "title": "Master's of Science | Bradley Department of Electrical and Computer Engineering | Virginia Tech",
+     "domain": "ece.vt.edu",
+     "registrable_domain": "vt.edu",
+     "retrieved_at": "2026-10-16T20:47:42.366140Z",
+     "content_hash": "10185a8fbc9d877c158bf62ce604009a6a4eca5b671557dc37fa2953338db4fc",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "program_overview",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_10e44d4be19a",
+     "url": "https://ece.vt.edu/grad/msadmissions.html",
+     "final_url": "https://ece.vt.edu/grad/msadmissions.html",
+     "title": "Master of Science (M.S.) Admissions | Bradley Department of Electrical and Computer Engineering | Virginia Tech",
+     "domain": "ece.vt.edu",
+     "registrable_domain": "vt.edu",
+     "retrieved_at": "2026-10-16T20:47:42.738659Z",
+     "content_hash": "387966a1e2786c0dec651ae7b3c3c6d2f45533c8076b93c56ac226ec63ff226c",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "admissions_requirements",
+     "retrieval_method": "direct"
+    },
+    {
+     "source_id": "src_638e78c41e17",
+     "url": "https://ece.vt.edu/grad/financialaid.html",
+     "final_url": "https://ece.vt.edu/grad/financialaid.html",
+     "title": "Financial Aid | Bradley Department of Electrical and Computer Engineering | Virginia Tech",
+     "domain": "ece.vt.edu",
+     "registrable_domain": "vt.edu",
+     "retrieved_at": "2026-10-16T20:47:43.072584Z",
+     "content_hash": "6adde4a77c4f70791573da720ddeaebdf99bc917d4ea80ccc1e948c712ab6a49",
+     "fetch_status": "ok",
+     "error_category": null,
+     "freshness": "live",
+     "is_official": true,
+     "page_kind": "funding",
+     "retrieval_method": "direct"
+    }
+   ],
+   "retrieved_at": "2026-10-16T20:47:43.072584Z",
+   "last_verified_at": "2026-10-16T20:47:43.072584Z",
+   "data_freshness": "live",
+   "fallback_record": false,
+   "warnings": [],
+   "attempted_fields": [
+    "requirements",
+    "documents",
+    "funding"
+   ],
+   "failed_fields": [],
+   "has_verified_program_page": true
+  }
+ ]
+}

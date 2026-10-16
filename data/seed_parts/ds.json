@@ -1,0 +1,117 @@
+{"records": [
+ {"institution": "University of Rochester", "program_name": "MS in Data Science", "degree_level": "masters", "field": "Data Science",
+  "pages": [
+   {"url": "https://www.hajim.rochester.edu/dsc/graduate/ms.html", "page_kind": "program_overview", "scope": "program",
+    "institution_quote": "The master of science (MS) in data science program at the University of Rochester provides students with a strong background in the fundamentals and applications of data science",
+    "program_quote": "The master of science (MS) in data science program at the University of Rochester provides students with a strong background in the fundamentals and applications of data science",
+    "facts": []},
+   {"url": "https://www.hajim.rochester.edu/dsc/graduate/apply.html", "page_kind": "admissions_requirements", "scope": "program",
+    "facts": [
+     {"field": "deadline", "value": "January 5", "qualifiers": "Fall entry, full-time applicants, early action round", "quote": "January 5 (EARLY ACTION ROUND for full-time Fall entry): Applicants who submit by January 5 receive review for Fall admission."},
+     {"field": "deadline", "value": "February 15", "qualifiers": "Fall entry, full-time applicants, regular round", "quote": "February 15 (REGULAR ROUND for full-time Fall entry): Applicants who submit by February 15 can expect to receive a decision by March 15."},
+     {"field": "deadline", "value": "March 15", "qualifiers": "Fall entry, full-time applicants, late round", "quote": "March 15: (NEW LATE ROUND for full-time Fall entry): Applicants who submit by March 15 can expect to receive a decision by April 15."},
+     {"field": "document", "value": "Academic transcripts", "qualifiers": null, "quote": "Applicants are required to submit academic transcripts from each post-secondary college/university attended or at which you have completed courses."},
+     {"field": "document", "value": "Three letters of recommendation", "qualifiers": null, "quote": "Data Science MS and Data Science - Genomics Track MS require three (3) letters."},
+     {"field": "document", "value": "Statement of purpose", "qualifiers": null, "quote": "The Statement of Purpose should clearly describe your:"},
+     {"field": "document", "value": "Resume/CV", "qualifiers": null, "quote": "Committee members consider many factors in their final decision including GPA, past coursework, academic transcripts, experiences related to data science, letters of recommendation, statements of purpose, resumes/CV and standardized test scores."},
+     {"field": "english_test", "value": "TOEFL iBT 100", "qualifiers": "for exams taken before January 21, 2026", "quote": "For exams taken before January 21, 2026: We require a minimum TOEFL iBT score of 100."},
+     {"field": "gre", "value": "GRE not required (optional)", "qualifiers": null, "quote": "GRE test scores are NOT an application requirement, however applicants can submit their scores for consideration."}
+    ]},
+   {"url": "https://www.hajim.rochester.edu/dsc/graduate/tuition-fees.html", "page_kind": "tuition", "scope": "program",
+    "facts": [
+     {"field": "tuition", "value": "$2,234 per credit hour", "qualifiers": "2026-27, SAS/Hajim courses", "quote": "In 2026-27, the cost for SAS/Hajim courses is $2,234/credit hour and $2,366/credit hour for Simon School courses."},
+     {"field": "tuition", "value": "$71,488 total program", "qualifiers": "2026-27 tuition, assumes 32 SAS/Hajim credits", "quote": "Based on 2026-27 tuition, the Master of Science in Data Science program is $71,488 which assumes 32 SAS/Hajim credits."},
+     {"field": "application_fee", "value": "$30", "qualifiers": "master's program", "quote": "The application fee is $30 for the master's program."},
+     {"field": "funding", "value": "Full-time admitted students typically receive a partial merit-based scholarship applied to tuition", "qualifiers": null, "funding_type": "scholarship", "applies_to_all_admitted": false, "requires_separate_application": null, "quote": "Full-time students admitted to the program typically receive a partial merit based scholarship award applicable to tuition in the offer letter."}
+    ]}
+  ]},
+ {"institution": "University of Miami", "program_name": "Master of Science in Data Science", "degree_level": "masters", "field": "Data Science",
+  "pages": [
+   {"url": "https://msdatascience.as.miami.edu/index.html", "page_kind": "program_overview", "scope": "program",
+    "institution_quote": "Here at the University of Miami, you have the opportunity to engage in graduate work and complete an internship in one of the world’s fastest growing tech hubs.",
+    "program_quote": "The Master of Science in Data Science (MSDS) offers many successful career options in a rapidly growing industry.",
+    "facts": [
+     {"field": "state", "value": "FL", "qualifiers": null, "quote": "Coral Gables, FL 33124"}
+    ]},
+   {"url": "https://msdatascience.as.miami.edu/admissions/requirements/index.html", "page_kind": "admissions_requirements", "scope": "program",
+    "facts": [
+     {"field": "deadline", "value": "March 1", "qualifiers": "Fall, priority deadline", "quote": "Fall March 1 July 1"},
+     {"field": "deadline", "value": "July 1", "qualifiers": "Fall, extended deadline", "quote": "Fall March 1 July 1"},
+     {"field": "application_fee", "value": "$85.00", "qualifiers": "non-refundable", "quote": "An $85.00 non-refundable application fee is paid online upon submission of the application."},
+     {"field": "document", "value": "Statement of purpose", "qualifiers": "no more than two pages", "quote": "The statement of purpose should be no more than two pages in length."},
+     {"field": "document", "value": "Three letters of recommendation", "qualifiers": null, "quote": "Three letters of recommendation must be provided."},
+     {"field": "document", "value": "Official transcripts", "qualifiers": null, "quote": "You must provide official transcripts from each post-secondary institution attended."},
+     {"field": "min_gpa", "value": "3.0 on a 4.0 scale", "qualifiers": "overall undergraduate GPA", "quote": "A minimum overall undergraduate grade point average (GPA) of 3.0 on a 4.0 scale."}
+    ]},
+   {"url": "https://msdatascience.as.miami.edu/admissions/financial-assistance/index.html", "page_kind": "funding", "scope": "program",
+    "facts": [
+     {"field": "funding", "value": "Partial tuition waivers to all accepted students not receiving full outside funding", "qualifiers": "typically 20-30%", "funding_type": "tuition_waiver", "applies_to_all_admitted": false, "requires_separate_application": false, "quote": "Our pledge is to provide partial tuition waivers to ALL accepted students who are not receiving full funding from outside sources."}
+    ]}
+  ]},
+ {"institution": "University of Virginia", "program_name": "Ph.D. in Data Science", "degree_level": "phd", "field": "Data Science",
+  "pages": [
+   {"url": "https://datascience.virginia.edu/degrees/phd", "page_kind": "program_overview", "scope": "program",
+    "institution_quote": "The School of Data Science at the University of Virginia is committed to educating the next generation of data science leaders.",
+    "program_quote": "The Ph.D. in Data Science is designed to impart the skills and knowledge necessary to enable research and discovery in data science methods.",
+    "facts": []},
+   {"url": "https://datascience.virginia.edu/phd/admissions", "page_kind": "admissions_requirements", "scope": "program",
+    "facts": [
+     {"field": "direct_entry_phd", "value": "Master's degree not required; bachelor's degree holders may apply", "qualifiers": null, "quote": "A master’s degree is not required and does not make an applicant more competitive in the admissions process."},
+     {"field": "document", "value": "Three letters of recommendation", "qualifiers": null, "quote": "Three letters of recommendation are required as part of the application."},
+     {"field": "document", "value": "Curriculum Vitae (CV)", "qualifiers": null, "quote": "Your Curriculum Vitae (CV) will demonstrate your preparedness for graduate study"},
+     {"field": "document", "value": "Unofficial transcripts", "qualifiers": null, "quote": "All applicants must upload unofficial transcripts of their entire post-secondary academic record to the online application"},
+     {"field": "english_test", "value": "IELTS 7.0", "qualifiers": "overall; section minimums apply", "quote": "IELTS: 7.0 overall (including minimum section scores of 6.5 in speaking, 6.5 in writing, 7.0 in reading, and 7.0 in listening)."},
+     {"field": "english_test", "value": "TOEFL 100", "qualifiers": "TOEFL taken prior to Jan. 21, 2026", "quote": "TOEFL taken prior to Jan. 21, 2026: 100 overall"},
+     {"field": "gre", "value": "GRE not reviewed", "qualifiers": null, "quote": "The Ph.D. in Data Science does not review other standardized test scores (i.e., GRE, GMAT, MCAT) in its holistic evaluation of applicants."},
+     {"field": "application_fee", "value": "$85", "qualifiers": "or qualifying waiver", "quote": "All graduate applications to the School of Data Science require an application fee of $85 USD or qualifying waiver."},
+     {"field": "funding", "value": "Admitted applicants receive financial support for the duration of enrollment, including full tuition and fee remission, health insurance premium, and annual wages", "qualifiers": "pending continued enrollment and satisfactory progress", "funding_type": "tuition_waiver", "applies_to_all_admitted": true, "requires_separate_application": false, "quote": "Admitted applicants will receive financial support from the School of Data Science for the duration of their enrollment in the program, pending continued enrollment, satisfactory completion of requirements, and progression through the program."},
+     {"field": "funding", "value": "Assistantship compensation approximately $41,400 total for fall, spring, and summer", "qualifiers": null, "funding_type": "assistantship", "applies_to_all_admitted": false, "requires_separate_application": null, "quote": "The compensation for the assistantship is approximately $41,400 total for all three terms (fall, spring, and summer)."},
+     {"field": "research_area", "value": "Mathematical and Statistical Foundations of Data Science", "qualifiers": null, "quote": "Mathematical and Statistical Foundations of Data Science"},
+     {"field": "research_area", "value": "Data Systems, Infrastructure, and Scalable Computing", "qualifiers": null, "quote": "Data Systems, Infrastructure, and Scalable Computing"},
+     {"field": "research_area", "value": "Machine Learning and Statistical Learning", "qualifiers": null, "quote": "Machine Learning and Statistical Learning"},
+     {"field": "research_area", "value": "Trustworthy AI, Interpretability, and Robustness", "qualifiers": null, "quote": "Trustworthy AI, Interpretability, and Robustness"},
+     {"field": "research_area", "value": "Network Science and Complex Systems", "qualifiers": null, "quote": "Network Science and Complex Systems"},
+     {"field": "research_area", "value": "Health, Biomedicine, and Life Sciences", "qualifiers": null, "quote": "Health, Biomedicine, and Life Sciences"},
+     {"field": "state", "value": "VA", "qualifiers": null, "quote": "Charlottesville, VA 22904"}
+    ]},
+   {"url": "https://datascience.virginia.edu/degrees/phd/deadlines", "page_kind": "deadlines", "scope": "program",
+    "facts": [
+     {"field": "deadline", "value": "Jan. 8, 2027", "qualifiers": "Fall 2027, all applicants (11:59 pm ET)", "quote": "Application Deadline Friday, Jan. 8, 2027 (11:59 pm ET)"}
+    ]},
+   {"url": "https://datascience.virginia.edu/degrees/phd/tuition-and-fees", "page_kind": "funding", "scope": "program",
+    "facts": [
+     {"field": "funding", "value": "Fellowship, research assistantship, or teaching assistantship with annual living support of approximately $41,400 per year", "qualifiers": "distributed over 12 months", "funding_type": "stipend", "applies_to_all_admitted": false, "requires_separate_application": null, "quote": "In addition, Ph.D. students will receive either a fellowship, research assistantship, or teaching assistantship that includes annual living support in the approximate amount of $41,400 per year, distributed over 12 months."}
+    ]}
+  ]},
+ {"institution": "UNC Charlotte", "program_name": "Doctor of Philosophy in Data Science", "degree_level": "phd", "field": "Data Science",
+  "pages": [
+   {"url": "https://datasciencephd.charlotte.edu/", "page_kind": "program_overview", "scope": "program",
+    "institution_quote": "Our Ph.D. program at the School of Data Science at UNC Charlotte is designed to nurture the next generation of scholars",
+    "program_quote": "Welcome to the Doctoral Studies Program in Data Science, where groundbreaking research meets academic excellence.",
+    "facts": []},
+   {"url": "https://datasciencephd.charlotte.edu/admissions/application-requirements/", "page_kind": "admissions_requirements", "scope": "program",
+    "facts": [
+     {"field": "deadline", "value": "February 1, 2026", "qualifiers": "Fall 2026, priority admission deadline", "quote": "Applications for admission to the Ph.D. in Data Science program in Fall 2026 must be received by February 1, 2026."},
+     {"field": "direct_entry_phd", "value": "Bachelor's degree holders may apply (undergraduate GPA of 3.2 or higher)", "qualifiers": null, "quote": "A baccalaureate degree from a college or university accredited by an accepted accrediting body, with an undergraduate GPA of 3.2 or higher and outstanding overall academic credentials."},
+     {"field": "min_gpa", "value": "3.2", "qualifiers": "undergraduate GPA, applicants with a bachelor's degree", "quote": "A baccalaureate degree from a college or university accredited by an accepted accrediting body, with an undergraduate GPA of 3.2 or higher and outstanding overall academic credentials."},
+     {"field": "english_test", "value": "TOEFL iBT 83", "qualifiers": null, "quote": "TOEFL: (Internet-based): 83 or higher"},
+     {"field": "english_test", "value": "IELTS 6.5", "qualifiers": null, "quote": "IELTS: Overall band score of 6.5 or higher"},
+     {"field": "application_fee", "value": "$75", "qualifiers": "U.S. citizens and permanent residents", "quote": "$75 USD for U.S. Citizens and Permanent Residents, and $85 USD for International Applicants."},
+     {"field": "application_fee", "value": "$85", "qualifiers": "international applicants", "quote": "$75 USD for U.S. Citizens and Permanent Residents, and $85 USD for International Applicants."},
+     {"field": "document", "value": "Unofficial transcripts", "qualifiers": "official transcripts required upon admission", "quote": "Unofficial transcripts from all post-secondary education (official transcripts will be required upon admission)"},
+     {"field": "document", "value": "Statement of purpose", "qualifiers": null, "quote": "A personal statement of purpose (e.g., career goal, research interest, potential mentor(s))"},
+     {"field": "document", "value": "Three letters of recommendation", "qualifiers": "at least two from faculty members", "quote": "Three letters of recommendation (at least two from faculty members)"},
+     {"field": "gre", "value": "GRE required; waivers available", "qualifiers": null, "quote": "GRE scores (waivers available)"}
+    ]},
+   {"url": "https://datasciencephd.charlotte.edu/tuition-funding/", "page_kind": "tuition", "scope": "program",
+    "facts": [
+     {"field": "tuition", "value": "$4414.50 per semester", "qualifiers": "North Carolina residents, 9+ credits, estimated 2026-2027", "quote": "9+ Credits | $4414.50 | $13096.50"},
+     {"field": "tuition", "value": "$13096.50 per semester", "qualifiers": "non-residents of North Carolina, 9+ credits, estimated 2026-2027", "quote": "9+ Credits | $4414.50 | $13096.50"}
+    ]},
+   {"url": "https://datasciencephd.charlotte.edu/sds-funding/", "page_kind": "funding", "scope": "program",
+    "facts": [
+     {"field": "funding", "value": "Funding package covering tuition, health insurance, and a teaching assistantship typically offered to admitted, well-qualified full-time students", "qualifiers": "full-time doctoral students", "funding_type": "assistantship", "applies_to_all_admitted": false, "requires_separate_application": null, "quote": "Admitted, well-qualified Ph.D. students are typically offered a funding package that covers tuition, health insurance, and a Teaching Assistantship (TA)."},
+     {"field": "funding", "value": "TA stipend of $23,600 for the first year", "qualifiers": "$11,800 fall and $11,800 spring", "funding_type": "stipend", "applies_to_all_admitted": false, "requires_separate_application": null, "quote": "The TA provides a stipend of $23,600 for the first year, distributed as $11,800 in the fall and $11,800 in the spring."}
+    ]}
+  ]}
+]}
