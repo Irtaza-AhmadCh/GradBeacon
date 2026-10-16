@@ -208,3 +208,5 @@ Live-run verification record: _(fill in after the first live run)_
 - Student email is self-declared (only used for Reply-To/CC once sending exists).
 - PDFs are only readable via the provider-extract fallback; visa rules are not modelled.
 - Budgets/latency are initial assumptions until measured on the deployed instance.
+#   G r a d B e a c o n  
+ 
