@@ -8,19 +8,23 @@ returned. The loop stops on finish_research, budget/deadline, or provider failur
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
+import logging
 import time
 
 from app.agent.state import LoopSession
 from app.agent.tool_executor import ToolExecutor
 from app.agent.tool_specs import specs_for
 from app.core.errors import ProviderError
+from app.core.logging import bind_log_context
 from app.models.common import ErrorCategory
 from app.orchestrator.budgets import BudgetExceeded
 from app.orchestrator.event_bus import JobEventLog
 from app.providers.llm.base import LLMProvider
 
 MAX_PARALLEL_TOOLS = 3
+log = logging.getLogger("gradbeacon.agent")
 
 
 def render_state_text(session: LoopSession) -> str:
@@ -60,9 +64,30 @@ class ResearchLoop:
                     s.budget.consume_turn()
                     s.budget.llm.consume(1)
                     s.turns += 1
-                    turn = await self.llm.research_turn(system=s.mode.system_prompt, tools=tools,
-                                                        messages=self.messages, effort=self.effort)
+                    rendered_messages = json.dumps(self.messages, separators=(",", ":"), default=str)
+                    log.info("llm_turn_started", extra={
+                        "job_id": self.events.job_id, "loop": s.name, "turn": s.turns,
+                        "provider": getattr(self.llm, "name", type(self.llm).__name__),
+                        "model": getattr(self.llm, "model", None), "effort": self.effort,
+                        "history_messages": len(self.messages), "history_chars": len(rendered_messages),
+                        "history_sha256": hashlib.sha256(rendered_messages.encode("utf-8")).hexdigest(),
+                        "available_tools": [tool["name"] for tool in tools],
+                        "seconds_remaining": round(s.seconds_left, 2),
+                    })
+                    with bind_log_context(job_id=self.events.job_id, loop=s.name, llm_turn=s.turns):
+                        turn = await self.llm.research_turn(system=s.mode.system_prompt, tools=tools,
+                                                            messages=self.messages, effort=self.effort)
                     s.budget.llm.add_usage(turn.usage)
+                    log.info("llm_turn_completed", extra={
+                        "job_id": self.events.job_id, "loop": s.name, "turn": s.turns,
+                        "provider": getattr(self.llm, "name", type(self.llm).__name__),
+                        "model": getattr(self.llm, "model", None), "stop_reason": turn.stop_reason,
+                        "tool_calls": [{"id": c.id, "name": c.name, "arguments": c.input}
+                                       for c in turn.tool_calls],
+                        "input_tokens": turn.usage.get("input_tokens", 0),
+                        "output_tokens": turn.usage.get("output_tokens", 0),
+                        "duration_ms": turn.duration_ms,
+                    })
                     if turn.stop_reason == "refusal":
                         s.stop_reason = "provider_refusal"
                         self.events.append("warning", s.mode.mode.value, "The model declined this step; stopping safely",
@@ -95,6 +120,13 @@ class ResearchLoop:
                             return await self.ex.execute(call)
 
                     results = await asyncio.gather(*(run_one(c) for c in turn.tool_calls))
+                    log.info("llm_tool_results_returned", extra={
+                        "job_id": self.events.job_id, "loop": s.name, "turn": s.turns,
+                        "results": [{"tool": c.name, "is_error": r.is_error,
+                                     "chars": len(r.content),
+                                     "sha256": hashlib.sha256(r.content.encode("utf-8")).hexdigest()}
+                                    for c, r in zip(turn.tool_calls, results, strict=True)],
+                    })
                     blocks: list[dict] = [{"type": "tool_result", "tool_use_id": c.id, "content": r.content,
                                            "is_error": r.is_error} for c, r in zip(turn.tool_calls, results, strict=True)]
                     blocks.append({"type": "text", "text": "Current research state:\n" + render_state_text(s)})

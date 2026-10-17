@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import logging
 import time
 
@@ -12,6 +13,7 @@ from app.agent.state import LoopSession, ModeConfig, ResearchMode, SharedResearc
 from app.agent.tool_executor import ToolExecutor
 from app.agent.tool_specs import RESEARCH_TOOL_NAMES
 from app.core import clock
+from app.core.logging import bind_log_context
 from app.deliverables.templates import explanation_template
 from app.models.common import DegreeLevel, ErrorCategory, SourceMode
 from app.models.profile import profile_for_llm
@@ -76,9 +78,20 @@ class ProgramPageHandler:
                   "expected_page_kind": fctx.get("expected_page_kind")}
         gaps = compute_gaps(job.programs[target_pid], job.gap_attempts) if target_pid in job.programs else \
             ["requirements", "deadline", "tuition", "funding", "documents"]
+        log.info("program_extraction_started", extra={
+            "job_id": job.job_id, "source_url": page.source.final_url,
+            "source_id": page.source.source_id, "target_program_id": target_pid,
+            "page_kind": fctx.get("expected_page_kind"), "gaps": gaps,
+            "chunks": len(page.chunks), "input_chars": sum(len(c.text) for c in page.chunks),
+            "input_sha256": hashlib.sha256("\n".join(c.text for c in page.chunks).encode("utf-8")).hexdigest(),
+            "model": getattr(self.ctx.providers.llm, "model", None),
+            "schema": "ProgramPageExtraction",
+        })
         job.llm_budget.consume(1)
         t0 = time.monotonic()
-        extraction, calls, truncated = await self.ctx.extractor().extract_program_page(page, target, gaps)
+        with bind_log_context(job_id=job.job_id, operation="program_extraction",
+                              target_program_id=target_pid):
+            extraction, calls, truncated = await self.ctx.extractor().extract_program_page(page, target, gaps)
         if calls > 1 and job.llm_budget.can(calls - 1):
             job.llm_budget.consume(calls - 1)
         job.counts["extractions"] += 1
@@ -86,6 +99,11 @@ class ProgramPageHandler:
             job.counts["truncated_pages"] += 1
         if extraction is None:
             job.counts["extraction_failed"] += 1
+            log.warning("program_extraction_failed", extra={
+                "job_id": job.job_id, "source_url": page.source.final_url,
+                "target_program_id": target_pid, "llm_calls": calls,
+                "duration_ms": int((time.monotonic() - t0) * 1000),
+            })
             self.event_log.append("extraction_failed", "extraction",
                                   "Could not extract structured facts from this page; facts stay unverified",
                                   error_category=ErrorCategory.invalid_output)
@@ -103,6 +121,15 @@ class ProgramPageHandler:
                 job.programs.pop(pid, None)
         job.counts["verified_claims"] += rep.verified_claims
         job.counts["rejected_claims"] += rep.rejected_claims
+        log.info("program_extraction_validated", extra={
+            "job_id": job.job_id, "source_url": page.source.final_url,
+            "target_program_id": target_pid, "page_kind": extraction.page_kind,
+            "llm_calls": calls, "truncated": truncated, "verified_claims": rep.verified_claims,
+            "rejected_claims": rep.rejected_claims, "rejection_reasons": rep.rejection_reasons,
+            "programs_touched": sorted(rep.touched), "newly_verified": {
+                key: sorted(value) for key, value in rep.newly_verified.items()},
+            "duration_ms": int((time.monotonic() - t0) * 1000),
+        })
         for pid in rep.touched:
             self.shared.index.tag_program(page.source.source_id, pid)
         self.event_log.append(
@@ -310,6 +337,13 @@ def _finish(job: Job) -> None:
     job.finished_at = clock.utc_now()
     job.profile = None  # never retained after the job (privacy)
     elapsed = int((time.monotonic() - job.started_monotonic) * 1000)
+    log.info("research_job_completed", extra={
+        "job_id": job.job_id, "kind": job.kind.value, "status": job.status.value,
+        "source_mode": job.source_mode.value, "stop_reason": job.stop_reason,
+        "elapsed_ms": elapsed, "first_result_ms": job.first_result_ms,
+        "results": len(job.emitted), "counts": dict(job.counts),
+        "warnings": job.warnings,
+    })
     job.events.append("done", "done", _done_summary(job), counts=dict(job.counts), duration_ms=elapsed,
                       payload={"status": job.status.value, "stop_reason": job.stop_reason,
                                "source_mode": job.source_mode.value, "elapsed_ms": elapsed,

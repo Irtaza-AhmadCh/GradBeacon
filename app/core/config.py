@@ -20,15 +20,23 @@ class Settings(BaseSettings):
     trust_proxy_headers: bool = False
     serve_frontend: bool = True
 
-    # --- LLM (Groq, native tool use) ---
-    llm_provider: Literal["groq"] = "groq"
+    # --- LLM (Gemini or Groq, native tool use; both via OpenAI-compatible chat completions) ---
+    llm_provider: Literal["gemini", "groq"] = "gemini"
+    gemini_api_key_1: SecretStr | None = None
+    gemini_api_key_2: SecretStr | None = None
+    gemini_api_key_3: SecretStr | None = None
+    gemini_api_key_4: SecretStr | None = None
+    gemini_api_key_5: SecretStr | None = None
+    gemini_api_key_6: SecretStr | None = None
     groq_api_key_1: SecretStr | None = None
     groq_api_key_2: SecretStr | None = None
     groq_api_key_3: SecretStr | None = None
     groq_api_key_4: SecretStr | None = None
     groq_api_key_5: SecretStr | None = None
     groq_api_key_6: SecretStr | None = None
-    llm_model: str = "openai/gpt-oss-120b"
+    llm_model: str = "gemini-3.5-flash"
+    # CSV; tried in order when every key is out of quota for the current model (quotas are per model)
+    llm_fallback_models: str = "gemini-3.8-flash,gemini-flash-latest,gemini-3-flash-preview,gemini-3.1-flash-lite"
     llm_writing_model: str | None = None
     llm_effort_research: Literal["low", "medium", "high"] = "low"
     llm_effort_extraction: Literal["low", "medium", "high"] = "low"
@@ -90,6 +98,10 @@ class Settings(BaseSettings):
 
     # ---- derived helpers ----
     @property
+    def fallback_models(self) -> list[str]:
+        return [m.strip() for m in self.llm_fallback_models.split(",") if m.strip()]
+
+    @property
     def writing_model(self) -> str:
         return self.llm_writing_model or self.llm_model
 
@@ -103,8 +115,7 @@ class Settings(BaseSettings):
 
     def secret_values(self) -> list[str]:
         out: list[str] = []
-        for name in ("groq_api_key_1", "groq_api_key_2", "groq_api_key_3", "groq_api_key_4",
-                     "groq_api_key_5", "groq_api_key_6", "tavily_api_key", "approval_token_secret"):
+        for name in (*_key_names("gemini"), *_key_names("groq"), "tavily_api_key", "approval_token_secret"):
             v = getattr(self, name)
             if v is not None and v.get_secret_value():
                 out.append(v.get_secret_value())
@@ -112,18 +123,31 @@ class Settings(BaseSettings):
 
     def missing_for_live(self) -> list[str]:
         missing = []
-        if not self.groq_api_keys:
-            missing.append("GROQ_API_KEY_1..6 (at least one)")
+        if not self.llm_api_keys:
+            missing.append(f"{self.llm_provider.upper()}_API_KEY_1..6 (at least one)")
         if not _present(self.tavily_api_key):
             missing.append("TAVILY_API_KEY")
         return missing
 
+    def _keys(self, provider: str) -> list[str]:
+        return [v.get_secret_value().strip() for name in _key_names(provider)
+                if (v := getattr(self, name)) is not None and v.get_secret_value().strip()]
+
     @property
     def groq_api_keys(self) -> list[str]:
-        return [v.get_secret_value().strip() for name in (
-            "groq_api_key_1", "groq_api_key_2", "groq_api_key_3", "groq_api_key_4",
-            "groq_api_key_5", "groq_api_key_6") if (v := getattr(self, name)) is not None
-                and v.get_secret_value().strip()]
+        return self._keys("groq")
+
+    @property
+    def gemini_api_keys(self) -> list[str]:
+        return self._keys("gemini")
+
+    @property
+    def llm_api_keys(self) -> list[str]:
+        return self._keys(self.llm_provider)
+
+
+def _key_names(provider: str) -> tuple[str, ...]:
+    return tuple(f"{provider}_api_key_{i}" for i in range(1, 7))
 
 
 def _present(v: SecretStr | None) -> bool:

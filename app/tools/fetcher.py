@@ -115,11 +115,17 @@ class SafePageFetcher:
         try:
             url = canonicalize(url)
         except Exception:  # noqa: BLE001
+            log.warning("page_fetch_rejected", extra={"url": url, "reason": "invalid_url"})
             return self._error_page(url, url, ErrorCategory.blocked_url, started)
         if not domain_allowed(url, self.s.extra_official, allow_publication_domains):
+            log.warning("page_fetch_rejected", extra={"url": url, "reason": "domain_policy"})
             return self._error_page(url, url, ErrorCategory.blocked_url, started)
         cached = self.cache.get(url)
         if cached is not None:
+            log.info("page_fetch", extra={"url": url, "domain": cached.source.domain, "status": "ok",
+                                          "cache_hit": True, "duration_ms": 0,
+                                          "chunks": len(cached.chunks),
+                                          "readable_chars": len(cached.readable.text_markdown) if cached.readable else 0})
             src = cached.source.model_copy(update={"freshness": DataFreshness.cached})
             return FetchedPage(source=src, readable=cached.readable, links=cached.links, chunks=cached.chunks,
                                mailto_emails=cached.mailto_emails, duration_ms=0)
@@ -140,6 +146,10 @@ class SafePageFetcher:
             self.cache.set(url, page)
         log.info("page_fetch", extra={"domain": page.source.domain, "status": page.source.fetch_status,
                                       "error_category": page.source.error_category,
+                                      "url": page.source.final_url, "cache_hit": False,
+                                      "chunks": len(page.chunks),
+                                      "readable_chars": len(page.readable.text_markdown) if page.readable else 0,
+                                      "retrieval_method": page.source.retrieval_method,
                                       "duration_ms": page.duration_ms})
         return page
 

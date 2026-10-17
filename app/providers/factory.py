@@ -40,14 +40,17 @@ def build_providers(settings: Settings) -> Providers:
     search = llm = None
     extractor = None
     if effective == "live":
+        from app.providers.llm.gemini_provider import GeminiLLMProvider
         from app.providers.llm.groq_provider import GroqLLMProvider
         from app.providers.search.tavily_provider import TavilySearchProvider
 
         tavily = TavilySearchProvider(settings.tavily_api_key.get_secret_value())
         extractor = tavily
         search = SearchService(tavily, settings)
-        llm = GroqLLMProvider(api_keys=settings.groq_api_keys, model=settings.llm_model,
-                              writing_model=settings.writing_model, timeout=settings.llm_timeout_seconds)
+        provider_cls = GeminiLLMProvider if settings.llm_provider == "gemini" else GroqLLMProvider
+        llm = provider_cls(api_keys=settings.llm_api_keys, model=settings.llm_model,
+                              writing_model=settings.writing_model, timeout=settings.llm_timeout_seconds,
+                              fallback_models=settings.fallback_models if settings.llm_provider == "gemini" else ())
     log.info("effective_mode", extra={"effective_mode": effective})
     return Providers(search=search, llm=llm, email=build_email_provider(settings), fetcher=SafePageFetcher(settings, extractor=extractor),
                      effective_mode=effective, config_warnings=warnings)

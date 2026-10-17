@@ -13,6 +13,7 @@ from app.agent.tool_executor import ToolExecutor
 from app.agent.tool_specs import RESEARCH_TOOL_NAMES
 from app.core import clock
 from app.core.ids import stable_professor_id
+from app.core.logging import bind_log_context
 from app.extraction.schemas import ExtractedValue, ProfessorPageExtraction
 from app.models.common import DataFreshness, ErrorCategory, FieldStatus, SummaryStatus
 from app.models.evidence import Claim, Evidence
@@ -74,7 +75,9 @@ class ProfessorPageHandler:
         if not job.llm_budget.can(1):
             return {"status": "extraction_skipped", "reason": "llm budget exhausted"}
         job.llm_budget.consume(1)
-        extraction, calls = await self.ctx.extractor().extract_professor_page(page, self.interests)
+        with bind_log_context(job_id=job.job_id, operation="professor_extraction",
+                              source_id=page.source.source_id):
+            extraction, calls = await self.ctx.extractor().extract_professor_page(page, self.interests)
         if calls > 1 and job.llm_budget.can(calls - 1):
             job.llm_budget.consume(calls - 1)
         if extraction is None:

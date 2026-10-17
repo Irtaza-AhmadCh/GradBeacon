@@ -21,7 +21,7 @@ FAKE_KEY = "gsk_test_THISISAFAKEKEYFORTESTS0123"
 
 
 def make_settings(**over) -> Settings:
-    base = dict(_env_file=None, app_env="development", app_mode="live", groq_api_key_1=SecretStr(FAKE_KEY),
+    base = dict(_env_file=None, app_env="development", app_mode="live", llm_provider="groq", groq_api_key_1=SecretStr(FAKE_KEY),
                 tavily_api_key=SecretStr("tvly-fakekeyfortests123"), approval_token_secret=SecretStr(SECRET),
                 request_deadline_seconds=60, verify_deadline_seconds=30, professor_deadline_seconds=30,
                 rate_research_per_10min=100)

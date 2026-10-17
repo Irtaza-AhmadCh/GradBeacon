@@ -8,6 +8,7 @@ import time
 
 from app.agent.state import SharedResearch
 from app.core import clock
+from app.core.logging import bind_log_context
 from app.deliverables.checklist import build_checklist
 from app.deliverables.decisions import compute_pending_decisions
 from app.deliverables.templates import explanation_template
@@ -132,7 +133,8 @@ async def explain_and_update(ctx: AppContext, job: Job, pid: str, shared, sem: a
             deadline_at - time.monotonic() > 15
         if use_llm:
             job.llm_budget.consume(1)
-            expl, _ = await ctx.explainer().explain(p, m, job.profile_summary)
+            with bind_log_context(job_id=job.job_id, operation="program_explanation", program_id=pid):
+                expl, _ = await ctx.explainer().explain(p, m, job.profile_summary)
         else:
             expl = explanation_template(p, m)
         job.explanations[pid] = expl

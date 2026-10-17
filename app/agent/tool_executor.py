@@ -6,7 +6,9 @@ results or fetched official pages, off-policy domains, and gaps already exhauste
 
 from __future__ import annotations
 
+import hashlib
 import json
+import logging
 import time
 from collections import Counter
 from dataclasses import dataclass
@@ -23,6 +25,8 @@ from app.tools.fetcher import PageFetcher, domain_allowed
 from app.tools.search_service import SearchService, normalize_query
 from app.tools.url_safety import canonicalize
 from app.validation.gaps import GAP_EXHAUST_ATTEMPTS
+
+log = logging.getLogger("gradbeacon.tools")
 
 PAGE_KIND_TO_GAP = {"tuition": "tuition", "funding": "funding", "deadlines": "deadline",
                     "admissions_requirements": "requirements"}
@@ -103,6 +107,8 @@ class ToolExecutor:
         return ToolOutcome(json.dumps({"error": reason}), is_error=True)
 
     async def execute(self, call: LLMToolCall) -> ToolOutcome:
+        log.info("agent_tool_call_received", extra={"job_id": self.events.job_id, "tool": call.name,
+                                                    "arguments": call.input})
         if call.name not in self.s.mode.tools:
             return self._reject(call, "unknown or forbidden tool")
         try:
@@ -113,17 +119,25 @@ class ToolExecutor:
             return self._reject(call, "research deadline reached; call finish_research")
         try:
             if call.name == "search_web":
-                return await self._search(call, args)
-            if call.name == "fetch_page":
-                return await self._fetch(call, args)
-            if call.name == "retrieve_evidence":
-                return await self._retrieve(args)
-            return self._finish(args)
+                result = await self._search(call, args)
+            elif call.name == "fetch_page":
+                result = await self._fetch(call, args)
+            elif call.name == "retrieve_evidence":
+                result = await self._retrieve(args)
+            else:
+                result = self._finish(args)
+            log.info("agent_tool_call_completed", extra={"job_id": self.events.job_id, "tool": call.name,
+                                                         "is_error": result.is_error, "result_chars": len(result.content),
+                                                         "result_sha256": hashlib.sha256(result.content.encode("utf-8")).hexdigest()})
+            return result
         except ProviderError as e:
             if e.category == ErrorCategory.provider_auth:
                 self.provider_auth_failed = True
             self.events.append("warning", "tool", f"{call.name} failed ({e.category.value})", tool=call.name,
                                error_category=e.category)
+            log.warning("agent_tool_call_failed", extra={"job_id": self.events.job_id, "tool": call.name,
+                                                          "error_category": e.category.value,
+                                                          "retryable": e.retryable})
             return ToolOutcome(json.dumps({"error": f"{call.name} failed: {e.category.value}"}), is_error=True)
 
     # ---------------- tools ----------------
@@ -148,6 +162,9 @@ class ToolExecutor:
                                tool="search_web", payload={"program_id": a.target_program_id, "gap": a.gap})
         self.events.append("search_started", stage, _search_summary(a), tool="search_web")
         t0 = time.monotonic()
+        log.info("search_dispatched", extra={"job_id": self.events.job_id, "query": a.query,
+                                              "purpose": a.purpose, "target_program_id": a.target_program_id,
+                                              "gap": a.gap, "limit": a.limit})
         results, cached = await self.search.search(a.query, min(a.limit, self.search_limit_cap),
                                                    allow_publication=self.s.mode.allow_publication_domains)
         self.counts["searches"] += 1
@@ -161,6 +178,11 @@ class ToolExecutor:
                            f"Retrieved {len(results)} official candidate source{'s' if len(results) != 1 else ''}"
                            + (" (cached)" if cached else ""), tool="search_web",
                            counts={"results": len(results)}, duration_ms=int((time.monotonic() - t0) * 1000))
+        log.info("search_delivered_to_agent", extra={
+            "job_id": self.events.job_id, "query": a.query, "cached": cached, "results": [
+                {"title": r.title, "url": r.url, "domain": r.domain, "score": r.score, "snippet": r.snippet}
+                for r in results],
+        })
         return ToolOutcome(json.dumps({
             "results": [{"title": r.title, "url": r.url, "domain": r.domain} for r in results],
             "note": "Candidate links only. Snippets are not evidence; fetch a page to verify facts.",
@@ -190,6 +212,9 @@ class ToolExecutor:
         self.s.budget.consume_fetch()
         sh.in_flight.add(url)
         try:
+            log.info("page_fetch_started", extra={"job_id": self.events.job_id, "url": url,
+                                                  "target_program_id": target,
+                                                  "expected_page_kind": a.expected_page_kind})
             page = await self.fetcher.fetch(url, allow_publication_domains=self.s.mode.allow_publication_domains)
         finally:
             sh.in_flight.discard(url)
@@ -205,6 +230,9 @@ class ToolExecutor:
             self.events.append("page_failed", stage, f"Source unavailable: {page.source.domain} ({cat.value})",
                                tool="fetch_page", error_category=cat, duration_ms=page.duration_ms,
                                payload={"url": url})
+            log.warning("page_fetch_result", extra={"job_id": self.events.job_id, "url": url,
+                                                     "status": "error", "error_category": cat.value,
+                                                     "duration_ms": page.duration_ms})
             self.s.on_fetch_failed(url, cat, ctx, self.s)
             return ToolOutcome(json.dumps({"status": "unavailable", "category": cat.value,
                                            "note": "Source could not be accessed; facts stay unverified."}),
@@ -230,6 +258,12 @@ class ToolExecutor:
                            tool="fetch_page", duration_ms=page.duration_ms,
                            counts={"chunks": len(page.chunks)}, payload={"url": page.source.final_url,
                                                                          "freshness": page.source.freshness.value})
+        log.info("page_fetch_result", extra={"job_id": self.events.job_id, "url": page.source.final_url,
+                                              "status": "ok", "title": page.source.title,
+                                              "domain": page.source.domain, "chunks": len(page.chunks),
+                                              "readable_chars": len(page.readable.text_markdown) if page.readable else 0,
+                                              "duration_ms": page.duration_ms,
+                                              "retrieval_method": page.source.retrieval_method})
         summary = await self.s.on_page(page, ctx, self.s)
         if target and gap and gap not in summary.get("newly_verified", {}).get(target, []):
             self.gap_attempts[(target, gap)] += 1
