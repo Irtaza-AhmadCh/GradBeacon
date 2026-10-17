@@ -15,7 +15,7 @@ from app.orchestrator.context import AppContext
 from app.orchestrator.job_store import JobKind
 from app.outreach.approval import ApprovalService, content_hash
 from app.outreach.drafter import REMINDERS, OutreachDrafter
-from app.outreach.sender import OutreachSender, mailto_link
+from app.outreach.sender import OutreachSender, gmail_compose_link, mailto_link
 
 router = APIRouter(prefix="/api/outreach", tags=["outreach"])
 
@@ -39,7 +39,7 @@ def _view(ctx: AppContext, d: Draft) -> dict:
     out["email_send_mode"] = ctx.settings.email_send_mode
     out["automatic_sending_available"] = sender.ready
     if d.status == DraftStatus.approved or d.status == DraftStatus.failed:
-        out["manual_send"] = {"mailto": mailto_link(d), "copy_text": f"To: {d.recipient_email}\nSubject: {d.subject}\n\n{d.body}",
+        out["manual_send"] = {"mailto": mailto_link(d), "gmail": gmail_compose_link(d), "copy_text": f"To: {d.recipient_email}\nSubject: {d.subject}\n\n{d.body}",
                               "note": "Send from your own email account using this exact approved text."}
     return out
 

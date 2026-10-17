@@ -3,428 +3,417 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GradBeacon — AI-Powered Graduate Opportunity Discovery</title>
-  <meta name="description" content="Discover fully funded graduate programs, PhD opportunities, and scholarships tailored to your academic profile. AI-powered research with evidence-backed recommendations.">
-  <meta property="og:title" content="GradBeacon — Your Next Big Opportunity Starts Here">
-  <meta property="og:description" content="AI-powered graduate opportunity discovery. Evidence-backed program research with transparent fit scores and official source links.">
-  <meta name="theme-color" content="#0a1628">
-  <link rel="stylesheet" href="/styles.css?v=20261017">
+  <title>GradBeacon — Official pages, quoted facts</title>
+  <meta name="description" content="GradBeacon searches official US graduate-program pages, keeps a quote beside every fact, and waits for your approval before anything is sent.">
+  <meta name="theme-color" content="#000AFF">
+  <link rel="stylesheet" href="https://use.typekit.net/qqp2xqh.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/instrument-sans@5.2.8/400.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/instrument-sans@5.2.8/500.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/instrument-sans@5.2.8/600.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/instrument-sans@5.2.8/700.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000AFF' d='M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z'/%3E%3C/svg%3E">
 </head>
-<body>
+<body data-view="landing">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<!-- ═══════════════════════ HEADER ═══════════════════════ -->
 <header class="site-header" role="banner">
-  <a class="brand" href="#top" aria-label="GradBeacon home">
-    <img class="brand-logo" src="logo.jpg" alt="GradBeacon logo" width="36" height="36">
-    GradBeacon
+  <a class="brand" href="#top" id="brand-home">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+    <span class="brand-name">GradBeacon</span>
   </a>
-
   <div class="header-right">
     <div class="header-status" id="api-status-bar" aria-live="polite">
       <span class="status-dot checking" id="status-dot"></span>
       <span id="api-status-text">Checking service…</span>
     </div>
-    <button class="btn btn-ghost" id="header-scroll-btn" onclick="document.getElementById('profile-section').scrollIntoView({behavior:'smooth'})" style="display:none" aria-label="Start searching">
-      Get Started ↓
-    </button>
+    <button class="btn btn-ghost" id="return-research" type="button" hidden>Back to research</button>
+    <button class="btn btn-primary" id="header-scroll-btn" type="button">Start searching</button>
   </div>
 </header>
 
-<!-- ═══════════════════════ HERO ═══════════════════════════ -->
-<section class="hero-section" id="top" aria-labelledby="hero-h1">
-  <div class="hero-bg-image" aria-hidden="true" id="hero-bg"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="hero-glow-2" aria-hidden="true"></div>
+<main id="main-content">
 
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-eyebrow">
-        <span class="hero-eyebrow-dot"></span>
-        US Graduate Opportunities · AI-Powered
+  <!-- LANDING -->
+  <section class="view view-landing" id="view-landing" aria-labelledby="hero-h1">
+    <div class="hero" id="top">
+      <div class="geo geo-hero" aria-hidden="true">
+        <svg class="star star-a" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+        <svg class="star star-b" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+        <svg class="star star-c" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+        <svg class="star star-d" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+        <svg class="ring ring-a" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></svg>
+        <svg class="ring ring-b" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></svg>
       </div>
-
-      <h1 class="hero-title" id="hero-h1">
-        Your Next Big<br>
-        <span class="hero-title-accent">Opportunity</span><br>
-        Starts Here.
-      </h1>
-
-      <p class="hero-sub">
-        Discover fully funded master's and PhD programs, research assistantships,
-        and scholarships tailored to your exact profile — backed by evidence from
-        official university sources.
-      </p>
-
-      <div class="hero-cta-row">
-        <button class="btn btn-primary btn-lg" id="hero-cta-btn"
-                onclick="document.getElementById('profile-section').scrollIntoView({behavior:'smooth'})"
-                aria-label="Start searching for opportunities">
-          <span>Find Opportunities</span>
-          <span aria-hidden="true">→</span>
-        </button>
-        <span class="text-muted" style="font-size:0.82rem; color:rgba(255,255,255,0.55)">
-          No account required · Evidence-first research
-        </span>
-      </div>
-
-      <div class="hero-stats" role="list">
-        <div class="hero-stat" role="listitem">
-          <div class="hero-stat-number">15+</div>
-          <div class="hero-stat-label">Programs per Search</div>
-        </div>
-        <div class="hero-stat" role="listitem">
-          <div class="hero-stat-number">Live</div>
-          <div class="hero-stat-label">Official Source Research</div>
-        </div>
-        <div class="hero-stat" role="listitem">
-          <div class="hero-stat-number">100%</div>
-          <div class="hero-stat-label">Human-Approved Actions</div>
+      <div class="hero-copy">
+        <p class="eyebrow">US graduate programs · evidence first</p>
+        <h1 class="display" id="hero-h1">The official page, <span class="display-break">already checked.</span></h1>
+        <p class="tagline">A quote beside every fact. A decision that stays yours.</p>
+        <p class="lede">
+          GradBeacon’s research agent reads official master’s and PhD pages, checks each claim against the source, and shows you the steps while it works. A fit score is how well a program matches your profile. It is not an admission probability. Nothing is emailed until you approve the exact text.
+        </p>
+        <div class="hero-cta-row">
+          <button class="btn btn-on-blue btn-lg" id="start-search-btn" type="button">
+            <span>Start searching</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="hero-note">No account. A fit score is profile fit, not an admission probability.</p>
         </div>
       </div>
     </div>
 
-    <div class="hero-feature-list" role="list" aria-label="Key features">
-      <div class="hero-feature-item" role="listitem">
-        <div class="hero-feature-icon fi-blue" aria-hidden="true">🔍</div>
-        <div>
-          <strong style="color:#fff;display:block;margin-bottom:2px">AI-Powered Discovery</strong>
-          Live web search of official university pages to find programs matching your exact academic profile.
+    <section class="feature-band" aria-label="How GradBeacon works">
+      <div class="shell">
+        <p class="eyebrow on-cream">What stays visible</p>
+        <h2 class="section-title">How a search actually works</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>It searches official pages</h3>
+            <p>The agent picks the next gap — tuition, deadline, funding, faculty — then fetches the university page that can answer it.</p>
+          </article>
+          <article class="feature-card">
+            <h3>It keeps the quote</h3>
+            <p>A fact is shown only when the quote appears on the page. Conflicts and missing fields stay visible as “needs your decision.”</p>
+          </article>
+          <article class="feature-card">
+            <h3>You approve the shortlist</h3>
+            <p>Professor research and the outreach draft open after you approve programs. You edit the email, then confirm the exact wording.</p>
+          </article>
         </div>
       </div>
-      <div class="hero-feature-item" role="listitem">
-        <div class="hero-feature-icon fi-green" aria-hidden="true">✅</div>
+    </section>
+  </section>
+
+  <!-- FORM -->
+  <section class="view view-form" id="view-form" hidden aria-labelledby="profile-heading">
+    <div class="geo geo-form" aria-hidden="true">
+      <svg class="star star-f1" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+      <svg class="star star-f2" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+      <svg class="star star-f3" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+      <svg class="ring ring-f1" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></svg>
+      <svg class="ring ring-f2" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></svg>
+    </div>
+    <div class="shell form-shell">
+      <div class="section-header">
         <div>
-          <strong style="color:#fff;display:block;margin-bottom:2px">Evidence-Backed Results</strong>
-          Every fact is sourced from official pages. Verification status is always visible, never hidden.
+          <p class="eyebrow on-cream">Step 01 · Profile</p>
+          <h1 class="page-title" id="profile-heading">Tell the agent who you are.</h1>
+          <p class="tagline on-cream">Required fields first. The rest can wait.</p>
+          <p class="section-desc">Skipped optional fields stay unknown. They are never treated as a poor match.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-ghost" id="back-to-landing" type="button">Back</button>
+          <button id="clear-profile-btn" class="btn btn-ghost" type="button">Clear saved profile</button>
         </div>
       </div>
-      <div class="hero-feature-item" role="listitem">
-        <div class="hero-feature-icon fi-gold" aria-hidden="true">💰</div>
-        <div>
-          <strong style="color:#fff;display:block;margin-bottom:2px">Funding Intelligence</strong>
-          Identifies scholarships, assistantships, and waivers — distinguishing confirmed from potential.
-        </div>
-      </div>
-      <div class="hero-feature-item" role="listitem">
-        <div class="hero-feature-icon fi-indigo" aria-hidden="true">📧</div>
-        <div>
-          <strong style="color:#fff;display:block;margin-bottom:2px">Professor Outreach</strong>
-          Match with faculty by research fit and send AI-drafted emails — only after your approval.
-        </div>
+
+      <div class="panel profile-panel">
+        <form id="profile-form" novalidate aria-label="Student profile form">
+          <p class="form-section-label">Required</p>
+          <div class="form-grid">
+            <label class="form-label" for="f-degree">
+              <span class="form-label-text">Degree pathway <span class="required-star">*</span></span>
+              <select name="degreePath" id="f-degree" class="form-select" required>
+                <option value="">Select pathway…</option>
+                <option value="masters">Master's only</option>
+                <option value="phd">PhD only</option>
+                <option value="both">Master's and PhD</option>
+              </select>
+            </label>
+
+            <label class="form-label" for="f-country">
+              <span class="form-label-text">Destination country <span class="required-star">*</span></span>
+              <select id="f-country" class="form-select" disabled aria-disabled="true">
+                <option value="US" selected>United States</option>
+              </select>
+              <span class="form-hint">This version researches US programs only.</span>
+            </label>
+
+            <label class="form-label" for="f-field">
+              <span class="form-label-text">Intended field <span class="required-star">*</span></span>
+              <input name="field" id="f-field" class="form-input" required maxlength="120" autocomplete="off" placeholder="Computer Science">
+            </label>
+
+            <label class="form-label" for="f-qual">
+              <span class="form-label-text">Current or completed qualification <span class="required-star">*</span></span>
+              <input name="qualification" id="f-qual" class="form-input" required maxlength="200" placeholder="BS Computer Science">
+            </label>
+
+            <label class="form-label" for="f-status">
+              <span class="form-label-text">Qualification status <span class="required-star">*</span></span>
+              <select name="qualificationStatus" id="f-status" class="form-select">
+                <option value="completed">Completed</option>
+                <option value="in_progress">In progress</option>
+              </select>
+            </label>
+
+            <label class="form-label" for="f-gpa">
+              <span class="form-label-text">GPA / CGPA <span class="required-star">*</span></span>
+              <input name="gpa" id="f-gpa" class="form-input" required inputmode="decimal" placeholder="3.60" aria-describedby="gpa-hint">
+              <span class="form-hint" id="gpa-hint">Number only, on the scale you select next.</span>
+            </label>
+
+            <label class="form-label" for="f-gpascale">
+              <span class="form-label-text">GPA scale <span class="required-star">*</span></span>
+              <select name="gpaScale" id="f-gpascale" class="form-select">
+                <option value="4.0">4.0 scale</option>
+                <option value="5.0">5.0 scale</option>
+                <option value="10.0">10.0 scale</option>
+                <option value="100">100-point scale</option>
+                <option value="other">Other / unknown</option>
+              </select>
+            </label>
+
+            <label class="form-label" for="f-gpa-context">
+              <span class="form-label-text">Grading context</span>
+              <input name="gpaContext" id="f-gpa-context" class="form-input" maxlength="300" placeholder="Cumulative GPA, final two years">
+            </label>
+          </div>
+
+          <div class="form-divider"></div>
+          <p class="form-section-label">Optional — sharper matches</p>
+          <div class="form-grid">
+            <label class="form-label" for="f-spec">
+              <span class="form-label-text">Specialization</span>
+              <input name="specialization" id="f-spec" class="form-input" maxlength="120" placeholder="Natural language processing">
+            </label>
+
+            <label class="form-label" for="f-funding">
+              <span class="form-label-text">Funding preference</span>
+              <select name="funding" id="f-funding" class="form-select">
+                <option value="unspecified">No preference</option>
+                <option value="required">Funding required</option>
+                <option value="preferred">Funding preferred</option>
+                <option value="not_important">Not important</option>
+              </select>
+            </label>
+
+            <label class="form-label col-span-2" for="f-interests">
+              <span class="form-label-text">Research interests</span>
+              <input name="interests" id="f-interests" class="form-input" placeholder="machine learning, low-resource languages" aria-describedby="interests-hint">
+              <span class="form-hint" id="interests-hint">Comma-separated. Up to 10. Used to match faculty later.</span>
+            </label>
+
+            <label class="form-label col-span-2" for="f-skills">
+              <span class="form-label-text">Skills</span>
+              <input name="skills" id="f-skills" class="form-input" placeholder="Python, PyTorch">
+              <span class="form-hint">Comma-separated. Up to 30.</span>
+            </label>
+
+            <label class="form-label col-span-2" for="f-projects">
+              <span class="form-label-text">Thesis, projects, or research</span>
+              <textarea name="projects_or_thesis" id="f-projects" class="form-textarea" maxlength="1500" rows="3" placeholder="What you built, studied, or published."></textarea>
+            </label>
+
+            <label class="form-label col-span-2" for="f-experience">
+              <span class="form-label-text">Work experience</span>
+              <textarea name="experience" id="f-experience" class="form-textarea" maxlength="1500" rows="3" placeholder="Roles that belong next to your academic record."></textarea>
+            </label>
+
+            <label class="form-label" for="f-lang">
+              <span class="form-label-text">English test</span>
+              <select name="langTest" id="f-lang" class="form-select">
+                <option value="">None provided</option>
+                <option value="TOEFL_iBT">TOEFL iBT</option>
+                <option value="IELTS">IELTS</option>
+                <option value="Duolingo">Duolingo</option>
+                <option value="PTE">PTE</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+
+            <label class="form-label" for="f-lang-score">
+              <span class="form-label-text">Overall score</span>
+              <input name="langScore" id="f-lang-score" class="form-input" inputmode="decimal" placeholder="7.5">
+              <span class="form-hint">Leave both blank to skip. Fill both if you add a test.</span>
+            </label>
+
+            <label class="form-label" for="f-tuition">
+              <span class="form-label-text">Maximum annual tuition (USD)</span>
+              <input name="maxTuition" id="f-tuition" class="form-input" inputmode="numeric" placeholder="35000">
+              <span class="form-hint">Leave blank if you have no ceiling.</span>
+            </label>
+
+            <label class="form-label" for="f-states">
+              <span class="form-label-text">Preferred states</span>
+              <input name="states" id="f-states" class="form-input" placeholder="CA, NY, MA" autocapitalize="characters">
+              <span class="form-hint">Two-letter US codes, comma-separated. Up to 10.</span>
+            </label>
+          </div>
+
+          <label class="checkbox-row" for="f-remember">
+            <input type="checkbox" name="remember" id="f-remember">
+            <span>
+              <span class="checkbox-row-text">Remember my profile on this device</span>
+              <span class="checkbox-row-sub">Stored only in this browser. Anyone using this browser on this device can see it. Clear it any time with the button above.</span>
+            </span>
+          </label>
+
+          <div class="form-actions">
+            <p id="form-error" class="form-error-msg" role="alert" aria-live="assertive"></p>
+            <button id="research-btn" class="btn btn-primary btn-lg" type="submit">
+              <span id="research-btn-text">Search Beacon</span>
+              <span id="research-btn-icon" aria-hidden="true">→</span>
+              <span class="spinner" id="research-spinner" style="display:none" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════ MAIN CONTENT ═══════════════════ -->
-<main class="shell" id="main-content">
-
-  <!-- ─── STEP 1: Student Profile Form ─────────────────── -->
-  <section class="section-block profile-section" id="profile-section" aria-labelledby="profile-heading">
-    <div class="section-header">
-      <div>
-        <div class="section-label">
-          <span class="step-pill" aria-label="Step 1">1</span>
-          Your Academic Profile
-        </div>
-        <h2 class="section-title" id="profile-heading">Tell Us About Yourself</h2>
-        <p class="section-desc">Required fields are marked with an asterisk. Optional fields improve your matches but can be skipped.</p>
+  <!-- SEARCH + RESULTS -->
+  <section class="view view-search" id="view-search" hidden>
+    <section class="section-block workflow-section" id="workflow-section" aria-labelledby="workflow-heading">
+      <div class="geo geo-search" aria-hidden="true">
+        <svg class="star star-s1" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+        <svg class="star star-s2" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+        <svg class="star star-s3" viewBox="0 0 24 24"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+        <svg class="ring ring-s1" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></svg>
+        <svg class="ring ring-s2" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></svg>
       </div>
-      <button id="clear-profile-btn" class="btn btn-ghost" type="button" aria-label="Clear saved profile data">
-        🗑 Clear saved profile
-      </button>
-    </div>
+      <div class="agent-stage" id="agent-stage">
+        <div class="agent-top">
+          <div>
+            <p class="agent-kicker">
+              <span class="agent-pulse" aria-hidden="true"></span>
+              <span id="agent-status-label">Standing by</span>
+            </p>
+            <h2 class="agent-title" id="workflow-heading">Beacon is researching</h2>
+          </div>
+          <span class="mode-badge" id="mode-badge" role="status">Live research</span>
+        </div>
 
-    <div class="panel profile-panel">
-      <form id="profile-form" novalidate aria-label="Student profile form">
+        <div class="agent-meters">
+          <p><span id="meter-searches">0</span> <span>searches</span></p>
+          <p><span id="meter-pages">0</span> <span>pages read</span></p>
+          <p><span id="meter-programs">0</span> <span>programs</span></p>
+        </div>
 
-        <!-- Required fields group -->
-        <div class="form-section-label">Required Information</div>
+        <ol class="agent-feed" id="agent-feed"></ol>
+        <p class="sr-only" id="workflow-summary" aria-live="polite"></p>
+        <div class="agent-scan" aria-hidden="true"></div>
 
-        <div class="form-grid" style="margin-top:14px">
-          <!-- Degree pathway -->
-          <label class="form-label" for="f-degree">
-            <span class="form-label-text">Degree Pathway <span class="required-star" aria-label="required">*</span></span>
-            <select name="degreePath" id="f-degree" class="form-select" required aria-required="true">
-              <option value="">Select pathway…</option>
+        <details class="agent-log">
+          <summary>Full activity log</summary>
+          <div class="trace-panel" id="trace-panel" role="log" aria-label="Research activity log">
+            <ol id="trace-list"></ol>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <div class="shell search-shell">
+      <section class="section-block results-section" id="results-section" aria-labelledby="results-heading">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow on-cream">Step 02 · Programs</p>
+            <h2 class="section-title" id="results-heading">Programs with evidence</h2>
+            <div class="result-summary-bar">
+              <span class="result-count" id="result-count" aria-live="polite"></span>
+              <span id="source-badge" class="mode-badge" role="status"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="warnings-area" id="warnings-area" role="alert" aria-live="polite"></div>
+
+        <div class="toolbar" role="group" aria-label="Filter and sort results">
+          <label class="toolbar-label" for="filter-degree">
+            Degree level
+            <select id="filter-degree">
+              <option value="all">All pathways</option>
               <option value="masters">Master's only</option>
               <option value="phd">PhD only</option>
-              <option value="both">Master's and PhD</option>
             </select>
           </label>
-
-          <!-- Field of study -->
-          <label class="form-label" for="f-field">
-            <span class="form-label-text">Intended Field / Discipline <span class="required-star" aria-label="required">*</span></span>
-            <input name="field" id="f-field" class="form-input" required aria-required="true"
-                   placeholder="e.g. Computer Science, Biomedical Engineering">
-          </label>
-
-          <!-- Qualification -->
-          <label class="form-label" for="f-qual">
-            <span class="form-label-text">Current / Completed Qualification <span class="required-star" aria-label="required">*</span></span>
-            <input name="qualification" id="f-qual" class="form-input" required aria-required="true"
-                   placeholder="e.g. BS Computer Science, BTech Electrical Engineering">
-          </label>
-
-          <!-- Status -->
-          <label class="form-label" for="f-status">
-            <span class="form-label-text">Qualification Status <span class="required-star" aria-label="required">*</span></span>
-            <select name="qualificationStatus" id="f-status" class="form-select" aria-required="true">
-              <option value="completed">Completed</option>
-              <option value="in_progress">In progress</option>
+          <label class="toolbar-label" for="filter-funding">
+            Funding status
+            <select id="filter-funding">
+              <option value="all">All funding statuses</option>
+              <option value="guaranteed">Guaranteed / confirmed</option>
+              <option value="available">Available</option>
+              <option value="unknown">Unknown / not found</option>
             </select>
           </label>
-
-          <!-- GPA -->
-          <label class="form-label" for="f-gpa">
-            <span class="form-label-text">GPA / CGPA <span class="required-star" aria-label="required">*</span></span>
-            <input name="gpa" id="f-gpa" class="form-input" required aria-required="true"
-                   inputmode="decimal" placeholder="e.g. 3.75" aria-describedby="gpa-hint">
-            <span class="form-hint" id="gpa-hint">Enter your GPA as a number (e.g. 3.75)</span>
-          </label>
-
-          <!-- GPA Scale -->
-          <label class="form-label" for="f-gpascale">
-            <span class="form-label-text">GPA Scale <span class="required-star" aria-label="required">*</span></span>
-            <select name="gpaScale" id="f-gpascale" class="form-select" aria-required="true">
-              <option value="4.0">4.0 scale</option>
-              <option value="5.0">5.0 scale</option>
-              <option value="10.0">10.0 scale</option>
-              <option value="100">100-point scale</option>
-              <option value="other">Other / unknown</option>
+          <label class="toolbar-label" for="sort-results">
+            Sort by
+            <select id="sort-results">
+              <option value="fit">Best profile fit</option>
+              <option value="tuition-low">Tuition: low to high</option>
+              <option value="tuition-high">Tuition: high to low</option>
             </select>
           </label>
         </div>
 
-        <div class="form-divider" style="margin-top:24px"></div>
-        <div class="form-section-label" style="margin-top:8px">Optional — Improves Your Matches</div>
+        <div id="results-grid" class="results-grid" role="list" aria-label="Graduate program opportunities"></div>
 
-        <div class="form-grid" style="margin-top:14px">
-          <!-- Research interests -->
-          <label class="form-label col-span-2" for="f-interests">
-            <span class="form-label-text">Research Interests</span>
-            <input name="interests" id="f-interests" class="form-input"
-                   placeholder="e.g. Machine Learning, Computational Biology, Climate Science"
-                   aria-describedby="interests-hint">
-            <span class="form-hint" id="interests-hint">Comma-separated. Helps match professors and research programs.</span>
-          </label>
-
-          <!-- Skills -->
-          <label class="form-label col-span-2" for="f-skills">
-            <span class="form-label-text">Skills &amp; Tools</span>
-            <input name="skills" id="f-skills" class="form-input"
-                   placeholder="e.g. Python, R, TensorFlow, MATLAB, LaTeX">
-            <span class="form-hint">Comma-separated technical and research skills.</span>
-          </label>
-
-          <!-- Projects/thesis -->
-          <label class="form-label col-span-2" for="f-projects">
-            <span class="form-label-text">Thesis, Projects, or Research Experience</span>
-            <textarea name="projects_or_thesis" id="f-projects" class="form-textarea"
-                      placeholder="Brief description of your thesis topic, research projects, or relevant academic work…"
-                      maxlength="1500" rows="3"></textarea>
-          </label>
-
-          <!-- Funding preference -->
-          <label class="form-label" for="f-funding">
-            <span class="form-label-text">Funding Preference</span>
-            <select name="funding" id="f-funding" class="form-select">
-              <option value="unspecified">No preference</option>
-              <option value="required">Funding required (fully funded only)</option>
-              <option value="preferred">Funding preferred</option>
-              <option value="not_important">Not important</option>
-            </select>
-          </label>
-
-          <!-- Max tuition -->
-          <label class="form-label" for="f-tuition">
-            <span class="form-label-text">Maximum Annual Tuition (USD)</span>
-            <input name="maxTuition" id="f-tuition" class="form-input"
-                   inputmode="numeric" placeholder="e.g. 25000 (leave blank if no limit)"
-                   aria-describedby="tuition-hint">
-            <span class="form-hint" id="tuition-hint">Optional budget ceiling for tuition filtering.</span>
-          </label>
-        </div>
-
-        <!-- Remember profile -->
-        <label class="checkbox-row" for="f-remember" style="margin-top:20px">
-          <input type="checkbox" name="remember" id="f-remember">
-          <div>
-            <div class="checkbox-row-text">Remember my profile on this device</div>
-            <div class="checkbox-row-sub">Stored only in your browser's local storage. Specific to this device and browser. You can clear it anytime with the button above.</div>
+        <div class="shortlist-bar hidden-bar" id="shortlist-bar" role="region" aria-label="Shortlist selection">
+          <div class="shortlist-info">
+            <span class="shortlist-count" id="shortlist-count" aria-live="polite">0 selected</span>
+            <span class="shortlist-hint">Select up to 8 programs, then approve the shortlist to open professor research.</span>
           </div>
-        </label>
-
-        <!-- Actions -->
-        <div class="form-actions">
-          <div id="form-error" class="form-error-msg" role="alert" aria-live="assertive"></div>
-          <button id="research-btn" class="btn btn-primary btn-lg" type="submit" aria-label="Find matching graduate opportunities">
-            <span id="research-btn-text">Find Opportunities</span>
-            <span id="research-btn-icon" aria-hidden="true">→</span>
-            <span class="spinner" id="research-spinner" style="display:none" aria-hidden="true"></span>
-          </button>
+          <button id="approve-shortlist-btn" class="btn btn-primary" type="button" disabled>Approve shortlist</button>
         </div>
-      </form>
+      </section>
+
+      <section class="section-block professor-section" id="professor-section" aria-labelledby="professor-heading">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow on-cream">Step 03 · Faculty</p>
+            <h2 class="section-title" id="professor-heading">Faculty on the official pages</h2>
+            <p class="section-desc">Matches come from faculty pages at the programs you approved. An outreach draft is created only when you ask for one.</p>
+          </div>
+          <button id="find-professors-btn" class="btn btn-primary" type="button">Find professors</button>
+        </div>
+        <div id="professor-grid" class="results-grid" role="list" aria-label="Professor matches"></div>
+      </section>
     </div>
   </section>
-
-  <!-- ─── WORKFLOW TRACE ───────────────────────────────── -->
-  <section class="section-block workflow-section" id="workflow-section" aria-labelledby="workflow-heading" aria-live="polite">
-    <div class="workflow-header">
-      <div>
-        <div class="section-label">
-          <span class="step-pill" aria-label="Processing">⚙</span>
-          Live Research Activity
-        </div>
-        <h2 class="section-title" id="workflow-heading">Searching for Opportunities</h2>
-        <p class="workflow-summary section-desc" id="workflow-summary">Starting research…</p>
-      </div>
-      <span class="mode-badge" id="mode-badge" role="status">Live research</span>
-    </div>
-
-    <div class="trace-panel" id="trace-panel" role="log" aria-label="Research activity log">
-      <ol id="trace-list"></ol>
-    </div>
-  </section>
-
-  <!-- ─── STEP 2: Results ──────────────────────────────── -->
-  <section class="section-block results-section" id="results-section" aria-labelledby="results-heading">
-    <div class="section-header">
-      <div>
-        <div class="section-label">
-          <span class="step-pill" aria-label="Step 2">2</span>
-          Recommended Opportunities
-        </div>
-        <h2 class="section-title" id="results-heading">Your Matched Programs</h2>
-        <div class="result-summary-bar">
-          <span class="result-count" id="result-count" aria-live="polite"></span>
-          <span id="source-badge" class="mode-badge" role="status"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Warnings -->
-    <div class="warnings-area" id="warnings-area" role="alert" aria-live="polite"></div>
-
-    <!-- Toolbar -->
-    <div class="toolbar" role="group" aria-label="Filter and sort results">
-      <label class="toolbar-label" for="filter-degree">
-        Degree Level
-        <select id="filter-degree" aria-label="Filter by degree level">
-          <option value="all">All pathways</option>
-          <option value="masters">Master's only</option>
-          <option value="phd">PhD only</option>
-        </select>
-      </label>
-      <div class="toolbar-divider" role="separator"></div>
-      <label class="toolbar-label" for="filter-funding">
-        Funding Status
-        <select id="filter-funding" aria-label="Filter by funding status">
-          <option value="all">All funding statuses</option>
-          <option value="guaranteed">Guaranteed / confirmed</option>
-          <option value="available">Available (potential)</option>
-          <option value="unknown">Unknown / not found</option>
-        </select>
-      </label>
-      <div class="toolbar-divider" role="separator"></div>
-      <label class="toolbar-label" for="sort-results">
-        Sort By
-        <select id="sort-results" aria-label="Sort results">
-          <option value="fit">Best profile fit</option>
-          <option value="tuition-low">Tuition: Low → High</option>
-          <option value="tuition-high">Tuition: High → Low</option>
-        </select>
-      </label>
-    </div>
-
-    <!-- Results grid -->
-    <div id="results-grid" class="results-grid" role="list" aria-label="Graduate program opportunities"></div>
-
-    <!-- Shortlist sticky bar -->
-    <div class="shortlist-bar hidden-bar" id="shortlist-bar" role="region" aria-label="Shortlist selection">
-      <div class="shortlist-info">
-        <span class="shortlist-count" id="shortlist-count" aria-live="polite">0 selected</span>
-        <span class="shortlist-hint">Select up to 8 programs, then approve your shortlist to unlock professor research.</span>
-      </div>
-      <button id="approve-shortlist-btn" class="btn btn-primary" disabled
-              aria-label="Approve selected shortlist and proceed to professor matching">
-        Approve Shortlist →
-      </button>
-    </div>
-  </section>
-
-  <!-- ─── STEP 3: Professor Matching ──────────────────── -->
-  <section class="section-block professor-section" id="professor-section" aria-labelledby="professor-heading">
-    <div class="section-header">
-      <div>
-        <div class="section-label">
-          <span class="step-pill" aria-label="Step 3">3</span>
-          Professor Matching
-        </div>
-        <h2 class="section-title" id="professor-heading">Find Your Research Mentors</h2>
-        <p class="section-desc">AI identifies faculty at your shortlisted programs whose research aligns with your interests.</p>
-      </div>
-      <button id="find-professors-btn" class="btn btn-primary" aria-label="Search for matching professors">
-        🔍 Find Professors
-      </button>
-    </div>
-
-    <div id="professor-grid" class="results-grid" role="list" aria-label="Professor matches"></div>
-  </section>
-
 </main>
 
-<!-- ═══════════════ DIALOGS ═══════════════════════════════ -->
-
-<!-- Decision Dialog -->
-<dialog id="decision-dialog" aria-labelledby="decision-dialog-title" aria-modal="true">
-  <form method="dialog" aria-label="Needs your decision">
+<dialog id="decision-dialog" aria-labelledby="decision-dialog-title">
+  <form method="dialog">
     <div class="dialog-top">
-      <h3 class="dialog-title" id="decision-dialog-title">⚠️ Needs Your Decision</h3>
-      <button class="btn-icon" value="cancel" type="submit" aria-label="Close dialog">✕</button>
+      <h3 class="dialog-title" id="decision-dialog-title">Needs your decision</h3>
+      <button class="btn-icon" value="cancel" type="submit" aria-label="Close dialog">Close</button>
     </div>
     <div class="dialog-body">
-      <p class="decision-q" id="decision-question" role="alert"></p>
-      <div class="source-links" id="decision-sources" aria-label="Suggested sources to review"></div>
+      <p class="decision-q" id="decision-question"></p>
+      <div class="source-links" id="decision-sources"></div>
     </div>
     <div class="dialog-footer">
       <button value="cancel" class="btn btn-secondary" type="submit">Cancel</button>
-      <button id="continue-uncertain-btn" value="default" class="btn btn-primary" type="button">
-        Continue with uncertainty
-      </button>
+      <button id="continue-uncertain-btn" class="btn btn-primary" type="button">Continue with uncertainty</button>
     </div>
   </form>
 </dialog>
 
-<!-- Outreach Student Info Dialog (before drafting) -->
-<dialog id="student-info-dialog" aria-labelledby="student-info-title" aria-modal="true">
-  <form method="dialog" id="student-info-form" aria-label="Your information for outreach email">
+<dialog id="student-info-dialog" aria-labelledby="student-info-title">
+  <form method="dialog" id="student-info-form">
     <div class="dialog-top">
-      <h3 class="dialog-title" id="student-info-title">📧 Your Information</h3>
-      <button class="btn-icon" value="cancel" type="submit" aria-label="Close dialog">✕</button>
+      <h3 class="dialog-title" id="student-info-title">Your details for the draft</h3>
+      <button class="btn-icon" value="cancel" type="submit" aria-label="Close dialog">Close</button>
     </div>
-    <div class="dialog-body" style="gap:14px">
-      <p style="font-size:0.87rem;color:#475569;line-height:1.55">
-        Provide your details to personalize the outreach email draft. This information will not be stored on any server.
-      </p>
+    <div class="dialog-body">
+      <p class="dialog-lead">These details personalize the draft. They are not stored in an account.</p>
       <div class="student-form-group">
-        <label for="si-name">Your Full Name <span class="required-star">*</span></label>
-        <input type="text" id="si-name" placeholder="Jane Smith" maxlength="120" required>
+        <label for="si-name">Full name <span class="required-star">*</span></label>
+        <input type="text" id="si-name" maxlength="120" required autocomplete="name">
       </div>
       <div class="student-form-group">
-        <label for="si-email">Your Email Address <span class="required-star">*</span></label>
-        <input type="email" id="si-email" placeholder="jane@example.com" maxlength="200" required>
+        <label for="si-email">Email <span class="required-star">*</span></label>
+        <input type="email" id="si-email" maxlength="200" required autocomplete="email">
       </div>
       <div class="student-form-group">
-        <label for="si-institution">Your Current Institution <span class="required-star">*</span></label>
-        <input type="text" id="si-institution" placeholder="e.g. University of XYZ" maxlength="200" required>
+        <label for="si-institution">Current institution <span class="required-star">*</span></label>
+        <input type="text" id="si-institution" maxlength="200" required>
       </div>
       <div class="student-form-group">
-        <label for="si-goal">Email Goal</label>
+        <label for="si-goal">Email goal</label>
         <select id="si-goal">
           <option value="ask_about_research_fit">Ask about research fit</option>
           <option value="inquire_about_openings">Inquire about openings</option>
@@ -433,77 +422,58 @@
     </div>
     <div class="dialog-footer">
       <button value="cancel" class="btn btn-secondary" type="submit">Cancel</button>
-      <button id="student-info-submit-btn" class="btn btn-primary" type="button">
-        Create Draft →
-      </button>
+      <button id="student-info-submit-btn" class="btn btn-primary" type="button">Create draft</button>
     </div>
-    <p id="student-info-error" style="font-size:0.8rem;color:#ef4444;padding:0 28px 16px;margin:0;display:none"></p>
+    <p id="student-info-error" class="form-error-msg dialog-error"></p>
   </form>
 </dialog>
 
-<!-- Outreach Draft Review Dialog -->
-<dialog id="outreach-dialog" aria-labelledby="outreach-dialog-title" aria-modal="true">
-  <form method="dialog" aria-label="Review outreach email draft">
+<dialog id="outreach-dialog" aria-labelledby="outreach-dialog-title">
+  <form method="dialog">
     <div class="dialog-top">
-      <h3 class="dialog-title" id="outreach-dialog-title">✉️ Review Before Sending</h3>
-      <button class="btn-icon" value="cancel" type="submit" aria-label="Close dialog">✕</button>
+      <h3 class="dialog-title" id="outreach-dialog-title">Review before sending</h3>
+      <button class="btn-icon" value="cancel" type="submit" aria-label="Close dialog">Close</button>
     </div>
     <div class="dialog-body">
-      <div class="recipient-bar" id="recipient-bar" role="note">
-        <span>📬</span>
+      <div class="recipient-bar" id="recipient-bar">
         <span id="recipient-text"></span>
       </div>
-
       <div class="student-form-group">
         <label class="draft-label" for="draft-subject">Subject</label>
-        <input class="draft-input" id="draft-subject" maxlength="200" placeholder="Email subject…" aria-label="Email subject">
+        <input class="draft-input" id="draft-subject" maxlength="200">
       </div>
-
       <div class="student-form-group">
-        <label class="draft-label" for="draft-body">Email Draft</label>
-        <textarea class="draft-textarea" id="draft-body" rows="10" maxlength="5000"
-                  placeholder="Email body…" aria-label="Email body"></textarea>
+        <label class="draft-label" for="draft-body">Email draft</label>
+        <textarea class="draft-textarea" id="draft-body" rows="10" maxlength="5000"></textarea>
       </div>
-
-      <div id="draft-reminders" class="warnings-area" role="note" aria-label="Reminders before sending"></div>
-
+      <div id="draft-reminders" class="warnings-area"></div>
       <label class="approval-check-row" for="send-approval-check">
-        <input type="checkbox" id="send-approval-check" aria-describedby="approval-hint">
-        <div class="approval-check-text">
-          I have reviewed this exact draft and approve sending it once to the official email address shown above.
-          <div id="approval-hint" style="font-weight:400;margin-top:3px;font-size:0.78rem;color:#92400e">
-            You will be asked to type exactly: <em>"I approve sending this email"</em>
-          </div>
-        </div>
+        <input type="checkbox" id="send-approval-check">
+        <span class="approval-check-text">
+          I have reviewed this exact draft and approve sending it once to the official address above.
+          <span class="form-hint" id="approval-hint">You will type exactly: I approve sending this email</span>
+        </span>
       </label>
-
       <p id="send-status" class="send-status" role="status" aria-live="polite"></p>
     </div>
-    <div class="dialog-footer" style="flex-wrap:wrap;gap:8px">
-      <button id="save-draft-btn" class="btn btn-secondary" type="button" aria-label="Save edits to draft">
-        💾 Save Edits
-      </button>
+    <div class="dialog-footer">
+      <button id="save-draft-btn" class="btn btn-secondary" type="button">Save edits</button>
       <button value="cancel" class="btn btn-ghost" type="submit">Cancel</button>
-      <button id="send-btn" class="btn btn-primary" type="button" disabled aria-label="Approve and send email">
-        ✅ Approve &amp; Send
-      </button>
+      <button id="send-btn" class="btn btn-primary" type="button" disabled>Approve and send</button>
     </div>
   </form>
 </dialog>
 
-<!-- ═══════════════ FOOTER ═══════════════════════════════ -->
-<footer class="site-footer" role="contentinfo">
+<footer class="site-footer">
   <div class="footer-brand">
-    <img class="footer-logo" src="logo.jpg" alt="GradBeacon logo" width="28" height="28">
-    GradBeacon
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 14.2 9.8 24 12 14.2 14.2 12 24 9.8 14.2 0 12 9.8 9.8Z"/></svg>
+    <span>GradBeacon</span>
   </div>
   <p class="footer-disclaimer">
-    Fit scores are profile-fit indicators, not admission probabilities.
-    Always verify requirements, deadlines, and funding details on official university pages before applying.
-    No application is submitted without your explicit action.
+    Fit scores are profile-fit indicators, not admission probabilities. Confirm requirements, deadlines, and funding on the official university page before you apply. GradBeacon does not submit an application for you.
   </p>
 </footer>
 
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

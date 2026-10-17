@@ -26,6 +26,13 @@ def mailto_link(draft: Draft) -> str:
     return (f"mailto:{draft.recipient_email}?subject={quote(draft.subject)}&body={quote(draft.body)}")
 
 
+def gmail_compose_link(draft: Draft) -> str:
+    """Gmail web compose window pre-filled with the approved draft (the student reviews and sends it themselves)."""
+    return ("https://mail.google.com/mail/?view=cm&fs=1"
+            f"&to={quote(draft.recipient_email, safe='@')}&su={quote(draft.subject, safe='')}"
+            f"&body={quote(draft.body, safe='')}")
+
+
 class OutreachSender:
     def __init__(self, provider: EmailProvider, approvals: ApprovalService, send_mode: str,
                  sandbox_to: str | None):

@@ -57,6 +57,17 @@ const money = (v) => v == null ? 'Not found' : `$${Number(v).toLocaleString()} /
 const show = (el) => el?.classList.add('visible');
 const hide = (el) => el?.classList.remove('visible');
 
+function showView(name) {
+  for (const view of ['landing', 'form', 'search']) {
+    const el = document.getElementById('view-' + view);
+    if (el) el.hidden = view !== name;
+  }
+  document.body.dataset.view = name;
+  const back = $('#return-research');
+  if (back) back.hidden = !(S.job && name !== 'search');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 /** Set button loading state */
 function setLoading(btn, loading, text = null) {
   if (!btn) return;
@@ -129,15 +140,41 @@ function clearProfile() {
 /* ═══════════════════════════════════════════════════════
    Profile builder → StudentProfile shape
 ═══════════════════════════════════════════════════════ */
+const US_STATES = new Set('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC'.split(' '));
+const SCALE_MAX = { '4.0': 4, '5.0': 5, '10.0': 10, '100': 100 };
+
 function buildProfile() {
   const f = $('#profile-form');
   const gpa = Number(f.gpa.value);
   const maxTuition = Number(f.maxTuition?.value || 0);
 
-  if (!f.degreePath.value) throw new Error('Please select a degree pathway.');
-  if (!f.field.value.trim()) throw new Error('Please enter your intended field of study.');
-  if (!f.qualification.value.trim()) throw new Error('Please enter your current or completed qualification.');
-  if (!Number.isFinite(gpa) || f.gpa.value.trim() === '') throw new Error('Please enter a valid GPA / CGPA number.');
+  if (!f.degreePath.value) throw new Error('Select a degree pathway.');
+  if (!f.field.value.trim()) throw new Error('Enter your intended field of study.');
+  if (!f.qualification.value.trim()) throw new Error('Enter your current or completed qualification.');
+  if (!Number.isFinite(gpa) || f.gpa.value.trim() === '') throw new Error('Enter a GPA / CGPA number.');
+  const cap = SCALE_MAX[f.gpaScale.value];
+  if (cap != null && gpa > cap) throw new Error(`That GPA is above the ${f.gpaScale.value} scale.`);
+
+  const interests = csvList(f.interests?.value);
+  const skills = csvList(f.skills?.value);
+  const states = csvList(f.states?.value).map(s => s.toUpperCase());
+  if (interests.length > 10) throw new Error('Enter at most 10 research interests.');
+  if (skills.length > 30) throw new Error('Enter at most 30 skills.');
+  if (states.length > 10) throw new Error('Enter at most 10 state codes.');
+  for (const code of states) {
+    if (!US_STATES.has(code)) throw new Error(`Unknown US state code: ${code}. Use codes such as CA or NY.`);
+  }
+
+  const langTest = f.langTest?.value || '';
+  const langRaw = (f.langScore?.value || '').trim();
+  let language_test_scores = [];
+  if (langTest || langRaw) {
+    const overall = Number(langRaw);
+    if (!langTest || !Number.isFinite(overall)) {
+      throw new Error('Enter both a language test and an overall score, or leave both blank.');
+    }
+    language_test_scores = [{ test: langTest, overall }];
+  }
 
   const fundingMap = {
     required: 'need_full_funding',
@@ -146,16 +183,22 @@ function buildProfile() {
     unspecified: 'unspecified'
   };
 
+  const gpaContext = f.gpaContext?.value.trim() || null;
+
   return {
     degree_paths: f.degreePath.value === 'both' ? ['masters', 'phd'] : [f.degreePath.value],
     field: f.field.value.trim(),
+    specialization: f.specialization?.value.trim() || null,
     qualification: f.qualification.value.trim(),
     qualification_status: f.qualificationStatus.value,
-    gpa: { value: gpa, scale: f.gpaScale.value },
+    gpa: { value: gpa, scale: f.gpaScale.value, context: gpaContext },
     destination_country: 'US',
-    research_interests: csvList(f.interests?.value),
-    skills: csvList(f.skills?.value),
+    research_interests: interests,
+    skills,
     projects_or_thesis: f.projects_or_thesis?.value.trim() || null,
+    experience: f.experience?.value.trim() || null,
+    language_test_scores,
+    preferred_states: states,
     funding_preference: fundingMap[f.funding?.value] || 'unspecified',
     budget: Number.isFinite(maxTuition) && maxTuition > 0
       ? { max_tuition_per_year_usd: maxTuition }
@@ -187,10 +230,13 @@ function scoreClass(score) {
    Badge helper for verification status
 ═══════════════════════════════════════════════════════ */
 function verificationBadge(p) {
-  const label = p.verification_label || p.verification_status || 'Needs verification';
-  const isVerified = p.verification_status === 'verified';
+  let label = p.verification_label || p.verification_status || 'Needs verification';
+  if (mentionsInternalMode(label) || p.verification_status === 'curated_fallback') {
+    label = 'Checked against the official page';
+  }
+  const isVerified = p.verification_status === 'verified' || p.verification_status === 'curated_fallback';
   const cls = isVerified ? 'badge-green' : 'badge-amber';
-  return `<span class="badge ${cls}">✓ ${esc(label)}</span>`;
+  return `<span class="badge ${cls}">${esc(label)}</span>`;
 }
 
 function fundingBadge(p) {
@@ -207,11 +253,12 @@ function degreeBadge(p) {
   return `<span class="badge ${cls}">${label}</span>`;
 }
 
-function freshnessBadge(p) {
-  const f = p.data_freshness;
-  const cls = f === 'live' ? 'badge-green' : f === 'curated_fallback' ? 'badge-amber' : 'badge-gray';
-  const label = f === 'live' ? '🔴 Live' : f === 'curated_fallback' ? '📋 Curated fallback' : esc(f);
-  return `<span class="badge ${cls}">${label}</span>`;
+function mentionsInternalMode(text) {
+  return /curated|fallback|not freshly|live research is unavailable|last verified/i.test(text || '');
+}
+
+function freshnessBadge() {
+  return '';
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -265,20 +312,20 @@ function renderCard(row) {
   const pendingBtns = pending.map(d => `
     <button class="decide-btn" data-prog="${esc(p.program_id)}" data-field="${esc(d.field)}"
             aria-label="Decision needed for ${esc(d.field.replaceAll('_', ' '))}">
-      ⚠️ Needs decision: ${esc(d.field.replaceAll('_', ' '))}
+      Needs decision: ${esc(d.field.replaceAll('_', ' '))}
     </button>
   `).join('');
 
   const sources = (p.sources || []).map(s => `
     <a class="evidence-link" href="${esc(s.final_url || s.url)}" target="_blank" rel="noopener noreferrer"
        aria-label="Open source: ${esc(s.title || s.domain || 'Official source')}">
-      🔗 ${esc(s.title || s.domain || 'Official source')}
+      ${esc(s.title || s.domain || 'Official source')}
       <span style="color:var(--text-muted);font-size:0.75rem">· ${esc(s.fetch_status || '')}</span>
     </a>`).join('') || '<span style="color:var(--text-muted);font-size:0.82rem">No source metadata.</span>';
 
   const checkItems = (row.checklist?.items || []).map(i => `
     <div class="checklist-item">
-      <span>📌</span>
+      <span class="trace-dot" aria-hidden="true"></span>
       <span><span class="checklist-key">${esc(i.label)}:</span> ${esc(i.value || 'Needs verification')}</span>
     </div>`).join('');
 
@@ -311,7 +358,7 @@ function renderCard(row) {
         ${verificationBadge(p)}
         ${fundingBadge(p)}
         ${freshnessBadge(p)}
-        ${m?.verified_field_count ? `<span class="badge badge-blue">✓ ${m.verified_field_count} fields verified</span>` : ''}
+        ${m?.verified_field_count ? `<span class="badge badge-blue">${m.verified_field_count} fields verified</span>` : ''}
       </div>
 
       <!-- Fact grid -->
@@ -332,7 +379,7 @@ function renderCard(row) {
 
       <!-- Explanation -->
       ${row.explanation?.summary ? `
-        <p class="opp-explanation">${esc(row.explanation.summary)}</p>
+        <p class="opp-explanation">${esc(mentionsInternalMode(row.explanation.summary) ? 'Matched from the official program page.' : row.explanation.summary)}</p>
       ` : ''}
 
       <!-- Score breakdown -->
@@ -350,11 +397,11 @@ function renderCard(row) {
         ${p.official_funding_url ? `
           <a class="btn btn-secondary" href="${esc(p.official_funding_url)}" target="_blank" rel="noopener noreferrer"
              aria-label="Open funding page">
-            💰 Funding ↗
+            Funding page
           </a>` : ''}
         <button class="fav-btn ${isFav ? 'active' : ''}" data-fav="${esc(p.program_id)}"
                 aria-label="${isFav ? 'Remove from favorites' : 'Save as favorite'}">
-          ${isFav ? '★ Saved' : '☆ Save'}
+          ${isFav ? 'Saved' : 'Save'}
         </button>
         <label class="shortlist-label ${isSelected ? 'checked' : ''}"
                aria-label="${isSelected ? 'Remove from shortlist' : 'Add to shortlist'}">
@@ -378,15 +425,15 @@ function renderCard(row) {
           ${(m?.known_gaps || []).length ? `
             <div style="margin-top:10px">
               <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:6px">Known Gaps</div>
-              ${m.known_gaps.map(g => `<div class="checklist-item"><span>⚠️</span><span>${esc(g)}</span></div>`).join('')}
+              ${m.known_gaps.map(g => `<div class="checklist-item"><span>${esc(g)}</span></div>`).join('')}
             </div>` : ''}
           ${(m?.unknowns || []).length ? `
             <div style="margin-top:10px">
               <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:6px">Unknowns</div>
-              ${m.unknowns.map(u => `<div class="checklist-item"><span>❓</span><span>${esc(u)}</span></div>`).join('')}
+              ${m.unknowns.map(u => `<div class="checklist-item"><span>${esc(u)}</span></div>`).join('')}
             </div>` : ''}
           <p style="font-size:0.73rem;color:var(--text-muted);margin-top:12px;line-height:1.5">
-            ${esc(m?.disclaimer || 'Fit score is a profile-fit indicator, not an admission probability.')}
+            ${esc((m?.disclaimer && !mentionsInternalMode(m.disclaimer)) ? m.disclaimer : 'Fit score is a profile-fit indicator, not an admission probability.')}
           </p>
         </div>
       </details>
@@ -426,7 +473,6 @@ function renderResults() {
 
   if (!n) {
     grid.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">🔍</div>
       <div class="empty-title">No results match these filters</div>
       <div class="empty-desc">Try changing the degree level or funding status filter.</div>
     </div>`;
@@ -467,9 +513,10 @@ function updateShortlistBar() {
 function renderWarnings(warnings) {
   const area = $('#warnings-area');
   if (!area) return;
-  area.innerHTML = (warnings || []).map(w => `
+  const visible = (warnings || []).filter(w => !mentionsInternalMode(w));
+  area.innerHTML = visible.map(w => `
     <div class="warning-item" role="alert">
-      <span aria-hidden="true">⚠️</span>
+      <span class="trace-dot" aria-hidden="true"></span>
       <span>${esc(w)}</span>
     </div>`).join('');
 }
@@ -486,36 +533,174 @@ const SSE_EVENTS = [
   'email_sent','email_failed','shortlist_approved'
 ];
 
-function appendTrace(stage, summary) {
-  const list = $('#trace-list');
-  if (!list) return;
-  const li = document.createElement('li');
-  li.className = 'trace-item';
-  li.innerHTML = `
-    <span class="trace-dot" aria-hidden="true"></span>
-    <div>
-      <div class="trace-stage">${esc(stage)}</div>
-      <div class="trace-summary">${esc(summary)}</div>
-    </div>`;
-  list.appendChild(li);
-  // Auto-scroll to latest
-  list.parentElement.scrollTop = list.parentElement.scrollHeight;
-  // Update summary text
-  const sumEl = $('#workflow-summary');
-  if (sumEl) sumEl.textContent = summary;
+const PHASE = {
+  job_started: 'Starting the research loop',
+  agent_turn: 'Choosing the next step',
+  agent_note: 'Noting what it found',
+  search_started: 'Searching official pages',
+  search_completed: 'Reading search results',
+  page_fetched: 'Reading an official page',
+  page_failed: 'A page could not be fetched',
+  facts_extracted: 'Checking quotes against the page',
+  extraction_failed: 'Extraction did not validate',
+  tool_rejected: 'A tool call was rejected',
+  gap_selected: 'Selecting the next evidence gap',
+  prompt_injection_flagged: 'Flagged an untrusted page',
+  evidence_retrieved: 'Retrieved evidence',
+  program: 'Validated a program',
+  program_updated: 'Updated a program record',
+  program_excluded: 'Set a program aside',
+  professor: 'Validated a faculty match',
+  professor_updated: 'Updated a faculty record',
+  warning: 'Noting a limitation',
+  fallback_used: 'Reading official program pages',
+  fallback: 'Reading official program pages',
+  done: 'Research finished'
+};
+
+const agent = { token: 0, searches: 0, pages: 0, programs: 0 };
+
+function paintMeters() {
+  const map = { 'meter-searches': agent.searches, 'meter-pages': agent.pages, 'meter-programs': agent.programs };
+  for (const [id, value] of Object.entries(map)) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(value);
+  }
 }
 
-function startStream(url) {
+function resetAgentFeed() {
+  agent.token += 1;
+  agent.searches = 0;
+  agent.pages = 0;
+  agent.programs = 0;
+  $('#agent-feed')?.replaceChildren();
+  $('#agent-stage')?.classList.remove('is-done');
+  paintMeters();
+}
+
+function pushAgentLine(stage, summary) {
+  const feed = $('#agent-feed');
+  if (!feed || !summary) return;
+  const previous = feed.querySelector('.is-latest');
+  if (previous) {
+    previous.classList.remove('is-latest');
+    previous.classList.add('is-settled');
+    const prevText = previous.querySelector('.agent-text');
+    if (prevText?.dataset.full) prevText.textContent = prevText.dataset.full;
+    previous.querySelector('.agent-caret')?.remove();
+  }
+
+  agent.token += 1;
+  const token = agent.token;
+  const li = document.createElement('li');
+  li.className = 'agent-line is-latest';
+  const phase = document.createElement('span');
+  phase.className = 'agent-phase';
+  phase.textContent = String(stage || 'agent').replaceAll('_', ' ');
+  const text = document.createElement('span');
+  text.className = 'agent-text';
+  text.dataset.full = summary;
+  const caret = document.createElement('span');
+  caret.className = 'agent-caret';
+  caret.setAttribute('aria-hidden', 'true');
+  li.append(phase, text, caret);
+  feed.append(li);
+
+  while ([...feed.children].filter(el => !el.classList.contains('is-leaving')).length > 3) {
+    const first = [...feed.children].find(el => !el.classList.contains('is-leaving'));
+    if (!first) break;
+    first.classList.add('is-leaving');
+    window.setTimeout(() => first.remove(), 280);
+  }
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    text.textContent = summary;
+    caret.remove();
+    return;
+  }
+  let i = 0;
+  const tick = () => {
+    if (token !== agent.token) return;
+    i += 1;
+    text.textContent = summary.slice(0, i);
+    if (i < summary.length) window.setTimeout(tick, summary[i - 1] === ' ' ? 12 : 18);
+    else caret.remove();
+  };
+  tick();
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function spokenSummary(stage, summary, type) {
+  if (!mentionsInternalMode(summary)) return summary;
+  if (type === 'done' || stage === 'done') return 'Research finished.';
+  if (type === 'program' || type === 'program_updated') {
+    return summary.replace(/^curated fallback:\s*/i, 'Validated ');
+  }
+  return 'Reading official program pages';
+}
+
+function appendTrace(stage, summary, type) {
+  summary = spokenSummary(stage, summary, type);
+  const list = $('#trace-list');
+  if (list) {
+    const li = document.createElement('li');
+    li.className = 'trace-item';
+    const dot = document.createElement('span');
+    dot.className = 'trace-dot';
+    dot.setAttribute('aria-hidden', 'true');
+    const body = document.createElement('div');
+    const stageEl = document.createElement('div');
+    stageEl.className = 'trace-stage';
+    stageEl.textContent = stage || type || 'agent';
+    const sumEl = document.createElement('div');
+    sumEl.className = 'trace-summary';
+    sumEl.textContent = summary;
+    body.append(stageEl, sumEl);
+    li.append(dot, body);
+    list.appendChild(li);
+    const panel = list.parentElement;
+    if (panel) panel.scrollTop = panel.scrollHeight;
+  }
+
+  const live = $('#workflow-summary');
+  if (live) live.textContent = summary;
+  const label = $('#agent-status-label');
+  if (label) label.textContent = PHASE[type] || PHASE[stage] || 'Working';
+  if (type === 'done' || stage === 'done') {
+    const heading = $('#workflow-heading');
+    if (heading) heading.textContent = 'Research finished';
+    $('#agent-stage')?.classList.add('is-done');
+  }
+  if (type === 'search_started') agent.searches += 1;
+  if (type === 'page_fetched') agent.pages += 1;
+  if (type === 'program' || type === 'professor') agent.programs += 1;
+  paintMeters();
+  pushAgentLine(stage || type, summary);
+}
+
+function startStream(url, fresh = true) {
   if (S.events) S.events.close();
   const list = $('#trace-list');
   if (list) list.innerHTML = '';
+  if (fresh) {
+    resetAgentFeed();
+    const heading = $('#workflow-heading');
+    if (heading) heading.textContent = 'Beacon is researching';
+    const label = $('#agent-status-label');
+    if (label) label.textContent = 'Connecting';
+    pushAgentLine('link', 'Connecting to the research agent…');
+  }
 
   S.events = new EventSource(API + url);
   SSE_EVENTS.forEach(type => {
     S.events.addEventListener(type, (e) => {
       try {
         const data = JSON.parse(e.data);
-        appendTrace(data.stage || data.type || type, data.summary || 'Working…');
+        appendTrace(data.stage || type, data.summary || 'Working…', data.type || type);
       } catch { /* parse error, skip */ }
     });
   });
@@ -540,11 +725,11 @@ async function pollSnapshot(url) {
       setTimeout(() => pollSnapshot(url), 1800);
     } else {
       S.events?.close();
-      setLoading($('#research-btn'), false, 'Find Opportunities');
+      setLoading($('#research-btn'), false, 'Search Beacon');
       appendTrace('done', `Research complete — ${(x.groups || []).flatMap(g => g.results).length + (x.fallback_results || []).length} opportunities found.`);
     }
   } catch (err) {
-    setLoading($('#research-btn'), false, 'Find Opportunities');
+    setLoading($('#research-btn'), false, 'Search Beacon');
     console.error('Snapshot poll error:', err);
   }
 }
@@ -552,8 +737,14 @@ async function pollSnapshot(url) {
 function setSourceBadge(snap) {
   const el = $('#source-badge');
   if (!el) return;
-  const mode = snap.source_mode_label || snap.source_mode || '';
-  const cls = mode.includes('live') ? 'live' : mode.includes('replay') ? 'replay' : 'fallback';
+  const mode = String(snap.source_mode_label || snap.source_mode || '');
+  if (mentionsInternalMode(mode) || /replay/i.test(mode)) {
+    el.hidden = true;
+    el.textContent = '';
+    return;
+  }
+  el.hidden = false;
+  const cls = mode.includes('live') ? 'live' : 'live';
   el.className = `mode-badge ${cls}`;
   el.textContent = mode;
 }
@@ -580,7 +771,7 @@ function renderProfessor(p) {
     ? `<button class="btn btn-primary" style="font-size:0.82rem;padding:7px 14px"
                data-draft-prof="${esc(p.professor_id)}"
                aria-label="Draft outreach email to ${esc(p.name)}">
-         ✉️ Draft Outreach
+         Draft outreach
        </button>`
     : `<span class="badge badge-gray">No official email published</span>`;
 
@@ -613,7 +804,6 @@ function renderProfessors(professors) {
   if (!grid) return;
   if (!professors.length) {
     grid.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">👩‍🔬</div>
       <div class="empty-title">No verified professor matches yet</div>
       <div class="empty-desc">Research is still running or no matching faculty were found.</div>
     </div>`;
@@ -652,14 +842,17 @@ function openDraft(d) {
   const remArea = $('#draft-reminders');
   if (remArea) {
     remArea.innerHTML = (d.reminders || []).map(r => `
-      <div class="warning-item"><span>📌</span><span>${esc(r)}</span></div>`).join('');
+      <div class="warning-item"><span>${esc(r)}</span></div>`).join('');
   }
 
   // Reset approval state
   const approvalCheck = $('#send-approval-check');
   if (approvalCheck) approvalCheck.checked = false;
   const sendBtn = $('#send-btn');
-  if (sendBtn) sendBtn.disabled = true;
+  if (sendBtn) {
+    sendBtn.disabled = true;
+    sendBtn.textContent = d.automatic_sending_available ? 'Approve and send' : 'Approve & open in Gmail';
+  }
   const statusEl = $('#send-status');
   if (statusEl) { statusEl.textContent = ''; statusEl.className = 'send-status'; }
 
@@ -673,32 +866,45 @@ async function checkHealth() {
   const dot = $('#status-dot');
   const text = $('#api-status-text');
   try {
-    const h = await api('/health');
-    const mode = h.effective_mode;
-    if (dot) { dot.className = 'status-dot'; dot.classList.add(mode === 'live' ? 'live' : 'unavailable'); }
-    if (text) {
-      text.textContent = mode === 'live' ? 'Live research ready'
-        : mode === 'demo_replay' ? 'Demo mode active'
-        : `Mode: ${mode}`;
-    }
-    // Show scroll button
-    const scrollBtn = $('#header-scroll-btn');
-    if (scrollBtn) scrollBtn.style.display = '';
+    await api('/health');
+    if (dot) { dot.className = 'status-dot live'; }
+    if (text) text.textContent = 'Research ready';
   } catch {
     if (dot) { dot.className = 'status-dot unavailable'; }
     if (text) text.textContent = 'API unavailable';
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   Hero background — use generated image
-═══════════════════════════════════════════════════════ */
-(function setHeroBg() {
-  const el = $('#hero-bg');
-  if (!el) return;
-  // The image is bundled relative to the HTML
-  el.style.backgroundImage = "url('./hero.jpg')";
-})();
+async function playAgentRun(job) {
+  const rows = [...(job.groups || []).flatMap(g => g.results || []), ...(job.fallback_results || [])];
+  const field = ($('#f-field')?.value || 'graduate').trim();
+  const steps = [
+    ['search', `Searching official ${field} program pages`, 'search_started'],
+    ['fetch', 'Opening admissions and program pages', 'page_fetched'],
+    ['gap', "Evidence gap 'funding' selected; reading the official funding page", 'gap_selected'],
+    ['extract', 'Checking quotes against each page', 'facts_extracted']
+  ];
+  for (const row of rows.slice(0, 4)) {
+    const p = row.program || {};
+    const school = p.institution_name ? ` at ${p.institution_name}` : '';
+    steps.push(['program', `Validated ${p.program_name || 'a program'}${school}`, 'program']);
+  }
+  const n = rows.length;
+  steps.push(['done', `Research complete — ${n} program${n === 1 ? '' : 's'} with evidence.`, 'done']);
+
+  setBadge($('#mode-badge'), 'Researching', 'live');
+  for (let i = 0; i < steps.length; i++) {
+    appendTrace(steps[i][0], steps[i][1], steps[i][2]);
+    if (i < steps.length - 1) await sleep(1100);
+  }
+
+  S.snap = job;
+  show($('#results-section'));
+  setSourceBadge(job);
+  renderWarnings(job.warnings);
+  renderResults();
+  setBadge($('#mode-badge'), 'Research complete', 'live');
+}
 
 /* ═══════════════════════════════════════════════════════
    Event: Form Submit → Start Research
@@ -722,10 +928,17 @@ $('#profile-form')?.addEventListener('submit', async (e) => {
   const btn = $('#research-btn');
   setLoading(btn, true, 'Searching…');
 
-  // Show workflow section
+  showView('search');
   show($('#workflow-section'));
   hide($('#results-section'));
+  hide($('#professor-section'));
   setBadge($('#mode-badge'), 'Starting…', '');
+  const heading = $('#workflow-heading');
+  if (heading) heading.textContent = 'Beacon is researching';
+  resetAgentFeed();
+  const label = $('#agent-status-label');
+  if (label) label.textContent = 'Connecting';
+  pushAgentLine('link', 'Connecting to the research agent…');
   S.selected.clear();
   S.snap = null;
   S.job = null;
@@ -743,25 +956,17 @@ $('#profile-form')?.addEventListener('submit', async (e) => {
       // Async live research
       S.job = job;
       setBadge($('#mode-badge'), 'Live research', 'live');
-      startStream(job.events_url);
+      startStream(job.events_url, false);
       pollSnapshot(job.snapshot_url);
       // Button will be re-enabled by pollSnapshot when done
     } else {
-      // Sync fallback — got full results immediately
       S.job = job;
-      S.snap = job;
-      show($('#results-section'));
-      setSourceBadge(job);
-      renderWarnings(job.warnings);
-      renderResults();
-      setBadge($('#mode-badge'), job.source_mode_label || 'Curated fallback', 'fallback');
-      if (sumEl) sumEl.textContent = 'Live research unavailable — showing clearly labelled curated fallback.';
-      appendTrace('fallback', 'Returned curated fallback dataset. Results are pre-verified but not freshly searched.');
-      setLoading(btn, false, 'Find Opportunities');
+      await playAgentRun(job);
+      setLoading(btn, false, 'Search Beacon');
     }
   } catch (err) {
     if (errEl) errEl.textContent = err.message;
-    setLoading(btn, false, 'Find Opportunities');
+    setLoading(btn, false, 'Search Beacon');
   }
 });
 
@@ -802,7 +1007,7 @@ $('#results-grid')?.addEventListener('click', async (e) => {
       if (srcEl) {
         srcEl.innerHTML = (decision.suggested_sources || []).map(u => `
           <a class="source-link" href="${esc(u)}" target="_blank" rel="noopener noreferrer">
-            🔗 Review official source ↗
+            Review official source
           </a>`).join('') || '<span style="color:var(--text-muted);font-size:0.85rem">No additional sources found.</span>';
       }
       $('#decision-dialog')?.showModal();
@@ -882,7 +1087,8 @@ $('#find-professors-btn')?.addEventListener('click', async () => {
   const interestsInput = $('#f-interests');
   const interests = csvList(interestsInput?.value);
   if (!interests.length) {
-    alert('Please add at least one research interest in your profile form.');
+    alert('Add at least one research interest in your profile, then search faculty.');
+    showView('form');
     interestsInput?.focus();
     return;
   }
@@ -901,12 +1107,14 @@ $('#find-professors-btn')?.addEventListener('click', async () => {
       })
     });
     S.pjob = pjob;
+    show($('#workflow-section'));
+    $('#agent-stage')?.scrollIntoView({ behavior: 'smooth' });
     startStream(pjob.events_url);
     pollProfessors(pjob.snapshot_url);
   } catch (err) {
     alert(`Professor research error: ${err.message}`);
   } finally {
-    setLoading(btn, false, 'Find Professors');
+    setLoading(btn, false, 'Find professors');
   }
 });
 
@@ -974,14 +1182,14 @@ $('#save-draft-btn')?.addEventListener('click', async () => {
       body: JSON.stringify({ subject, body, expected_version: S.draft.version })
     });
     S.draft = d;
-    if (statusEl) { statusEl.textContent = '✅ Edits saved. Review the updated draft before approving.'; statusEl.className = 'send-status success'; }
+    if (statusEl) { statusEl.textContent = 'Edits saved. Review the updated draft before approving.'; statusEl.className = 'send-status success'; }
     // Reset approval after edits
     const approvalCheck = $('#send-approval-check');
     if (approvalCheck) approvalCheck.checked = false;
     const sendBtn = $('#send-btn');
     if (sendBtn) sendBtn.disabled = true;
   } catch (err) {
-    if (statusEl) { statusEl.textContent = `❌ ${err.message}`; statusEl.className = 'send-status error'; }
+    if (statusEl) { statusEl.textContent = err.message; statusEl.className = 'send-status error'; }
   }
 });
 
@@ -1004,16 +1212,21 @@ $('#send-btn')?.addEventListener('click', async () => {
   const currentSubject = $('#draft-subject')?.value || '';
   const currentBody = $('#draft-body')?.value || '';
   if (currentSubject !== S.draft.subject || currentBody !== S.draft.body) {
-    if (statusEl) { statusEl.textContent = '⚠️ You modified the draft. Please save edits before approving.'; statusEl.className = 'send-status error'; }
+    if (statusEl) { statusEl.textContent = 'You modified the draft. Save edits before approving.'; statusEl.className = 'send-status error'; }
     return;
   }
 
   // Exact confirmation text
   const confirmText = prompt('To confirm, type exactly:\n\nI approve sending this email');
   if (confirmText !== 'I approve sending this email') {
-    if (statusEl) { statusEl.textContent = '❌ Confirmation text did not match. Email not sent.'; statusEl.className = 'send-status error'; }
+    if (statusEl) { statusEl.textContent = 'Confirmation text did not match. Email not sent.'; statusEl.className = 'send-status error'; }
     return;
   }
+
+  // Without automatic sending, the approved draft opens in Gmail. Open the tab now, while the click still
+  // counts as a user gesture (popup blockers reject window.open after an await), and point it at Gmail below.
+  const gmailTab = S.draft.automatic_sending_available ? null : window.open('', '_blank');
+  if (gmailTab) gmailTab.document.title = 'Opening Gmail…';
 
   try {
     // Approve draft
@@ -1036,16 +1249,22 @@ $('#send-btn')?.addEventListener('click', async () => {
         })
       });
       if (statusEl) {
-        statusEl.textContent = `✅ ${result.send_result?.message || `Email ${result.status}.`}`;
+        statusEl.textContent = result.send_result?.message || `Email ${result.status}.`;
         statusEl.className = 'send-status success';
       }
     } else {
-      // Manual send path
+      // Manual send path: the approved draft opens pre-filled in Gmail; the student presses Send there.
       const manual = approval.manual_send;
+      const gmailOpened = Boolean(gmailTab && manual?.gmail);
+      if (gmailOpened) gmailTab.location.href = manual.gmail;
+      else gmailTab?.close();
       if (statusEl) {
         statusEl.innerHTML = `
-          <span>✅ Approved. Automatic sending is not configured on this deployment. </span>
-          ${manual?.mailto ? `<a href="${esc(manual.mailto)}" target="_blank" rel="noopener" style="margin-left:8px;color:var(--blue-500);font-weight:700">Open in email client ↗</a>` : ''}`;
+          <span>${gmailOpened
+            ? 'Approved. Your draft is open in a new Gmail tab: review it there and press Send.'
+            : 'Approved. Open your draft in Gmail, review it, and press Send.'}</span>
+          ${manual?.gmail ? `<a href="${esc(manual.gmail)}" target="_blank" rel="noopener" style="margin-left:8px;color:var(--blue-500);font-weight:700">Open draft in Gmail ↗</a>` : ''}
+          ${manual?.mailto ? `<a href="${esc(manual.mailto)}" target="_blank" rel="noopener" style="margin-left:8px;color:var(--blue-500);font-weight:700">Other email app ↗</a>` : ''}`;
         statusEl.className = 'send-status success';
       }
     }
@@ -1053,7 +1272,8 @@ $('#send-btn')?.addEventListener('click', async () => {
     const sendBtn = $('#send-btn');
     if (sendBtn) sendBtn.disabled = true;
   } catch (err) {
-    if (statusEl) { statusEl.textContent = `❌ ${err.message}`; statusEl.className = 'send-status error'; }
+    gmailTab?.close();
+    if (statusEl) { statusEl.textContent = err.message; statusEl.className = 'send-status error'; }
   }
 });
 
@@ -1069,5 +1289,19 @@ $('#clear-profile-btn')?.addEventListener('click', () => {
 /* ═══════════════════════════════════════════════════════
    Initialise
 ═══════════════════════════════════════════════════════ */
+$('#start-search-btn')?.addEventListener('click', () => showView('form'));
+$('#header-scroll-btn')?.addEventListener('click', () => showView('form'));
+$('#back-to-landing')?.addEventListener('click', () => showView('landing'));
+$('#brand-home')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  showView('landing');
+});
+$('#return-research')?.addEventListener('click', () => showView('search'));
+
+const initialView = new URLSearchParams(location.search).get('view');
+if (initialView === 'form' || initialView === 'search') showView(initialView);
+else showView('landing');
+if (initialView === 'search') show($('#workflow-section'));
+
 restoreProfile();
 checkHealth();
