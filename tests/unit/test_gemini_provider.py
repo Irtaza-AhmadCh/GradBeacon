@@ -90,3 +90,24 @@ async def test_daily_quota_falls_over_to_next_model_without_waiting():
     await p.research_turn(system="s", tools=[], messages=[{"role": "user", "content": "go"}], effort="low")
     assert [m for _, m in seen] == ["backup"]
     await p.aclose()
+
+
+@pytest.mark.asyncio
+@respx.mock
+async def test_overloaded_model_is_retried_then_falls_over(monkeypatch):
+    seen: list[str] = []
+
+    def handler(request):
+        model = json.loads(request.content)["model"]
+        seen.append(model)
+        return httpx.Response(503, json=[{"error": {"code": 503, "status": "UNAVAILABLE"}}]) if model == "primary" \
+            else httpx.Response(200, json=OK)
+
+    respx.post(GEMINI_CHAT_URL).mock(side_effect=handler)
+    p = GeminiLLMProvider(["AQ.k1", "AQ.k2"], "primary", "primary", 10, fallback_models=["backup"])
+    real_cool = p._cool
+    monkeypatch.setattr(p, "_cool", lambda index, model, seconds: real_cool(index, model, 0.01))  # keep test fast
+    turn = await p.research_turn(system="s", tools=[], messages=[{"role": "user", "content": "go"}], effort="low")
+    assert turn.text == "done"
+    assert seen == ["primary"] * 4 + ["backup"]  # 2 keys x (first try + 1 transient retry), then next model
+    await p.aclose()

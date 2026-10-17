@@ -72,6 +72,8 @@ def _effort(model: str, effort: str) -> dict:
 TOOL_USE_FAILED_RETRIES = 2
 RATE_LIMIT_ROUNDS = 12  # bounded overall by the research loop deadline
 MAX_WAIT_SECONDS = 30  # longer cooldowns (e.g. a daily quota) skip to the next model instead of waiting
+TRANSIENT_RETRIES = 1  # extra round per model for 5xx/timeouts before moving to the next model
+TRANSIENT = (ErrorCategory.provider_unavailable, ErrorCategory.provider_timeout)
 
 
 def _content_audit(content: Any) -> dict[str, Any]:
@@ -323,16 +325,22 @@ class GroqLLMProvider:
             try:
                 return await self._request_model({**payload, "model": model})
             except ProviderError as e:
-                if e.category != ErrorCategory.provider_rate_limited or not self._exhausted(model):
+                if e.category == ErrorCategory.provider_rate_limited and self._exhausted(model):
+                    self.log.warning(f"{self.slug}_model_quota_exhausted", extra={"model": model})
+                elif e.category in TRANSIENT and e.retryable:  # model overloaded/timing out on every key
+                    self.log.warning(f"{self.slug}_model_unavailable", extra={"model": model,
+                                                                              "error_category": e.category.value})
+                else:
                     raise
                 last = e
-                self.log.warning(f"{self.slug}_model_quota_exhausted", extra={"model": model})
         raise last or ProviderError(ErrorCategory.provider_rate_limited,
                                     f"{self.name} quota exhausted for all models ({', '.join(chain)})", retryable=True)
 
     async def _request_model(self, payload: dict) -> dict:
-        """Bounded rounds: when every key is briefly rate limited, wait for the provider's retry-after and retry."""
+        """Bounded rounds: when every key is briefly rate limited, wait for the provider's retry-after and retry;
+        transient server errors / timeouts get TRANSIENT_RETRIES extra rounds (keys cool down briefly first)."""
         started = time.monotonic()
+        transient_rounds = 0
         audit = _request_audit(payload)
         self.log.info(f"{self.slug}_request_started", extra=audit)
         for round_ in range(RATE_LIMIT_ROUNDS):
@@ -350,7 +358,10 @@ class GroqLLMProvider:
                     "error_category": e.category.value, "retryable": e.retryable,
                     "duration_ms": int((time.monotonic() - started) * 1000),
                 })
-                if (e.category != ErrorCategory.provider_rate_limited or round_ == RATE_LIMIT_ROUNDS - 1
+                transient = e.category in TRANSIENT and e.retryable and transient_rounds < TRANSIENT_RETRIES
+                if transient:
+                    transient_rounds += 1
+                elif (e.category != ErrorCategory.provider_rate_limited or round_ == RATE_LIMIT_ROUNDS - 1
                         or self._exhausted(payload["model"])):
                     raise
                 self.log.info(f"{self.slug}_rate_limit_wait", extra={"round": round_ + 1})

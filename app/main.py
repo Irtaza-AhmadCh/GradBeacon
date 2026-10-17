@@ -10,7 +10,7 @@ from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from app import __version__
@@ -98,6 +98,11 @@ def create_app(settings: Settings | None = None, providers: Providers | None = N
     app.include_router(professors_router)
     app.include_router(outreach_router)
     app.include_router(demo_router)
+
+    @app.get("/favicon.ico", include_in_schema=False)
+    async def favicon():
+        """Avoid a browser-generated 404 when a client probes the conventional favicon path."""
+        return Response(status_code=204)
 
     if settings.serve_frontend and FRONTEND_DIST.is_dir() and (FRONTEND_DIST / "index.html").exists():
         app.mount("/", StaticFiles(directory=FRONTEND_DIST, html=True), name="frontend")
